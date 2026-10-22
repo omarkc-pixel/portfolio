@@ -268,31 +268,13 @@
         </div>
       </div>
       <p style="margin:18px 0 0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:40em; text-wrap:pretty;">Research turned up problems across the entire journey and we could not take them all on. Enabling self-service meant starting where confidence broke down, which was setup. The rest phased in behind it.</p>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start; margin-top:20px;">
-        <div onClick="{{ openFtDsStyles }}" style="aspect-ratio:1600/1280; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
-          <img src="images/ft-ds-styles.png" alt="Blueprint design system: styles" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
-          <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Blueprint · Styles</span>
-        </div>
-        <div onClick="{{ openFtDsControls }}" style="aspect-ratio:1600/1930; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
-          <img src="images/ft-ds-controls.png" alt="Blueprint design system: controls" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
-          <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Blueprint · Controls</span>
-        </div>
-        <div onClick="{{ openFtDsFeedback }}" style="aspect-ratio:1600/1854; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
-          <img src="images/ft-ds-feedback.png" alt="Blueprint design system: feedback and overlays" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
-          <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Blueprint · Feedback and overlays</span>
-        </div>
-        <div onClick="{{ openFtDsPatterns }}" style="aspect-ratio:1600/1691; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
-          <img src="images/ft-ds-patterns.png" alt="Blueprint design system: patterns" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
-          <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Blueprint · Patterns</span>
-        </div>
-      </div>
     </div>
 
     <div style="padding:96px 100px 0;">
       <div style="display:flex; align-items:baseline; justify-content:space-between; padding-bottom:20px; border-bottom:1px solid #0f1211; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase;">
         <span>Rebuilt in Blueprint</span><span style="color:#6b6f6c;">Setup flow and connector screens, end to end</span>
       </div>
-      <p style="margin:18px 0 0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:40em; text-wrap:pretty;">A component sheet only proves so much. To pressure-test Blueprint, I rebuilt the setup flow and the two screens people come back to most using nothing but its tokens and components. Every state the flow needed had to exist in the system, from the stepper and connection tests to the schema picker and status badges.</p>
+      <p style="margin:18px 0 0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:40em; text-wrap:pretty;">I rebuilt the setup flow and the two screens people come back to most using nothing but Blueprint’s tokens and components. Every state the flow needed had to exist in the system, from the stepper and connection tests to the schema picker and status badges.</p>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start; margin-top:20px;">
         <div onClick="{{ openFtBpConnectors }}" style="aspect-ratio:1440/1100; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
           <img src="images/ft-bp-connectors.png" alt="Connectors list rebuilt in Blueprint: filters, sortable columns and status badges" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
@@ -335,6 +317,32 @@
         <div onClick="{{ openFtBpOnb8 }}" style="aspect-ratio:1440/960; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
           <img src="images/ft-bp-onb-8-done.png" alt="Onboarding step 8: initial sync started" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
           <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">08 · Sync started</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:96px 100px 0;">
+      <div style="display:flex; align-items:baseline; justify-content:space-between; padding-bottom:20px; border-bottom:1px solid #0f1211; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase;">
+        <span>Blueprint design system</span><span style="color:#6b6f6c;">Built in parallel with the UX work</span>
+      </div>
+      <p style="margin:18px 0 0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:40em; text-wrap:pretty;">I didn’t treat the design system as a separate project. While the onboarding work moved through its phases, I built Blueprint alongside it: whenever a pattern repeated across screens, it became a token or a component, with every state documented, and went straight back into the next round of design.</p>
+      <p style="margin:18px 0 0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:40em; text-wrap:pretty;">Engineering adopted Blueprint as the shared foundation for the product UI. It wasn’t a deliverable handed over at the end; it was an outcome of the design process itself.</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start; margin-top:20px;">
+        <div onClick="{{ openFtDsStyles }}" style="aspect-ratio:1600/1280; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
+          <img src="images/ft-ds-styles.png" alt="Blueprint design system: styles" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
+          <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Blueprint · Styles</span>
+        </div>
+        <div onClick="{{ openFtDsControls }}" style="aspect-ratio:1600/1930; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
+          <img src="images/ft-ds-controls.png" alt="Blueprint design system: controls" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
+          <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Blueprint · Controls</span>
+        </div>
+        <div onClick="{{ openFtDsFeedback }}" style="aspect-ratio:1600/1854; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
+          <img src="images/ft-ds-feedback.png" alt="Blueprint design system: feedback and overlays" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
+          <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Blueprint · Feedback and overlays</span>
+        </div>
+        <div onClick="{{ openFtDsPatterns }}" style="aspect-ratio:1600/1691; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
+          <img src="images/ft-ds-patterns.png" alt="Blueprint design system: patterns" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
+          <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Blueprint · Patterns</span>
         </div>
       </div>
     </div>

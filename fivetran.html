@@ -268,10 +268,6 @@
         </div>
       </div>
       <p style="margin:18px 0 0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:40em; text-wrap:pretty;">Research turned up problems across the entire journey and we could not take them all on. Enabling self-service meant starting where confidence broke down, which was setup. The rest phased in behind it.</p>
-      <div onClick="{{ openFtConnector }}" style="aspect-ratio:2736/1800; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
-              <img src="images/ft-connector-detail.png" alt="Connector detail page, updated components" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
-              <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Connector detail page, updated components</span>
-            </div>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start; margin-top:20px;">
         <div onClick="{{ openFtDsStyles }}" style="aspect-ratio:1600/1280; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
           <img src="images/ft-ds-styles.png" alt="Blueprint design system: styles" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
@@ -543,7 +539,6 @@ class Component extends DCLogic {
       openFtWelcome: () => this.setState({ lightbox: { src: 'images/ft-welcome.png', alt: 'First release: the Welcome step' } }),
       openFtDropoff: () => this.setState({ lightbox: { src: 'images/ft-dropoff.png', alt: 'Old flow vs test flow' } }),
       openFtFlow: () => this.setState({ lightbox: { src: 'images/ft-onboarding-flow.png', alt: 'Onboarding flow map' } }),
-      openFtConnector: () => this.setState({ lightbox: { src: 'images/ft-connector-detail.png', alt: 'Connector detail page' } }),
       openFtDsStyles: () => this.setState({ lightbox: { src: 'images/ft-ds-styles.png', alt: 'Blueprint design system: styles' } }),
       openFtDsControls: () => this.setState({ lightbox: { src: 'images/ft-ds-controls.png', alt: 'Blueprint design system: controls' } }),
       openFtDsFeedback: () => this.setState({ lightbox: { src: 'images/ft-ds-feedback.png', alt: 'Blueprint design system: feedback and overlays' } }),

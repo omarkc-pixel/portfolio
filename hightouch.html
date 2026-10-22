@@ -306,10 +306,26 @@
       </div>
       <p style="margin:18px 0 0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:40em; text-wrap:pretty;">Users don't only monitor pipelines, they build them. Someone who stalls during setup often doesn't come back. Holding the long-range vision and the unglamorous step-by-step optimization at the same time was the real constraint of being the only designer.</p>
       <div style="display:flex; flex-direction:column; gap:20px; margin-top:32px;">
-        <div onClick="{{ openHtStates }}" style="aspect-ratio:1870/1570; max-width:640px; width:100%; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
-              <img src="images/ht-sync-detail-states.png" alt="Sync detail page states" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
-              <span style="position:absolute; left:12px; bottom:12px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Sync detail page states</span>
+        <div style="display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:20px; align-items:start;">
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div onClick="{{ openHtStates }}" style="aspect-ratio:2880/2800; width:100%; border:1px solid #d8d8d4; background:#fff; overflow:hidden; cursor:zoom-in;">
+              <img src="images/ht-sync-detail-running.png" alt="Sync detail page while a sync is running: no open alerts, querying the model" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
             </div>
+            <span style="font:400 10px/1.4 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c;">Sync detail: running</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div onClick="{{ openHtStatesIdle }}" style="aspect-ratio:2880/2800; width:100%; border:1px solid #d8d8d4; background:#fff; overflow:hidden; cursor:zoom-in;">
+              <img src="images/ht-sync-detail-idle.png" alt="Sync detail page with no run scheduled and open alerts collapsed to a summary" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
+            </div>
+            <span style="font:400 10px/1.4 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c;">Sync detail: idle, alerts collapsed</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div onClick="{{ openHtStatesAlerts }}" style="aspect-ratio:2880/3680; width:100%; border:1px solid #d8d8d4; background:#fff; overflow:hidden; cursor:zoom-in;">
+              <img src="images/ht-sync-detail-alerts.png" alt="Sync detail page with a critical and a warning alert expanded while a run sends rows to the destination" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
+            </div>
+            <span style="font:400 10px/1.4 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c;">Sync detail: alerts open, run in progress</span>
+          </div>
+        </div>
         <div onClick="{{ openHtWorkflows }}" style="aspect-ratio:2880/3322; max-width:640px; width:100%; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
               <img src="images/ht-core-workflows.png" alt="Core workflow steps, revisited" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
               <span style="position:absolute; left:12px; bottom:12px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Core workflow steps, revisited</span>
@@ -548,7 +564,9 @@ class Component extends DCLogic {
       openHtAfterRuns: () => this.setState({ lightbox: { src: 'images/ht-after-sync-runs.png', alt: 'After: sync runs from the chart' } }),
       openHtJam: () => this.setState({ lightbox: { src: 'images/ht-design-jam.png', alt: 'Design jam output' } }),
       openHtOnboarding: () => this.setState({ lightbox: { src: 'images/ht-onboarding.png', alt: 'Onboarding iteration under test' } }),
-      openHtStates: () => this.setState({ lightbox: { src: 'images/ht-sync-detail-states.png', alt: 'Sync detail page states' } }),
+      openHtStates: () => this.setState({ lightbox: { src: 'images/ht-sync-detail-running.png', alt: 'Sync detail: running' } }),
+      openHtStatesIdle: () => this.setState({ lightbox: { src: 'images/ht-sync-detail-idle.png', alt: 'Sync detail: idle, alerts collapsed' } }),
+      openHtStatesAlerts: () => this.setState({ lightbox: { src: 'images/ht-sync-detail-alerts.png', alt: 'Sync detail: alerts open, run in progress' } }),
       openHtWorkflows: () => this.setState({ lightbox: { src: 'images/ht-core-workflows.png', alt: 'Core workflow steps' } }),
       openDpHash: () => this.setState({ lightbox: { src: 'images/dp-hash-field.png', alt: 'Field-level hash control' } }),
       openDpIcon1: () => this.setState({ lightbox: { src: 'images/dp-hash-icon-1.png', alt: 'Hash icon explorations' } }),

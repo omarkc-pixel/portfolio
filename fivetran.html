@@ -245,30 +245,6 @@
 
     <div style="padding:96px 100px 0;">
       <div style="display:flex; align-items:baseline; justify-content:space-between; padding-bottom:20px; border-bottom:1px solid #0f1211; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase;">
-        <span>The phased plan</span><span style="color:#6b6f6c;">Goal stated before the work started</span>
-      </div>
-      <div style="display:grid; grid-template-columns:repeat(3, 1fr); border-bottom:1px solid #d8d8d4;">
-        <div style="display:flex; flex-direction:column; gap:12px; padding:24px 24px 24px 0; border-right:1px solid #d8d8d4;">
-          <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.06em; color:oklch(0.55 0.11 150);">Phase 1</span>
-          <span style="font:400 15px/1.45 Archivo, sans-serif;">Reorder the onboarding steps and make source setup easier.</span>
-          <span style="font:400 12px/1.5 'Space Mono', monospace; letter-spacing:0.04em; color:#6b6f6c;">Goal: reduce time to value and dropoff at key steps; cut error rates in setup.</span>
-        </div>
-        <div style="display:flex; flex-direction:column; gap:12px; padding:24px; border-right:1px solid #d8d8d4;">
-          <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.06em; color:oklch(0.55 0.11 150);">Phase 2</span>
-          <span style="font:400 15px/1.45 Archivo, sans-serif;">Let users review the data schema and its PII risks before syncing.</span>
-          <span style="font:400 12px/1.5 'Space Mono', monospace; letter-spacing:0.04em; color:#6b6f6c;">Goal: reduce PII anxiety and increase sync rates.</span>
-        </div>
-        <div style="display:flex; flex-direction:column; gap:12px; padding:24px 0 24px 24px;">
-          <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.06em; color:oklch(0.55 0.11 150);">Phase 3</span>
-          <span style="font:400 15px/1.45 Archivo, sans-serif;">Add sync observability features.</span>
-          <span style="font:400 12px/1.5 'Space Mono', monospace; letter-spacing:0.04em; color:#6b6f6c;">Goal: reduce time to error resolution.</span>
-        </div>
-      </div>
-      <p style="margin:18px 0 0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:40em; text-wrap:pretty;">Research turned up problems across the entire journey and we could not take them all on. Enabling self-service meant starting where confidence broke down, which was setup. The rest phased in behind it.</p>
-    </div>
-
-    <div style="padding:96px 100px 0;">
-      <div style="display:flex; align-items:baseline; justify-content:space-between; padding-bottom:20px; border-bottom:1px solid #0f1211; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase;">
         <span>The shipped setup flow</span><span style="color:#6b6f6c;">Eight steps, end to end</span>
       </div>
       <p style="margin:18px 0 0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:40em; text-wrap:pretty;">This is the setup flow as it shipped, from the welcome step to the first sync. It brings both phases together: the reordered steps and in-place guidance from Phase 1, and the schema review from Phase 2, where people choose what to sync and how future schema changes are handled before anything leaves their source. Every screen is built from Blueprint’s components, from the stepper and connection tests to the schema picker and status badges.</p>
@@ -306,6 +282,30 @@
           <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">08 · Sync started</span>
         </div>
       </div>
+    </div>
+
+    <div style="padding:96px 100px 0;">
+      <div style="display:flex; align-items:baseline; justify-content:space-between; padding-bottom:20px; border-bottom:1px solid #0f1211; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase;">
+        <span>The phased plan</span><span style="color:#6b6f6c;">Goal stated before the work started</span>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); border-bottom:1px solid #d8d8d4;">
+        <div style="display:flex; flex-direction:column; gap:12px; padding:24px 24px 24px 0; border-right:1px solid #d8d8d4;">
+          <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.06em; color:oklch(0.55 0.11 150);">Phase 1</span>
+          <span style="font:400 15px/1.45 Archivo, sans-serif;">Reorder the onboarding steps and make source setup easier.</span>
+          <span style="font:400 12px/1.5 'Space Mono', monospace; letter-spacing:0.04em; color:#6b6f6c;">Goal: reduce time to value and dropoff at key steps; cut error rates in setup.</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px; padding:24px; border-right:1px solid #d8d8d4;">
+          <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.06em; color:oklch(0.55 0.11 150);">Phase 2</span>
+          <span style="font:400 15px/1.45 Archivo, sans-serif;">Let users review the data schema and its PII risks before syncing.</span>
+          <span style="font:400 12px/1.5 'Space Mono', monospace; letter-spacing:0.04em; color:#6b6f6c;">Goal: reduce PII anxiety and increase sync rates.</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px; padding:24px 0 24px 24px;">
+          <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.06em; color:oklch(0.55 0.11 150);">Phase 3</span>
+          <span style="font:400 15px/1.45 Archivo, sans-serif;">Add sync observability features.</span>
+          <span style="font:400 12px/1.5 'Space Mono', monospace; letter-spacing:0.04em; color:#6b6f6c;">Goal: reduce time to error resolution.</span>
+        </div>
+      </div>
+      <p style="margin:18px 0 0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:40em; text-wrap:pretty;">Research turned up problems across the entire journey and we could not take them all on. Enabling self-service meant starting where confidence broke down, which was setup. The rest phased in behind it.</p>
     </div>
 
     <div style="padding:96px 100px 0;">

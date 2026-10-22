@@ -1,0 +1,18 @@
+# Netlify config for omaryounis.com
+# Static site: no build step, files are served from the repo root.
+
+[build]
+  publish = "."
+
+# Carried over from the live site's existing redirect rule.
+[[redirects]]
+  from = "/work"
+  to = "/index.html"
+  status = 301
+
+# Carried over from the live site's existing header rule.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Content-Type-Options = "nosniff"

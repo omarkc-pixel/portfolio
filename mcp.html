@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Omar Younis · MCP</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Space+Mono:wght@400;700&family=Fredoka:wght@700&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; background:#f6f6f4; }
+  a { color:#0f1211; text-decoration:none; }
+  a:hover { color:oklch(0.55 0.11 150); }
+
+@media (max-width: 1300px) {
+  [data-screen-label]{width:100% !important; min-width:0 !important; border-left:none !important; border-right:none !important}
+  [style*="grid-template-columns: 56px minmax(0px, 1fr) 470px"]{grid-template-columns:56px 1.4fr 1fr !important}
+  [style*="grid-template-columns: minmax(0px, 1fr) 300px"]{grid-template-columns:1.6fr 1fr !important; gap:40px !important}
+  [style*="grid-template-columns: minmax(0px, 1fr) 400px"]{grid-template-columns:1.2fr 1fr !important}
+  [style*="font: 500 52px /"]{font-size:38px !important; line-height:1.15 !important}
+  [style*="font: 500 46px /"]{font-size:34px !important; line-height:1.15 !important}
+  [style*="font: 500 42px /"]{font-size:32px !important; line-height:1.15 !important}
+  [style*="font: 500 40px /"]{font-size:31px !important; line-height:1.15 !important}
+  [style*="font: 500 38px /"]{font-size:30px !important; line-height:1.2 !important}
+  [style*="font: 500 34px /"]{font-size:28px !important; line-height:1.2 !important}
+}
+@media (max-width: 900px) {
+  [data-screen-label]{width:100% !important; min-width:0 !important; border-left:none !important; border-right:none !important}
+  [style*="padding: 22px 100px"],[style*="padding: 22px 100px"]{padding:16px 28px !important}
+  [style*="padding: 96px 100px 80px"],[style*="padding: 96px 100px 80px"]{padding:58px 28px 48px !important}
+  [style*="padding: 0 100px"],[style*="padding: 0px 100px"]{padding:0 28px !important}
+  [style*="padding: 64px 100px 0"],[style*="padding: 64px 100px 0px"]{padding:38px 28px 0 !important}
+  [style*="padding: 80px 100px 56px"],[style*="padding: 80px 100px 56px"]{padding:48px 28px 34px !important}
+  [style*="padding: 80px 100px 0"],[style*="padding: 80px 100px 0px"]{padding:48px 28px 0 !important}
+  [style*="padding: 96px 100px 0"],[style*="padding: 96px 100px 0px"]{padding:58px 28px 0 !important}
+  [style*="padding: 24px 100px 0"],[style*="padding: 24px 100px 0px"]{padding:16px 28px 0 !important}
+  [style*="padding: 56px 100px 0"],[style*="padding: 56px 100px 0px"]{padding:34px 28px 0 !important}
+  [style*="padding: 88px 100px 0"],[style*="padding: 88px 100px 0px"]{padding:53px 28px 0 !important}
+  [style*="padding: 80px 100px 72px"],[style*="padding: 80px 100px 72px"]{padding:48px 28px 43px !important}
+  [style*="padding: 72px 100px 48px"],[style*="padding: 72px 100px 48px"]{padding:43px 28px 29px !important}
+  [style*="grid-template-columns: minmax(0px, 1fr) 300px"]{grid-template-columns:minmax(0px, 1fr) !important; gap:32px !important}
+  [style*="grid-template-columns: 56px minmax(0px, 1fr) 470px"]{grid-template-columns:32px minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: 200px minmax(0px, 1fr)"]{grid-template-columns:minmax(0px, 1fr) !important; gap:14px !important}
+  [style*="grid-template-columns: repeat(6, 1fr)"]{grid-template-columns:repeat(3, 1fr) !important}
+  [style*="grid-template-columns: repeat(4, 1fr)"]{grid-template-columns:repeat(2, 1fr) !important}
+  [style*="border-left: 1px solid"][style*="padding-left: 24px"]{border-left:none !important; padding-left:0 !important; border-top:1px solid rgb(216,216,212); padding-top:20px}
+  [style*="font: 500 52px /"]{font-size:32px !important; line-height:1.2 !important}
+  [style*="font: 500 46px /"]{font-size:30px !important; line-height:1.2 !important}
+  [style*="font: 500 42px /"]{font-size:28px !important; line-height:1.2 !important}
+  [style*="font: 500 40px /"]{font-size:27px !important; line-height:1.2 !important}
+  [style*="font: 500 38px /"]{font-size:26px !important; line-height:1.2 !important}
+  [style*="font: 500 34px /"]{font-size:24px !important; line-height:1.2 !important}
+  [style*="font: 500 28px /"]{font-size:22px !important; line-height:1.2 !important}
+  [style*="font: 500 27px /"]{font-size:22px !important; line-height:1.2 !important}
+  [style*="font: 500 26px /"]{font-size:21px !important; line-height:1.2 !important}
+}
+@media (max-width: 600px) {
+  [style*="padding: 22px 100px"],[style*="padding: 22px 100px"]{padding:16px 18px !important}
+  [style*="padding: 96px 100px 80px"],[style*="padding: 96px 100px 80px"]{padding:48px 18px 40px !important}
+  [style*="padding: 0 100px"],[style*="padding: 0px 100px"]{padding:0 18px !important}
+  [style*="padding: 64px 100px 0"],[style*="padding: 64px 100px 0px"]{padding:32px 18px 0 !important}
+  [style*="padding: 80px 100px 56px"],[style*="padding: 80px 100px 56px"]{padding:40px 18px 28px !important}
+  [style*="padding: 80px 100px 0"],[style*="padding: 80px 100px 0px"]{padding:40px 18px 0 !important}
+  [style*="padding: 96px 100px 0"],[style*="padding: 96px 100px 0px"]{padding:48px 18px 0 !important}
+  [style*="padding: 24px 100px 0"],[style*="padding: 24px 100px 0px"]{padding:16px 18px 0 !important}
+  [style*="padding: 56px 100px 0"],[style*="padding: 56px 100px 0px"]{padding:28px 18px 0 !important}
+  [style*="padding: 88px 100px 0"],[style*="padding: 88px 100px 0px"]{padding:44px 18px 0 !important}
+  [style*="padding: 80px 100px 72px"],[style*="padding: 80px 100px 72px"]{padding:40px 18px 36px !important}
+  [style*="padding: 72px 100px 48px"],[style*="padding: 72px 100px 48px"]{padding:36px 18px 24px !important}
+  [style*="grid-template-columns: minmax(0px, 1fr) 300px"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: 56px minmax(0px, 1fr) 470px"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: 1fr 1fr"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: repeat(4, 1fr)"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: 200px minmax(0px, 1fr)"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: repeat(6, 1fr)"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: repeat(3, 1fr)"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: 1fr 1fr 1fr"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: 130px minmax(0px, 1fr)"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: minmax(0px, 1fr) 400px"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: 110px 190px minmax(0px, 1fr)"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: minmax(0px, 1fr) 280px"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: 150px minmax(0px, 1fr)"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: 96px minmax(0px, 1fr)"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: repeat(6, 1fr)"]{grid-template-columns:repeat(2, 1fr) !important}
+  [style*="padding: 22px 100px"]{flex-wrap:wrap !important; gap:12px !important}
+  div[style*="align-items: stretch"]:has(> div[style*="flex: 0 0 44px"]){flex-direction:column !important}
+  div[style*="flex: 0 0 44px"]{flex:0 0 18px !important; transform:rotate(90deg)}
+  [style*="max-width: 560px"],[style*="max-width: 720px"],[style*="max-width: 420px"]{max-width:100% !important}
+  h1[style]{font-size:26px !important}
+  [style*="grid-template-columns: 1fr 44px 1fr 44px 1fr 44px 1fr"]{grid-template-columns:minmax(0px, 1fr) !important; gap:12px !important; height:auto !important}
+  [style*="grid-template-columns: 1fr 44px 1fr 44px 1fr 44px 1fr"] > div:empty{display:none !important}
+  [style*="grid-template-columns: minmax(0px, 1fr) auto"]{grid-template-columns:minmax(0px, 1fr) !important; justify-items:start !important; gap:12px !important}
+}
+</style>
+</helmet>
+
+<div style="display:flex; flex-direction:column; gap:64px; padding:0 0 64px; font-family:Archivo, Helvetica, sans-serif;">
+
+  <div data-screen-label="Case study: MCP" style="width:1280px; min-width:1280px; margin:0 auto; background:#f6f6f4; color:#0f1211; border:none;">
+    <div style="display:flex; align-items:center; justify-content:space-between; padding:22px 100px; border-bottom:1px solid #d8d8d4;">
+      <a href='/' style='display:block; line-height:0;'><svg width="52" height="52" viewBox="0 0 100 100" role="img" aria-label="Omar Younis" style="display:block;"><path d="M12 30C8 12 30 3 54 5C80 7 98 18 96 42C94 66 92 90 62 96C32 100 3 88 3 62C3 47 16 42 12 30Z" fill="#0f1211"></path><text x="50" y="49" text-anchor="middle" font-family="Fredoka, Archivo, sans-serif" font-weight="700" font-size="25" letter-spacing="-0.5" fill="#f6f6f4">OMAR</text><text x="50" y="72" text-anchor="middle" font-family="Fredoka, Archivo, sans-serif" font-weight="700" font-size="19" letter-spacing="-0.3" fill="#f6f6f4">YOUNIS</text></svg></a>
+      <div style="display:flex; gap:26px; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; color:#6b6f6c;">
+        <a href='/' style='color:#0f1211;'>Work</a>
+        <a href='/about' style='color:#6b6f6c;'>About</a>
+        <a href="resume-omar-younis.pdf" target="_blank" rel="noopener" style="color:#6b6f6c;">Resume</a>
+      </div>
+    </div>
+
+    <div style="padding:80px 100px 56px; display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:64px; align-items:start;">
+      <div style="display:flex; flex-direction:column; gap:24px;">
+        <img src="images/workato-logo.png" alt="Workato" style="height:26px; width:auto; align-self:flex-start; display:block; margin-bottom:-4px;" />
+        <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; color:oklch(0.58 0.10 205);">Workato · 2025</span>
+        <h1 style="margin:0; font:500 52px/1.08 Archivo, sans-serif; letter-spacing:-0.03em; max-width:20em;">Enterprise MCP servers</h1>
+        <p style="margin:0; font:400 20px/1.5 Archivo, sans-serif; color:#333836; max-width:26em; text-wrap:pretty;">Building an MCP server was an engineering task. We made it something a business team could do on their own. IT could still govern it.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.05em; color:#6b6f6c; border-top:1px solid #0f1211;">
+        <div style="display:flex; flex-direction:column; gap:4px; padding:14px 0; border-bottom:1px solid #d8d8d4;"><span style="font:700 10px/1.5 'Space Mono', monospace; text-transform:uppercase; letter-spacing:0.13em; color:#5f6462;">Role</span><span style="font:400 15px/1.45 Archivo, sans-serif; letter-spacing:0; color:#1c211f;">Lead designer, research &amp; design</span></div>
+        <div style="display:flex; flex-direction:column; gap:4px; padding:14px 0; border-bottom:1px solid #d8d8d4;"><span style="font:700 10px/1.5 'Space Mono', monospace; text-transform:uppercase; letter-spacing:0.13em; color:#5f6462;">Team</span><span style="font:400 15px/1.45 Archivo, sans-serif; letter-spacing:0; color:#1c211f;">1 PM, 3 to 4 engineers, 4 pilot customers</span></div>
+        <div style="display:flex; flex-direction:column; gap:4px; padding:14px 0; border-bottom:1px solid #d8d8d4;"><span style="font:700 10px/1.5 'Space Mono', monospace; text-transform:uppercase; letter-spacing:0.13em; color:#5f6462;">Duration</span><span style="font:400 15px/1.45 Archivo, sans-serif; letter-spacing:0; color:#1c211f;">6 months to general availability</span></div>
+        <div style="display:flex; flex-direction:column; gap:4px; padding:14px 0; border-bottom:1px solid #d8d8d4;"><span style="font:700 10px/1.5 'Space Mono', monospace; text-transform:uppercase; letter-spacing:0.13em; color:#5f6462;">Foundation</span><span style="font:400 15px/1.45 Archivo, sans-serif; letter-spacing:0; color:#1c211f;">Workato design system</span></div>
+      </div>
+    </div>
+
+    <div style="margin:0 100px; padding:12px; background:#0f1211; color:#f6f6f4;">
+      <div style="display:flex; align-items:baseline; justify-content:space-between; padding:8px 12px 20px; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; color:#8b918e;">
+        <span>Outcome in the first week of general availability</span><span>Fall 2025</span>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(4, 1fr);">
+        <div style="display:flex; flex-direction:column; gap:8px; padding:0 12px 12px; border-right:1px solid #2a2e2c;">
+          <span style="font:500 38px/1 Archivo, sans-serif; letter-spacing:-0.03em;">35</span>
+          <span style="font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.05em; color:#8b918e;">MCP servers created across 14 customers</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; padding:0 12px 12px; border-right:1px solid #2a2e2c;">
+          <span style="font:500 38px/1 Archivo, sans-serif; letter-spacing:-0.03em;">1,031</span>
+          <span style="font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.05em; color:#8b918e;">Active tools published</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; padding:0 12px 12px; border-right:1px solid #2a2e2c;">
+          <span style="font:500 38px/1 Archivo, sans-serif; letter-spacing:-0.03em;">6,392</span>
+          <span style="font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.05em; color:#8b918e;">Tool calls</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; padding:0 12px 12px;">
+          <span style="font:500 38px/1 Archivo, sans-serif; letter-spacing:-0.03em; color:oklch(0.72 0.13 60);">34%</span>
+          <span style="font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.05em; color:#8b918e;">Average tool failure rate. Too high, and the thing we went after next</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:80px 100px 0; display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px;">
+      <span style="font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; padding-top:6px;">The problem</span>
+      <div style="display:flex; flex-direction:column; gap:20px; max-width:36em;">
+        <p style="margin:0; font:400 18px/1.6 Archivo, sans-serif; text-wrap:pretty;">The people who understand a business problem are rarely the people who can ship a secure MCP server. Every custom server needed engineering time, which capped experimentation and left the useful automations unbuilt.</p>
+        <p style="margin:0; font:400 18px/1.6 Archivo, sans-serif; color:#4a4e4c; text-wrap:pretty;">Existing MCP catalogs offered pre-built servers from common providers, but none let a team encode its own business logic. Workato already had the raw material: recipes, connections, an identity layer. The opportunity was composition. Let people assemble a server out of assets they already trusted.</p>
+        <div style="display:flex; flex-direction:column; gap:10px; padding:20px 0 0; border-top:1px solid #d8d8d4; font:400 13px/1.6 'Space Mono', monospace; color:#4a4e4c;">
+          <span><span style="color:oklch(0.55 0.11 150);">Builders</span> create servers and provision access.</span>
+          <span><span style="color:oklch(0.55 0.11 150);">End users</span> install a server and prompt it from Claude or Cursor.</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:64px 100px 0;">
+      <div style="border:1px solid #d8d8d4; background:#fbfbf9; padding:40px 36px 36px;">
+
+        <div style="display:flex; align-items:baseline; justify-content:space-between; padding-bottom:28px; border-bottom:1px solid #d8d8d4; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; color:#6b6f6c;">
+          <span style="font:400 15px/1.45 Archivo, sans-serif; letter-spacing:0; color:#1c211f;">Core workflows</span>
+          <span>Two personas, one shared surface</span>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:14px; padding:30px 0 14px;">
+          <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; color:oklch(0.55 0.11 150);">Builder</span>
+          <span style="font:400 12px/1 'Space Mono', monospace; color:#8b918e;">Ops lead, IT admin, platform owner</span>
+          <span style="flex:1; height:1px; background:#e2e2de;"></span>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 44px 1fr 44px 1fr 44px 1fr; align-items:stretch;">
+          <div style="min-width:0; box-sizing:border-box; display:flex; flex-direction:column; gap:9px; border:1px solid #cfcfca; background:#f6f6f4; padding:16px 16px 18px;">
+            <span style="font:400 10px/1 'Space Mono', monospace; letter-spacing:0.09em; color:oklch(0.55 0.11 150);">01</span>
+            <span style="font:500 19px/1.2 Archivo, sans-serif; letter-spacing:-0.015em;">Build</span>
+            <span style="font:400 13px/1.5 Archivo, sans-serif; color:#4a4e4c; text-wrap:pretty;">Compose a server from recipes, connections and API collections already in the workspace.</span>
+          </div>
+          <div style="box-sizing:border-box; display:flex; align-items:center; justify-content:center; color:#b6b8b3; font:400 13px/1 'Space Mono', monospace;">→</div>
+          <div style="min-width:0; box-sizing:border-box; display:flex; flex-direction:column; gap:9px; border:1px solid #cfcfca; background:#f6f6f4; padding:16px 16px 18px;">
+            <span style="font:400 10px/1 'Space Mono', monospace; letter-spacing:0.09em; color:oklch(0.55 0.11 150);">02</span>
+            <span style="font:500 19px/1.2 Archivo, sans-serif; letter-spacing:-0.015em;">Publish</span>
+            <span style="font:400 13px/1.5 Archivo, sans-serif; color:#4a4e4c; text-wrap:pretty;">Set the auth method, scope access to user groups, and expose the server URL.</span>
+          </div>
+          <div style="box-sizing:border-box; display:flex; align-items:center; justify-content:center; color:#b6b8b3; font:400 13px/1 'Space Mono', monospace;">→</div>
+          <div style="min-width:0; box-sizing:border-box; display:flex; flex-direction:column; gap:9px; border:1px solid #cfcfca; background:#f6f6f4; padding:16px 16px 18px;">
+            <span style="font:400 10px/1 'Space Mono', monospace; letter-spacing:0.09em; color:oklch(0.55 0.11 150);">03</span>
+            <span style="font:500 19px/1.2 Archivo, sans-serif; letter-spacing:-0.015em;">Install</span>
+            <span style="font:400 13px/1.5 Archivo, sans-serif; color:#4a4e4c; text-wrap:pretty;">Connect the remote URL in Claude or Cursor to check the server works end to end.</span>
+          </div>
+          <div style="box-sizing:border-box; display:flex; align-items:center; justify-content:center; color:#b6b8b3; font:400 13px/1 'Space Mono', monospace;">→</div>
+          <div style="min-width:0; box-sizing:border-box; display:flex; flex-direction:column; gap:9px; border:1px solid #cfcfca; background:#f6f6f4; padding:16px 16px 18px;">
+            <span style="font:400 10px/1 'Space Mono', monospace; letter-spacing:0.09em; color:oklch(0.55 0.11 150);">04</span>
+            <span style="font:500 19px/1.2 Archivo, sans-serif; letter-spacing:-0.015em;">Prompt</span>
+            <span style="font:400 13px/1.5 Archivo, sans-serif; color:#4a4e4c; text-wrap:pretty;">Test tool calls, read failures in the dashboard, tighten descriptions and retry.</span>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 44px 1fr 44px 1fr 44px 1fr; align-items:stretch; height:78px;">
+          <div></div>
+          <div></div>
+          <div style="min-width:0; box-sizing:border-box; display:flex; align-items:center; gap:12px; padding-left:24px;">
+            <div style="width:1px; align-self:stretch; margin:6px 0; border-left:1px dashed oklch(0.55 0.11 150);"></div>
+            <span style="font:400 10px/1.5 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:oklch(0.55 0.11 150);">Handoff<br />Published server<br />becomes discoverable</span>
+          </div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:14px; padding:0 0 14px;">
+          <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; color:oklch(0.55 0.11 150);">End user</span>
+          <span style="font:400 12px/1 'Space Mono', monospace; color:#8b918e;">Anyone on a business team with a client app</span>
+          <span style="flex:1; height:1px; background:#e2e2de;"></span>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 44px 1fr 44px 1fr 44px 1fr; align-items:stretch;">
+          <div></div>
+          <div></div>
+          <div style="min-width:0; box-sizing:border-box; display:flex; flex-direction:column; gap:9px; border:1px solid #cfcfca; background:#f0f0ec; padding:16px 16px 18px;">
+            <span style="font:400 10px/1 'Space Mono', monospace; letter-spacing:0.09em; color:oklch(0.55 0.11 150);">01</span>
+            <span style="font:500 19px/1.2 Archivo, sans-serif; letter-spacing:-0.015em;">Discover</span>
+            <span style="font:400 13px/1.5 Archivo, sans-serif; color:#4a4e4c; text-wrap:pretty;">Find an existing server in the list rather than asking for a new one to be built.</span>
+          </div>
+          <div style="box-sizing:border-box; display:flex; align-items:center; justify-content:center; color:#b6b8b3; font:400 13px/1 'Space Mono', monospace;">→</div>
+          <div style="min-width:0; box-sizing:border-box; display:flex; flex-direction:column; gap:9px; border:1px solid #cfcfca; background:#f0f0ec; padding:16px 16px 18px;">
+            <span style="font:400 10px/1 'Space Mono', monospace; letter-spacing:0.09em; color:oklch(0.55 0.11 150);">02</span>
+            <span style="font:500 19px/1.2 Archivo, sans-serif; letter-spacing:-0.015em;">Install</span>
+            <span style="font:400 13px/1.5 Archivo, sans-serif; color:#4a4e4c; text-wrap:pretty;">Paste the remote URL into the client, sign in, and authorize each connected app.</span>
+          </div>
+          <div style="box-sizing:border-box; display:flex; align-items:center; justify-content:center; color:#b6b8b3; font:400 13px/1 'Space Mono', monospace;">→</div>
+          <div style="min-width:0; box-sizing:border-box; display:flex; flex-direction:column; gap:9px; border:1px solid #cfcfca; background:#f0f0ec; padding:16px 16px 18px;">
+            <span style="font:400 10px/1 'Space Mono', monospace; letter-spacing:0.09em; color:oklch(0.55 0.11 150);">03</span>
+            <span style="font:500 19px/1.2 Archivo, sans-serif; letter-spacing:-0.015em;">Prompt</span>
+            <span style="font:400 13px/1.5 Archivo, sans-serif; color:#4a4e4c; text-wrap:pretty;">Work in natural language. The tools run under the permissions they already have.</span>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:32px; margin-top:36px; padding-top:20px; border-top:1px solid #d8d8d4; font:400 12px/1.6 'Space Mono', monospace; color:#6b6f6c;">
+          <span style="flex:1;">Both paths converge on install and prompt. Same two steps, reached from opposite ends of the org.</span>
+          <span style="flex:1;">Every design decision in this case study sits on one of these seven steps.</span>
+        </div>
+      </div>
+      <p style="margin:14px 0 0; font:400 12px/1.5 'Space Mono', monospace; letter-spacing:0.04em; color:#6b6f6c;">The two paths we designed against.</p>
+    </div>
+
+    <div style="padding:96px 100px 0;">
+      <h2 style="margin:0; font:500 34px/1.2 Archivo, sans-serif; letter-spacing:-0.02em; max-width:24em;">Applying our strategy across milestones</h2>
+      <p style="margin:20px 0 0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:40em; text-wrap:pretty;">Our PM and I broke the north star into milestones small enough to verify and big enough to matter. We let requirements stay fluid across them so engineering could plan. We weren't going to solve it all at once, but we could keep it moving with the people we had.</p>
+    </div>
+
+    <div style="padding:56px 100px 0;">
+      <div style="display:flex; align-items:baseline; justify-content:space-between; padding-bottom:20px; border-bottom:1px solid #0f1211; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase;">
+        <span>How it shipped</span><span style="color:#6b6f6c;">Six milestones, scoped to stay verifiable</span>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(6, 1fr); border-bottom:1px solid #d8d8d4;">
+        <div style="display:flex; flex-direction:column; gap:10px; padding:24px 20px 24px 0; border-right:1px solid #d8d8d4;">
+          <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.06em; color:oklch(0.55 0.11 150);">M1</span>
+          <span style="font:400 14px/1.45 Archivo, sans-serif; color:#333836;">A toggle turning existing API collections into MCP servers.</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px; padding:24px 20px; border-right:1px solid #d8d8d4;">
+          <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.06em; color:oklch(0.55 0.11 150);">M2</span>
+          <span style="font:400 14px/1.45 Archivo, sans-serif; color:#333836;">Top-level navigation, landing page, creation wizard.</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px; padding:24px 20px; border-right:1px solid #d8d8d4;">
+          <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.06em; color:oklch(0.55 0.11 150);">M3</span>
+          <span style="font:400 14px/1.45 Archivo, sans-serif; color:#333836;">Auth settings, user groups, verified user access.</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px; padding:24px 20px; border-right:1px solid #d8d8d4;">
+          <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.06em; color:oklch(0.55 0.11 150);">M4</span>
+          <span style="font:400 14px/1.45 Archivo, sans-serif; color:#333836;">Wizard replaced by one composable page. Templates panel.</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px; padding:24px 20px; border-right:1px solid #d8d8d4;">
+          <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.06em; color:oklch(0.55 0.11 150);">M5</span>
+          <span style="font:400 14px/1.45 Archivo, sans-serif; color:#333836;">Detail page rebuilt for tool metadata and rich descriptions.</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px; padding:24px 0 24px 20px;">
+          <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.06em; color:oklch(0.55 0.11 150);">M6</span>
+          <span style="font:400 14px/1.45 Archivo, sans-serif; color:#333836;">Observability dashboard, limited preview then GA.</span>
+        </div>
+      </div>
+      
+
+      <div data-reveal style="display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px; padding:44px 0 40px; margin-top:24px; border-top:1px solid #d8d8d4;">
+        <div style="display:flex; flex-direction:column; gap:6px; font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.06em; color:#6b6f6c;">
+          <span style="font:400 15px/1.45 Archivo, sans-serif; letter-spacing:0; color:#1c211f;">Milestone 01</span>
+          <span>A toggle on what we already had</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:18px;">
+          <h4 style="margin:0; font:500 21px/1.35 Archivo, sans-serif; letter-spacing:-0.015em; max-width:24em;">Ship the smallest thing that proves an MCP server can come out of Workato</h4>
+          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">We built on the existing API platform. A toggle turned an API collection, already assembled from endpoint recipes, into an MCP server, and a panel showed the URL an end user needs to install it in Claude or another client. No new object model, no new infrastructure.</p>
+          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">It also told us what was wrong. Only users provisioned for the API platform could reach it, so almost nobody discovered it. MCP servers had to move into the core platform, not sit as a setting inside one product.</p>
+          <div style="display:flex; flex-direction:column; gap:8px; padding:18px 0 0; border-top:1px solid #d8d8d4;">
+            <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; color:#6b6f6c;">Open question, closed</span>
+            <p style="margin:0; font:400 15px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">Most catalogs offer both local and remote install. Following Anthropic's lead on where clients actually run, we shipped remote URLs only and cut the local instructions. One less branch in the install flow to explain.</p>
+          </div>
+          <div onClick="{{ openApiCollection }}" style="aspect-ratio:2/1; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in; margin-top:6px;">
+            <img src="images/mcp-api-collection.png" alt="API collection toggle and install URL panel" style="width:100%; height:100%; object-fit:contain; display:block;" />
+            <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">API collection toggle + install URL panel</span>
+          </div>
+        </div>
+      </div>
+
+      <div data-reveal style="display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px; padding:44px 0 40px; border-top:1px solid #d8d8d4;">
+        <div style="display:flex; flex-direction:column; gap:6px; font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.06em; color:#6b6f6c;">
+          <span style="font:400 15px/1.45 Archivo, sans-serif; letter-spacing:0; color:#1c211f;">Milestone 02</span>
+          <span>Into the main navigation</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:18px;">
+          <h4 style="margin:0; font:500 21px/1.35 Archivo, sans-serif; letter-spacing:-0.015em; max-width:24em;">Give MCP servers a home, a landing page and a way in</h4>
+          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">We pulled every AI capability into one top-level section and built the MCP landing state inside it. I assembled the creation flow from the design system's existing wizard components. It was the fastest path to something customers could use and react to.</p>
+          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">MCP is not a native Workato concept, so I borrowed from MCP server patterns customers had already seen elsewhere rather than inventing a Workato-specific mental model.</p>
+          <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; margin-top:6px;">
+            <div onClick="{{ openLanding }}" style="aspect-ratio:16/10; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
+              <img src="images/mcp-aihub-landing.png" alt="AI Hub MCP servers landing page" style="width:100%; height:100%; object-fit:cover; object-position:top left; display:block;" />
+              <span style="position:absolute; left:12px; bottom:12px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">MCP landing page state</span>
+            </div>
+            <div onClick="{{ openWizard }}" style="aspect-ratio:16/10; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
+              <img src="images/mcp-creation-wizard.png" alt="New MCP server creation wizard" style="width:100%; height:100%; object-fit:cover; object-position:top left; display:block;" />
+              <span style="position:absolute; left:12px; bottom:12px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Creation wizard</span>
+            </div>
+            <div onClick="{{ openDetail }}" style="aspect-ratio:16/10; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
+              <img src="images/mcp-detail-page.png" alt="MCP server detail page" style="width:100%; height:100%; object-fit:cover; object-position:top left; display:block;" />
+              <span style="position:absolute; left:12px; bottom:12px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">First detail page</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-reveal style="display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px; padding:44px 0 40px; border-top:1px solid #d8d8d4;">
+        <div style="display:flex; flex-direction:column; gap:6px; font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.06em; color:#6b6f6c;">
+          <span style="font:400 15px/1.45 Archivo, sans-serif; letter-spacing:0; color:#1c211f;">Milestone 03</span>
+          <span>Access and permissions</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:18px;">
+          <h4 style="margin:0; font:500 21px/1.35 Archivo, sans-serif; letter-spacing:-0.015em; max-width:24em;">Two questions IT asks before approving anything: who can use it, and what can it reach</h4>
+          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">A Settings section let builders switch a server's authentication method. I worked with the PM to prioritize real controls over both halves of the problem: which people get access, and which application permissions they carry once they have it.</p>
+          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">Verified user access came out of this milestone: the end user signs in to every app the server connects to. Getting it right meant sitting with product and engineering until I understood how those sign-in handoffs actually behave, failure states included. The defaulting decision is decision 03.</p>
+          <div onClick="{{ openAuth }}" style="aspect-ratio:2/1; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in; margin-top:6px;">
+            <img src="images/mcp-auth-method.gif" alt="MCP server settings, access method" style="width:100%; height:100%; object-fit:cover; object-position:top left; display:block;" />
+            <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Settings: access method</span>
+          </div>
+          <div onClick="{{ openVua }}" style="aspect-ratio:1894/1594; border:1px solid #d8d8d4; background:#1a1a1a; overflow:hidden; position:relative; cursor:zoom-in; margin-top:6px;">
+            <img src="images/mcp-vua-flow.png" alt="Verified user access sign-in flow" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
+            <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">User group access + VUA sign-in states</span>
+          </div>
+        </div>
+      </div>
+
+      <div data-reveal style="display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px; padding:44px 0 40px; border-top:1px solid #d8d8d4;">
+        <div style="display:flex; flex-direction:column; gap:6px; font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.06em; color:#6b6f6c;">
+          <span style="color:oklch(0.55 0.11 150);">Milestone 04</span>
+          <span>Composability. The one that mattered</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:18px;">
+          <h4 style="margin:0; font:500 21px/1.35 Archivo, sans-serif; letter-spacing:-0.015em; max-width:24em;">One page where you assemble a server out of things you already own</h4>
+          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">The wizard came out and a single-page workflow went in: pick tools from the assets already sitting in your Workato workspace. This was the milestone that delivered the actual promise. Teams could encode their own business logic so an agent behaves predictably every time, instead of installing someone else's generic server.</p>
+          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">A templates panel came later, for people who wanted to see how a server works before they had their own resources ready. The hard part was tone: inviting enough that a non-technical builder starts, precise enough that they understand what they just published.</p>
+          <div onClick="{{ openComposable }}" style="aspect-ratio:2/1; border:1px solid #0f1211; background:#fff; overflow:hidden; position:relative; cursor:zoom-in; margin-top:6px;">
+            <img src="images/mcp-composable-creation.gif" alt="Composable MCP server creation page" style="width:100%; height:100%; object-fit:cover; object-position:top left; display:block;" />
+            <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#f6f6f4; background:#0f1211; padding:6px 8px;">Composable creation page</span>
+          </div>
+          <p style="margin:0; font:400 12px/1.5 'Space Mono', monospace; letter-spacing:0.04em; color:#6b6f6c;">Interaction design for the composable flow.</p>
+        </div>
+      </div>
+
+      <div data-reveal style="display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px; padding:44px 0 40px; border-top:1px solid #d8d8d4;">
+        <div style="display:flex; flex-direction:column; gap:6px; font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.06em; color:#6b6f6c;">
+          <span style="font:400 15px/1.45 Archivo, sans-serif; letter-spacing:0; color:#1c211f;">Milestone 05</span>
+          <span>Detail page and tool metadata</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:18px;">
+          <h4 style="margin:0; font:500 21px/1.35 Archivo, sans-serif; letter-spacing:-0.015em; max-width:24em;">Tool descriptions turned out to be a performance feature</h4>
+          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">The model relies on a tool's description to decide whether to call it. That reframed a text field as something worth designing for: we allowed long descriptions to stay visible in the list view and invested in rich text editing so builders could structure them for accuracy.</p>
+          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">I rebuilt the detail page around that. It needed room for varied tool metadata, expanded instructions, and inline affordances to add a tool or edit a description without leaving the page. I explored several table layouts for Skills, and worked with the Digital Design team on generated avatars so every row stopped falling back to the same MCP icon.</p>
+          <div onClick="{{ openRebuilt }}" style="aspect-ratio:2/1; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in; margin-top:6px;">
+            <img src="images/mcp-rebuilt-detail.png" alt="Rebuilt MCP server detail page" style="width:100%; height:100%; object-fit:cover; object-position:top left; display:block;" />
+            <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Rebuilt detail page</span>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:14px; margin-top:22px;">
+            <div style="display:flex; align-items:baseline; justify-content:space-between; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; color:#6b6f6c;">
+              <span style="font:400 15px/1.45 Archivo, sans-serif; letter-spacing:0; color:#1c211f;">Skills table variants + avatars</span>
+              <span>{{ carouselLabel }}</span>
+            </div>
+            <div style="position:relative;">
+              <div ref="{{ carouselRef }}" onScroll="{{ onCarouselScroll }}" style="display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; border:1px solid #d8d8d4; background:#f0f0ec;">
+                <div onClick="{{ openSpec1 }}" style="flex:0 0 100%; scroll-snap-align:start; aspect-ratio:2/1; overflow:hidden; cursor:zoom-in; background:#fff; position:relative;">
+                  <img src="images/mcp-spec-1.png" alt="Tool list UI options" style="width:100%; height:100%; object-fit:contain; display:block;" />
+                  <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Tool list UI options</span>
+                </div>
+                <div onClick="{{ openSpec2 }}" style="flex:0 0 100%; scroll-snap-align:start; aspect-ratio:2/1; overflow:hidden; cursor:zoom-in; background:#fff; position:relative;">
+                  <img src="images/mcp-spec-2.png" alt="Table component details" style="width:100%; height:100%; object-fit:contain; display:block;" />
+                  <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Table component details</span>
+                </div>
+                <div onClick="{{ openSpec3 }}" style="flex:0 0 100%; scroll-snap-align:start; aspect-ratio:2/1; overflow:hidden; cursor:zoom-in; background:#fff; position:relative;">
+                  <img src="images/mcp-spec-3.png" alt="Responsive designs" style="width:100%; height:100%; object-fit:contain; display:block;" />
+                  <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Responsive designs</span>
+                </div>
+                <div onClick="{{ openSpec4 }}" style="flex:0 0 100%; scroll-snap-align:start; aspect-ratio:2/1; overflow:hidden; cursor:zoom-in; background:#fff; position:relative;">
+                  <img src="images/mcp-spec-4.png" alt="Default logo logic" style="width:100%; height:100%; object-fit:contain; display:block;" />
+                  <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Default logo logic</span>
+                </div>
+              </div>
+              <button onClick="{{ carouselPrev }}" aria-label="Previous" style="position:absolute; left:12px; top:50%; transform:translateY(-50%); width:36px; height:36px; border:1px solid #0f1211; background:#f6f6f4; color:#0f1211; font:400 13px/1 'Space Mono', monospace; cursor:pointer; display:flex; align-items:center; justify-content:center;" style-hover="background:#0f1211; color:#f6f6f4;">←</button>
+              <button onClick="{{ carouselNext }}" aria-label="Next" style="position:absolute; right:12px; top:50%; transform:translateY(-50%); width:36px; height:36px; border:1px solid #0f1211; background:#f6f6f4; color:#0f1211; font:400 13px/1 'Space Mono', monospace; cursor:pointer; display:flex; align-items:center; justify-content:center;" style-hover="background:#0f1211; color:#f6f6f4;">→</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-reveal style="display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px; padding:44px 0 0; border-top:1px solid #d8d8d4;">
+        <div style="display:flex; flex-direction:column; gap:6px; font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.06em; color:#6b6f6c;">
+          <span style="font:400 15px/1.45 Archivo, sans-serif; letter-spacing:0; color:#1c211f;">Milestone 06</span>
+          <span>Observability, then GA</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:18px;">
+          <h4 style="margin:0; font:500 21px/1.35 Archivo, sans-serif; letter-spacing:-0.015em; max-width:24em;">Give builders a way to see what their servers are doing</h4>
+          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">An analytics dashboard shipped as a limited preview to selected accounts, and we kept iterating on it while the preview ran and live feedback came in. It's also what made the launch numbers observable at all. That includes the failure rate we didn't like.</p>
+          <div onClick="{{ openMetrics }}" style="aspect-ratio:2/1; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in; margin-top:6px;">
+            <img src="images/mcp-metrics.png" alt="MCP metrics dashboard" style="width:100%; height:100%; object-fit:cover; object-position:top left; display:block;" />
+            <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">MCP metrics dashboard</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:96px 100px 0;">
+      <div style="display:flex; align-items:baseline; justify-content:space-between; padding-bottom:20px; border-bottom:1px solid #0f1211; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase;">
+        <span>Three decisions</span><span style="color:#6b6f6c;">Shipped across six milestones</span>
+      </div>
+
+      <div data-reveal style="display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px; padding:44px 0; border-bottom:1px solid #d8d8d4;">
+        <div style="display:flex; flex-direction:column; gap:6px; font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.06em; color:#6b6f6c;"><span style="color:oklch(0.55 0.11 150);">Decision 01</span><span>Milestone 2</span></div>
+        <div style="display:flex; flex-direction:column; gap:20px;">
+          <h3 style="margin:0; font:500 28px/1.25 Archivo, sans-serif; letter-spacing:-0.02em; max-width:22em;">"AI Hub" tested as a name nobody wanted to click</h3>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">MCP servers started buried inside the API platform, reachable only by users already provisioned for it. Almost nobody found them. We pulled every AI capability into one top-level section and called it AI Hub.</p>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">Customers told us the label was ambiguous and they hesitated to click it. A vague container is its own kind of hidden. We reworked the navigation to name the capability directly.</p>
+          <div onClick="{{ openNav }}" style="aspect-ratio:2/1; border:1px solid #d8d8d4; background:#e9e9e5; overflow:hidden; position:relative; cursor:zoom-in; margin-top:8px;">
+            <img src="images/mcp-nav-options.png" alt="Navigation options explored" style="width:100%; height:100%; object-fit:contain; display:block;" />
+            <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Navigation options explored → final menu</span>
+          </div>
+        </div>
+      </div>
+
+      <div data-reveal style="display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px; padding:44px 0; border-bottom:1px solid #d8d8d4;">
+        <div style="display:flex; flex-direction:column; gap:6px; font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.06em; color:#6b6f6c;"><span style="color:oklch(0.55 0.11 150);">Decision 02</span><span>Milestones 3 to 4</span></div>
+        <div style="display:flex; flex-direction:column; gap:20px;">
+          <h3 style="margin:0; font:500 28px/1.25 Archivo, sans-serif; letter-spacing:-0.02em; max-width:22em;">We shipped a card catalog, watched what people did with it, and replaced it with a list</h3>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">Cards were the familiar format. Every MCP catalog uses them, and we explored a lot of variations before shipping. Then usage showed the real problem: people couldn't tell whether a server they needed already existed, so they made another one. Workspaces filled with near-duplicates.</p>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">A catalog layout suits a fixed set of vendor-published items. This content was user-defined and metadata-heavy, which the grid couldn't carry. It was hard to scan, barely sortable, and it forced a weak call to action. We moved to a list.</p>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; padding-top:8px;">
+            <div onClick="{{ openBefore }}" style="aspect-ratio:16/10; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
+              <img src="images/mcp-card-grid-before.png" alt="MCP servers card grid, before" style="width:100%; height:100%; object-fit:cover; object-position:top left; display:block;" />
+              <span style="position:absolute; left:12px; bottom:12px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Before: card grid</span>
+            </div>
+            <div onClick="{{ openAfter }}" style="aspect-ratio:16/10; border:1px solid #0f1211; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
+              <img src="images/mcp-list-after.png" alt="MCP servers list with metadata, after" style="width:100%; height:100%; object-fit:cover; object-position:top left; display:block;" />
+              <span style="position:absolute; left:12px; bottom:12px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#f6f6f4; background:#0f1211; padding:6px 8px;">After: list with metadata</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-reveal style="display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px; padding:44px 0; border-bottom:1px solid #d8d8d4;">
+        <div style="display:flex; flex-direction:column; gap:6px; font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.06em; color:#6b6f6c;"><span style="color:oklch(0.55 0.11 150);">Decision 03</span><span>Milestone 3</span></div>
+        <div style="display:flex; flex-direction:column; gap:20px;">
+          <h3 style="margin:0; font:500 28px/1.25 Archivo, sans-serif; letter-spacing:-0.02em; max-width:22em;">Default to identity, not shared tokens</h3>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">Tokens are the path of least resistance for an MCP server and the fastest way to lose control of one. They get passed around, over-scoped, and never expire on schedule. We made every new server default to Workato Identity when the workspace had it enabled, so builders grant access by user group instead.</p>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">Verified user access followed: end users sign in to each application the server touches, so a server can never hold more permission than the person prompting it.</p>
+          <div onClick="{{ openAccessModel }}" style="aspect-ratio:2/1; border:1px solid #d8d8d4; background:#2b2b2b; overflow:hidden; position:relative; cursor:zoom-in; margin-top:8px;">
+            <img src="images/mcp-access-model.png" alt="Access model: token-based, Workato Identity, verified user access, policy settings" style="width:100%; height:100%; object-fit:contain; display:block;" />
+            <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">The access model</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:96px 100px 0; display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px;">
+      <span style="font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; padding-top:6px;">What we heard</span>
+      <div style="display:flex; flex-direction:column; gap:24px;">
+        <div>
+          <div onClick="{{ openClaudeClient }}" style="aspect-ratio:1804/1498; max-width:720px; width:100%; border:1px solid #d8d8d4; background:#fff; overflow:hidden; cursor:zoom-in;">
+            <img src="images/mcp-claude-client.gif" alt="Claude client connecting to an MCP server" style="width:100%; height:100%; object-fit:contain; display:block;" />
+          </div>
+          <span style="display:block; margin-top:10px; font:400 12px/1.5 'Space Mono', monospace; letter-spacing:0.04em; color:#6b6f6c; max-width:52em;">Claude's client interface along with other compatible clients like Cursor enables users to access any API function by connecting to MCP servers</span>
+        </div>
+        <p style="margin:0; font:400 18px/1.6 Archivo, sans-serif; max-width:36em; text-wrap:pretty;">A 34% tool failure rate was the number I cared about most, and the feedback form told us why it hurt: people couldn't see what was going wrong.</p>
+        <div style="display:flex; flex-direction:column; gap:0; border-top:1px solid #0f1211;">
+          <span style="font:400 15px/1.6 'Space Mono', monospace; color:#333836; padding:16px 0; border-bottom:1px solid #d8d8d4;">"I do not know which tools are failing"</span>
+          <span style="font:400 15px/1.6 'Space Mono', monospace; color:#333836; padding:16px 0; border-bottom:1px solid #d8d8d4;">"How do I prompt my MCP server when I want to {XYZ}"</span>
+          <span style="font:400 15px/1.6 'Space Mono', monospace; color:#333836; padding:16px 0; border-bottom:1px solid #d8d8d4;">"I'm getting {ERROR_X} when prompting in {CLIENT_APP}. Is this a problem with a tool or with the server?"</span>
+        </div>
+        <p style="margin:0; font:400 18px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:36em; text-wrap:pretty;">We answered with traceability, audit logs and inline education, and moved fast on them. For enterprise teams these were table stakes, not enhancements. Tool descriptions turned out to matter more than expected: the model needs them to pick the right tool, so we allowed long descriptions in the list and invested in rich text editing to help builders structure them well.</p>
+      </div>
+    </div>
+
+    <div style="display:flex; align-items:center; justify-content:space-between; margin:96px 100px 0; padding:28px 0 40px; border-top:1px solid #d8d8d4; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase;">
+      <a href='/'>← All work</a>
+      <a href='/data-pipelines' style='color:oklch(0.55 0.11 150);'>Next: Data pipelines →</a>
+    </div>
+  </div>
+
+<sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ closeLightbox }}" style="position:fixed; inset:0; z-index:9999; background:rgba(15,18,17,0.88); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; padding:48px; cursor:zoom-out;">
+  <div role="img" aria-label="{{ lightboxAlt }}" style="{{ lightboxImageStyle }}"></div>
+  <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; color:#8b918e;">Click anywhere or press Esc to close</span>
+</div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showEarlier&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Home page&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;fade-up&quot;,&quot;fade&quot;,&quot;off&quot;],&quot;default&quot;:&quot;fade-up&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+class Component extends DCLogic {
+  state = { lightbox: null, carouselIndex: 0 };
+  carouselRef = React.createRef();
+
+  carouselStep(el) {
+    const kids = el.children;
+    return kids.length > 1 ? kids[1].offsetLeft - kids[0].offsetLeft : el.clientWidth;
+  }
+
+  currentSlide(el) {
+    return Math.round(el.scrollLeft / this.carouselStep(el));
+  }
+
+  moveCarousel(dir) {
+    const el = this.carouselRef.current;
+    if (!el) return;
+    const next = Math.max(0, Math.min(el.children.length - 1, this.currentSlide(el) + dir));
+    el.scrollLeft = next * this.carouselStep(el);
+    this.setState({ carouselIndex: next });
+  }
+
+  onCarouselScroll = () => {
+    const el = this.carouselRef.current;
+    if (!el) return;
+    const i = this.currentSlide(el);
+    if (i !== this.state.carouselIndex) this.setState({ carouselIndex: i });
+  };
+
+  componentDidMount() {
+    this.onKey = (e) => { if (e.key === 'Escape' && this.state.lightbox) this.setState({ lightbox: null }); };
+    window.addEventListener('keydown', this.onKey);
+
+    this.onScroll = () => {
+      if (this.raf) return;
+      this.raf = requestAnimationFrame(() => { this.raf = null; this.tick(); });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onScroll);
+    this.setupMotion();
+  }
+
+  componentDidUpdate() { this.setupMotion(); }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+    if (this.raf) cancelAnimationFrame(this.raf);
+    if (this.watchdog) clearInterval(this.watchdog);
+    if (this.io) this.io.disconnect();
+  }
+
+  collect() {
+    const out = [];
+    document.querySelectorAll('[data-screen-label]').forEach(page => {
+      page.querySelectorAll(':scope > div:not(:first-child)').forEach(el => {
+        if (!el.querySelector('[data-reveal]')) out.push(el);
+      });
+      page.querySelectorAll('[data-reveal]').forEach(el => out.push(el));
+    });
+    return out;
+  }
+
+  setupMotion() {
+    const mode = this.props.motion ?? 'fade-up';
+    const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const targets = this.collect();
+
+    if (mode === 'off' || reduced) {
+      targets.forEach(el => {
+        el.style.opacity = '';
+        el.style.transform = '';
+        el.style.transition = '';
+        el.style.transitionDelay = '';
+        delete el.dataset.omState;
+      });
+      return;
+    }
+
+    this.shift = mode === 'fade' ? '0px' : '18px';
+
+    // Only ever hide content from inside a real animation frame. In a frameless
+    // context (background tab, print/screenshot capture) nothing is hidden at all.
+    requestAnimationFrame(() => {
+      targets.forEach(el => {
+        if (el.dataset.omState) return;
+        el.dataset.omState = 'hidden';
+        el.style.opacity = '0';
+        el.style.transform = 'translate3d(0,' + this.shift + ',0)';
+        el.style.transition = 'opacity 620ms cubic-bezier(0.22,0.61,0.36,1), transform 620ms cubic-bezier(0.22,0.61,0.36,1)';
+      });
+      requestAnimationFrame(() => this.tick());
+      this.startWatchdog();
+    });
+  }
+
+  // The canvas host pans/zooms with a CSS transform and never fires window
+  // scroll, so rect polling + an observer both drive the reveal.
+  startWatchdog() {
+    if (!this.io && window.IntersectionObserver) {
+      this.io = new IntersectionObserver(() => this.tick(), { rootMargin: '0px 0px -6% 0px' });
+    }
+    if (this.io) {
+      this.collect().forEach(el => {
+        if (el.dataset.omObserved) return;
+        el.dataset.omObserved = '1';
+        this.io.observe(el);
+      });
+    }
+    if (this.watchdog) return;
+    this.watchdog = setInterval(() => this.tick(), 900);
+  }
+
+  tick() {
+    const h = window.innerHeight || 800;
+    let n = 0;
+    this.collect().forEach(el => {
+      if (el.dataset.omState !== 'hidden') return;
+      const r = el.getBoundingClientRect();
+      if (r.top > h * 0.94 || r.bottom < 0) return;
+      el.dataset.omState = 'shown';
+      const delay = Math.min(n++, 3) * 70;
+      el.style.transitionDelay = delay + 'ms';
+      el.style.opacity = '1';
+      el.style.transform = 'translate3d(0,0,0)';
+    });
+  }
+
+  renderVals() {
+    const lb = this.state && this.state.lightbox;
+    return {
+      showEarlier: this.props.showEarlier ?? true,
+      lightboxAlt: lb ? lb.alt : '',
+      lightboxImageStyle: lb ? {
+        width: '100%',
+        maxWidth: '1600px',
+        flex: '1 1 auto',
+        minHeight: 0,
+        backgroundImage: 'url("' + lb.src + '")',
+        backgroundSize: 'contain',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundColor: '#fff',
+        border: '1px solid #3a3f3d'
+      } : {},
+      lightboxOpen: !!lb,
+      openBefore: () => this.setState({ lightbox: { src: 'images/mcp-card-grid-before.png', alt: 'MCP servers card grid, before' } }),
+      openAfter: () => this.setState({ lightbox: { src: 'images/mcp-list-after.png', alt: 'MCP servers list with metadata, after' } }),
+      openNav: () => this.setState({ lightbox: { src: 'images/mcp-nav-options.png', alt: 'Navigation options explored' } }),
+      carouselRef: this.carouselRef,
+      onCarouselScroll: this.onCarouselScroll,
+      carouselLabel: (this.state.carouselIndex || 0) + 1 + ' / 4',
+      carouselPrev: () => this.moveCarousel(-1),
+      carouselNext: () => this.moveCarousel(1),
+      openSpec1: () => this.setState({ lightbox: { src: 'images/mcp-spec-1.png', alt: 'Tool list UI options' } }),
+      openSpec2: () => this.setState({ lightbox: { src: 'images/mcp-spec-2.png', alt: 'Table component details' } }),
+      openSpec3: () => this.setState({ lightbox: { src: 'images/mcp-spec-3.png', alt: 'Responsive designs' } }),
+      openSpec4: () => this.setState({ lightbox: { src: 'images/mcp-spec-4.png', alt: 'Default logo logic' } }),
+      openClaudeClient: () => this.setState({ lightbox: { src: 'images/mcp-claude-client.gif', alt: 'Claude client connecting to an MCP server' } }),
+      openExOriginal: () => this.setState({ lightbox: { src: 'images/ex-3.png', alt: 'Original asset activity header, lo-fi' } }),
+      openExRedesign: () => this.setState({ lightbox: { src: 'images/ex-4.png', alt: 'Redesigned activity header' } }),
+      openExLofi: () => this.setState({ lightbox: { src: 'images/ex-1.png', alt: 'Lo-fi component map' } }),
+      openExPlaybook: () => this.setState({ lightbox: { src: 'images/ex-playbook.png', alt: 'Playbook builder' } }),
+      openExCharts: () => this.setState({ lightbox: { src: 'images/ex-charts.png', alt: 'Chart system' } }),
+      openExStyleguide: () => this.setState({ lightbox: { src: 'images/ex-styleguide.png', alt: 'Style guide and component library' } }),
+      openPbHifi: () => this.setState({ lightbox: { src: 'images/pb-hifi.png', alt: 'Companion app, high fidelity' } }),
+      openPbWatch: () => this.setState({ lightbox: { src: 'images/pb-watch.png', alt: 'Watch UI patterns and guidelines' } }),
+      openPbSketches: () => this.setState({ lightbox: { src: 'images/pb-sketches.png', alt: 'Sketched screen layouts' } }),
+      openPbAppstore: () => this.setState({ lightbox: { src: 'images/pb-appstore.png', alt: 'App store' } }),
+      openPbUikit: () => this.setState({ lightbox: { src: 'images/pb-uikit.png', alt: 'UI kit' } }),
+      openFtWorkflow: () => this.setState({ lightbox: { src: 'images/ft-workflow.png', alt: 'Self-service data workflow' } }),
+      openFtPersonas: () => this.setState({ lightbox: { src: 'images/ft-personas.png', alt: 'Personas' } }),
+      openFtLofi: () => this.setState({ lightbox: { src: 'images/ft-lofi.png', alt: 'Lo-fi pain point map' } }),
+      openFtSetup: () => this.setState({ lightbox: { src: 'images/ft-setup-step.png', alt: 'Setup step with embedded docs' } }),
+      openFtOnboardingV1: () => this.setState({ lightbox: { src: 'images/ft-onboarding-v1.gif', alt: 'First release of the Fivetran onboarding flow' } }),
+      openFtWelcome: () => this.setState({ lightbox: { src: 'images/ft-welcome.png', alt: 'First release: the Welcome step' } }),
+      openFtDropoff: () => this.setState({ lightbox: { src: 'images/ft-dropoff.png', alt: 'Old flow vs test flow' } }),
+      openFtFlow: () => this.setState({ lightbox: { src: 'images/ft-onboarding-flow.png', alt: 'Onboarding flow map' } }),
+      openFtConnector: () => this.setState({ lightbox: { src: 'images/ft-connector-detail.png', alt: 'Connector detail page' } }),
+      openHtEtl: () => this.setState({ lightbox: { src: 'images/ht-etl-diagram.png', alt: 'ETL vs reverse ETL' } }),
+      openHtAudit: () => this.setState({ lightbox: { src: 'images/ht-audit.png', alt: 'Annotated audit board' } }),
+      openHtComponents: () => this.setState({ lightbox: { src: 'images/ht-components.png', alt: 'Standardized component set' } }),
+      openHtBefore: () => this.setState({ lightbox: { src: 'images/ht-sync-list-before.png', alt: 'Sync list at scale' } }),
+      openHtAfter: () => this.setState({ lightbox: { src: 'images/ht-dashboard-after.png', alt: 'First released dashboard' } }),
+      openHtJam: () => this.setState({ lightbox: { src: 'images/ht-design-jam.png', alt: 'Design jam output' } }),
+      openHtOnboarding: () => this.setState({ lightbox: { src: 'images/ht-onboarding.png', alt: 'Onboarding iteration under test' } }),
+      openHtStates: () => this.setState({ lightbox: { src: 'images/ht-sync-detail-states.png', alt: 'Sync detail page states' } }),
+      openHtWorkflows: () => this.setState({ lightbox: { src: 'images/ht-core-workflows.png', alt: 'Core workflow steps' } }),
+      openDpHash: () => this.setState({ lightbox: { src: 'images/dp-hash-field.png', alt: 'Field-level hash control' } }),
+      openDpIcon1: () => this.setState({ lightbox: { src: 'images/dp-hash-icon-1.png', alt: 'Hash icon explorations' } }),
+      openDpIcon2: () => this.setState({ lightbox: { src: 'images/dp-hash-icon-2.png', alt: 'In context, field row' } }),
+      openDpIcon3: () => this.setState({ lightbox: { src: 'images/dp-hash-icon-3.png', alt: 'Final mark' } }),
+      openDpResync: () => this.setState({ lightbox: { src: 'images/dp-resync.png', alt: 'Object re-sync design handoff' } }),
+      openDpSettings: () => this.setState({ lightbox: { src: 'images/dp-object-settings.png', alt: 'Object sync settings' } }),
+      openDpMon1: () => this.setState({ lightbox: { src: 'images/dp-monitor-1.png', alt: 'Sync type indicators in chart' } }),
+      openDpMon2: () => this.setState({ lightbox: { src: 'images/dp-monitor-2.png', alt: 'Chart icons and tooltips' } }),
+      openDpFile: () => this.setState({ lightbox: { src: 'images/dp-file-connector.png', alt: 'File-connector metadata' } }),
+      openDpComponents: () => this.setState({ lightbox: { src: 'images/dp-components.png', alt: 'Components added across these releases' } }),
+      openMetrics: () => this.setState({ lightbox: { src: 'images/mcp-metrics.png', alt: 'MCP metrics dashboard' } }),
+      openRebuilt: () => this.setState({ lightbox: { src: 'images/mcp-rebuilt-detail.png', alt: 'Rebuilt MCP server detail page' } }),
+      openComposable: () => this.setState({ lightbox: { src: 'images/mcp-composable-creation.gif', alt: 'Composable MCP server creation page' } }),
+      openAccessModel: () => this.setState({ lightbox: { src: 'images/mcp-access-model.png', alt: 'Access model diagram' } }),
+      openAuth: () => this.setState({ lightbox: { src: 'images/mcp-auth-method.gif', alt: 'MCP server settings, access method' } }),
+      openWizard: () => this.setState({ lightbox: { src: 'images/mcp-creation-wizard.png', alt: 'New MCP server creation wizard' } }),
+      openLanding: () => this.setState({ lightbox: { src: 'images/mcp-aihub-landing.png', alt: 'AI Hub MCP servers landing page' } }),
+      openDetail: () => this.setState({ lightbox: { src: 'images/mcp-detail-page.png', alt: 'MCP server detail page' } }),
+      openApiCollection: () => this.setState({ lightbox: { src: 'images/mcp-api-collection.png', alt: 'API collection toggle and install URL panel' } }),
+      openVua: () => this.setState({ lightbox: { src: 'images/mcp-vua-flow.png', alt: 'Verified user access sign-in flow' } }),
+      closeLightbox: () => this.setState({ lightbox: null })
+    };
+  }
+}
+</script>
+</body>
+</html>

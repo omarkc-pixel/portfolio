@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Omar Younis · Product Designer</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Space+Mono:wght@400;700&family=Fredoka:wght@700&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; background:#f6f6f4; }
+  a { color:#0f1211; text-decoration:none; }
+  a:hover { color:oklch(0.55 0.11 150); }
+
+@media (max-width: 1300px) {
+  [data-screen-label]{width:100% !important; min-width:0 !important; border-left:none !important; border-right:none !important}
+  [style*="grid-template-columns: minmax(0px, 1fr) 470px"]{grid-template-columns:1.4fr 1fr !important}
+  [style*="grid-template-columns: minmax(0px, 1fr) 300px"]{grid-template-columns:1.6fr 1fr !important; gap:40px !important}
+  [style*="grid-template-columns: minmax(0px, 1fr) 400px"]{grid-template-columns:1.2fr 1fr !important}
+  [style*="font: 500 52px /"]{font-size:38px !important; line-height:1.15 !important}
+  [style*="font: 500 46px /"]{font-size:34px !important; line-height:1.15 !important}
+  [style*="font: 500 42px /"]{font-size:32px !important; line-height:1.15 !important}
+  [style*="font: 500 40px /"]{font-size:31px !important; line-height:1.15 !important}
+  [style*="font: 500 38px /"]{font-size:30px !important; line-height:1.2 !important}
+  [style*="font: 500 34px /"]{font-size:28px !important; line-height:1.2 !important}
+}
+@media (max-width: 900px) {
+  [data-screen-label]{width:100% !important; min-width:0 !important; border-left:none !important; border-right:none !important}
+  [style*="padding: 22px 100px"],[style*="padding: 22px 100px"]{padding:16px 28px !important}
+  [style*="padding: 96px 100px 80px"],[style*="padding: 96px 100px 80px"]{padding:58px 28px 48px !important}
+  [style*="padding: 0 100px"],[style*="padding: 0px 100px"]{padding:0 28px !important}
+  [style*="padding: 64px 100px 0"],[style*="padding: 64px 100px 0px"]{padding:38px 28px 0 !important}
+  [style*="padding: 80px 100px 56px"],[style*="padding: 80px 100px 56px"]{padding:48px 28px 34px !important}
+  [style*="padding: 80px 100px 0"],[style*="padding: 80px 100px 0px"]{padding:48px 28px 0 !important}
+  [style*="padding: 96px 100px 0"],[style*="padding: 96px 100px 0px"]{padding:58px 28px 0 !important}
+  [style*="padding: 24px 100px 0"],[style*="padding: 24px 100px 0px"]{padding:16px 28px 0 !important}
+  [style*="padding: 56px 100px 0"],[style*="padding: 56px 100px 0px"]{padding:34px 28px 0 !important}
+  [style*="padding: 88px 100px 0"],[style*="padding: 88px 100px 0px"]{padding:53px 28px 0 !important}
+  [style*="padding: 80px 100px 72px"],[style*="padding: 80px 100px 72px"]{padding:48px 28px 43px !important}
+  [style*="padding: 72px 100px 48px"],[style*="padding: 72px 100px 48px"]{padding:43px 28px 29px !important}
+  [style*="grid-template-columns: minmax(0px, 1fr) 300px"]{grid-template-columns:minmax(0px, 1fr) !important; gap:32px !important}
+  [style*="grid-template-columns: minmax(0px, 1fr) 470px"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: 200px minmax(0px, 1fr)"]{grid-template-columns:minmax(0px, 1fr) !important; gap:14px !important}
+  [style*="grid-template-columns: repeat(6, 1fr)"]{grid-template-columns:repeat(3, 1fr) !important}
+  [style*="grid-template-columns: repeat(4, 1fr)"]{grid-template-columns:repeat(2, 1fr) !important}
+  [style*="border-left: 1px solid"][style*="padding-left: 24px"]{border-left:none !important; padding-left:0 !important; border-top:1px solid rgb(216,216,212); padding-top:20px}
+  [style*="font: 500 52px /"]{font-size:32px !important; line-height:1.2 !important}
+  [style*="font: 500 46px /"]{font-size:30px !important; line-height:1.2 !important}
+  [style*="font: 500 42px /"]{font-size:28px !important; line-height:1.2 !important}
+  [style*="font: 500 40px /"]{font-size:27px !important; line-height:1.2 !important}
+  [style*="font: 500 38px /"]{font-size:26px !important; line-height:1.2 !important}
+  [style*="font: 500 34px /"]{font-size:24px !important; line-height:1.2 !important}
+  [style*="font: 500 28px /"]{font-size:22px !important; line-height:1.2 !important}
+  [style*="font: 500 27px /"]{font-size:22px !important; line-height:1.2 !important}
+  [style*="font: 500 26px /"]{font-size:21px !important; line-height:1.2 !important}
+}
+@media (max-width: 600px) {
+  [style*="padding: 22px 100px"],[style*="padding: 22px 100px"]{padding:16px 18px !important}
+  [style*="padding: 96px 100px 80px"],[style*="padding: 96px 100px 80px"]{padding:48px 18px 40px !important}
+  [style*="padding: 0 100px"],[style*="padding: 0px 100px"]{padding:0 18px !important}
+  [style*="padding: 64px 100px 0"],[style*="padding: 64px 100px 0px"]{padding:32px 18px 0 !important}
+  [style*="padding: 80px 100px 56px"],[style*="padding: 80px 100px 56px"]{padding:40px 18px 28px !important}
+  [style*="padding: 80px 100px 0"],[style*="padding: 80px 100px 0px"]{padding:40px 18px 0 !important}
+  [style*="padding: 96px 100px 0"],[style*="padding: 96px 100px 0px"]{padding:48px 18px 0 !important}
+  [style*="padding: 24px 100px 0"],[style*="padding: 24px 100px 0px"]{padding:16px 18px 0 !important}
+  [style*="padding: 56px 100px 0"],[style*="padding: 56px 100px 0px"]{padding:28px 18px 0 !important}
+  [style*="padding: 88px 100px 0"],[style*="padding: 88px 100px 0px"]{padding:44px 18px 0 !important}
+  [style*="padding: 80px 100px 72px"],[style*="padding: 80px 100px 72px"]{padding:40px 18px 36px !important}
+  [style*="padding: 72px 100px 48px"],[style*="padding: 72px 100px 48px"]{padding:36px 18px 24px !important}
+  [style*="grid-template-columns: minmax(0px, 1fr) 300px"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: minmax(0px, 1fr) 470px"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: 1fr 1fr"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: repeat(4, 1fr)"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: 200px minmax(0px, 1fr)"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: repeat(6, 1fr)"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: repeat(3, 1fr)"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: 1fr 1fr 1fr"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: 130px minmax(0px, 1fr)"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: minmax(0px, 1fr) 400px"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: 110px 190px minmax(0px, 1fr)"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: minmax(0px, 1fr) 280px"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: 150px minmax(0px, 1fr)"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: 96px minmax(0px, 1fr)"]{grid-template-columns:minmax(0px, 1fr) !important; gap:20px !important}
+  [style*="grid-template-columns: repeat(6, 1fr)"]{grid-template-columns:repeat(2, 1fr) !important}
+  [style*="padding: 22px 100px"]{flex-wrap:wrap !important; gap:12px !important}
+  div[style*="align-items: stretch"]:has(> div[style*="flex: 0 0 44px"]){flex-direction:column !important}
+  div[style*="flex: 0 0 44px"]{flex:0 0 18px !important; transform:rotate(90deg)}
+  [style*="max-width: 560px"],[style*="max-width: 720px"],[style*="max-width: 420px"]{max-width:100% !important}
+  h1[style]{font-size:26px !important}
+  [style*="grid-template-columns: 1fr 44px 1fr 44px 1fr 44px 1fr"]{grid-template-columns:minmax(0px, 1fr) !important; gap:12px !important; height:auto !important}
+  [style*="grid-template-columns: 1fr 44px 1fr 44px 1fr 44px 1fr"] > div:empty{display:none !important}
+  [style*="grid-template-columns: minmax(0px, 1fr) auto"]{grid-template-columns:minmax(0px, 1fr) !important; justify-items:start !important; gap:12px !important}
+}
+</style>
+<script>
+(function () {
+  var chars = ' ``..`:-=+*x#%@';
+  var glyphs = '#%&@8XVL7T?!>{}[]()/\\+=~:;.,`*0123459AEHKOPSUZ';
+  var t = 0, last = 0;
+  function frame(node, cols, rows) {
+    var out = [], bx = cols * (0.62 + 0.14 * Math.sin(t * 0.19)), by = rows * (0.52 + 0.22 * Math.cos(t * 0.13));
+    for (var y = 0; y < rows; y++) {
+      var line = '';
+      for (var x = 0; x < cols; x++) {
+        var v = Math.sin(x * 0.075 + t) * 0.34 + Math.sin(y * 0.21 - t * 0.62) * 0.28 + Math.sin((x * 0.6 + y) * 0.09 + t * 0.4) * 0.3;
+        var dx = (x - bx) / (cols * 0.17), dy = (y - by) / (rows * 0.30);
+        v += 2.9 * Math.exp(-(dx * dx + dy * dy));
+        var ex = (x - cols * (0.72 + 0.10 * Math.cos(t * 0.11))) / (cols * 0.11), ey = (y - rows * (0.34 + 0.24 * Math.sin(t * 0.17))) / (rows * 0.20);
+        v += 1.5 * Math.exp(-(ex * ex + ey * ey));
+        v -= (1 - x / cols) * 0.30;
+        var n = (v + 1.1) / 3.4;
+        if (n <= 0.22) { line += ' '; continue; }
+        if (n > 0.86) { line += glyphs[Math.abs(Math.round(x * 7 + y * 31 + t * 3)) % glyphs.length]; continue; }
+        line += chars[Math.min(chars.length - 1, Math.floor(n * chars.length))];
+      }
+      out.push(line);
+    }
+    node.textContent = out.join('\n');
+  }
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function tick() {
+    var node = document.querySelector('[data-ascii]');
+    if (!node) return;
+    var r = node.getBoundingClientRect();
+    if (r.width < 40 || r.height < 40) return;
+    var cols = Math.ceil(r.width / 7.22), rows = Math.ceil(r.height / 13);
+    if (reduce) { if (node.textContent) return; t = 1.2; } else { t += 0.055; }
+    frame(node, cols, rows);
+  }
+  setInterval(tick, 100);
+  tick();
+})();
+</script>
+</helmet>
+
+<div style="display:flex; flex-direction:column; gap:64px; padding:0 0 64px; font-family:Archivo, Helvetica, sans-serif;">
+
+  <div data-screen-label="Home" style="width:1280px; min-width:1280px; margin:0 auto; background:#f6f6f4; color:#0f1211; border:none;">
+    <div style="display:flex; align-items:center; justify-content:space-between; padding:22px 100px; border-bottom:1px solid #d8d8d4;">
+      <a href='/' style='display:block; line-height:0;'><svg width="52" height="52" viewBox="0 0 100 100" role="img" aria-label="Omar Younis" style="display:block;"><path d="M12 30C8 12 30 3 54 5C80 7 98 18 96 42C94 66 92 90 62 96C32 100 3 88 3 62C3 47 16 42 12 30Z" fill="#0f1211"></path><text x="50" y="49" text-anchor="middle" font-family="Fredoka, Archivo, sans-serif" font-weight="700" font-size="25" letter-spacing="-0.5" fill="#f6f6f4">OMAR</text><text x="50" y="72" text-anchor="middle" font-family="Fredoka, Archivo, sans-serif" font-weight="700" font-size="19" letter-spacing="-0.3" fill="#f6f6f4">YOUNIS</text></svg></a>
+      <div style="display:flex; gap:26px; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; color:#6b6f6c;">
+        <a href='/' style='color:#0f1211;'>Work</a>
+        <a href='/about' style='color:#6b6f6c;'>About</a>
+        <a href="resume-omar-younis.pdf" target="_blank" rel="noopener" style="color:#6b6f6c;">Resume</a>
+      </div>
+    </div>
+
+    <div style="position:relative; overflow:hidden; padding:96px 100px 80px; border-bottom:1px solid #d8d8d4; display:grid; grid-template-columns:minmax(0,1fr);">
+      <pre data-ascii="1" aria-hidden="true" style="position:absolute; inset:0; margin:0; font:400 12px/13px 'Space Mono', monospace; color:rgba(15,18,17,0.23); white-space:pre; overflow:hidden; pointer-events:none; user-select:none; mask-image:linear-gradient(100deg, transparent 6%, rgba(0,0,0,0.22) 38%, #000 72%); -webkit-mask-image:linear-gradient(100deg, transparent 6%, rgba(0,0,0,0.22) 38%, #000 72%);"></pre>
+      <div style="position:relative; display:flex; flex-direction:column; gap:26px;">
+        <h1 style="margin:0; font:500 46px/1.1 Archivo, sans-serif; letter-spacing:-0.025em; max-width:16em; text-wrap:pretty;">Hey, I'm Omar</h1>
+        <p style="margin:0; font:400 17px/1.55 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">I'm a product designer working on technically dense software: data integration 🔌, orchestration 🔀, and most recently the agentic enterprise platform 🤖 at Workato. I make complexity legible and build the structure a team can keep shipping against 🚢.</p>
+      </div>
+          </div>
+
+    <div style="padding:56px 100px 0;">
+
+      <a href='/mcp' style-hover='background:#f0f0ec;' style='display:grid; grid-template-columns:minmax(0,1fr) 470px; gap:40px; padding:36px 0; border-bottom:1px solid #d8d8d4; align-items:start;'>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <img src="images/workato-logo.png" alt="workato" style="height:18px; width:auto; align-self:flex-start; display:block;" />
+          <div style="display:flex; gap:14px; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; color:#6b6f6c;"><span>2025–2026</span></div>
+          <h2 style="margin:0; font:500 27px/1.2 Archivo, sans-serif; letter-spacing:-0.02em;">Enterprise MCP servers</h2>
+          <p style="margin:0; font:400 16px/1.55 Archivo, sans-serif; color:#4a4e4c; max-width:30em; text-wrap:pretty;">I led design for a self-service product where business teams compose, publish and govern their own MCP servers. No engineer required, and IT keeps control.</p>
+        </div>
+        <div style="aspect-ratio:16/10; border:1px solid #0f1211; background:#fff; overflow:hidden; transition:box-shadow 0.25s ease, transform 0.25s ease;" style-hover="box-shadow:0 12px 32px rgba(15,18,17,0.18); transform:translateY(-2px);">
+          <img src="images/mcp-server-list.png" alt="New MCP server creation page" style="width:100%; height:100%; object-fit:cover; object-position:top left; display:block;" />
+        </div>
+      </a>
+
+<a href='/data-pipelines' style-hover='background:#f0f0ec;' style='display:grid; grid-template-columns:minmax(0,1fr) 470px; gap:40px; padding:36px 0; border-bottom:1px solid #d8d8d4; align-items:start;'>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <img src="images/workato-logo.png" alt="workato" style="height:18px; width:auto; align-self:flex-start; display:block;" />
+          <div style="display:flex; gap:14px; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; color:#6b6f6c;"><span>2024–2025</span></div>
+          <h2 style="margin:0; font:500 27px/1.2 Archivo, sans-serif; letter-spacing:-0.02em;">Helping you customize your data schema</h2>
+          <p style="margin:0; font:400 16px/1.55 Archivo, sans-serif; color:#4a4e4c; max-width:30em; text-wrap:pretty;">I took over a shipped ETL product that had no designer on it. Field-level PII hashing, object re-syncs and sync-type monitoring all landed by extending its existing patterns, so nobody had to relearn the screen.</p>
+        </div>
+        <div style="aspect-ratio:16/10; border:1px solid #0f1211; background:#fff; overflow:hidden; transition:box-shadow 0.25s ease, transform 0.25s ease;" style-hover="box-shadow:0 12px 32px rgba(15,18,17,0.18); transform:translateY(-2px);">
+          <img src="images/pipeline-schema.png" alt="Data pipeline schema view" style="width:100%; height:100%; object-fit:cover; object-position:top left; display:block;" />
+        </div>
+      </a>
+
+      <a href='/hightouch' style-hover='background:#f0f0ec;' style='display:grid; grid-template-columns:minmax(0,1fr) 470px; gap:40px; padding:36px 0; border-bottom:1px solid #d8d8d4; align-items:start;'>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <img src="images/hightouch-logo.png" alt="hightouch" style="height:26px; width:auto; align-self:flex-start; display:block;" />
+          <div style="display:flex; gap:14px; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; color:#6b6f6c;"><span>2021–2024</span></div>
+          <h2 style="margin:0; font:500 27px/1.2 Archivo, sans-serif; letter-spacing:-0.02em;">Patterns for data activation</h2>
+          <p style="margin:0; font:400 16px/1.55 Archivo, sans-serif; color:#4a4e4c; max-width:30em; text-wrap:pretty;">I established the core workflows marketers use to sync product and customer data into their tools. Later the same patterns carried building and managing campaigns with agents.</p>
+        </div>
+        <div style="aspect-ratio:16/10; border:1px solid #0f1211; background:#fff; overflow:hidden; transition:box-shadow 0.25s ease, transform 0.25s ease;" style-hover="box-shadow:0 12px 32px rgba(15,18,17,0.18); transform:translateY(-2px);">
+          <img src="images/hightouch-sync-config.png" alt="Hightouch workspace activity dashboard" style="width:100%; height:100%; object-fit:cover; object-position:top left; display:block;" />
+        </div>
+      </a>
+
+      <a href='/fivetran' style-hover='background:#f0f0ec;' style='display:grid; grid-template-columns:minmax(0,1fr) 470px; gap:40px; padding:36px 0; border-bottom:1px solid #d8d8d4; align-items:start;'>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <img src="images/fivetran-logo.webp" alt="fivetran" style="height:16px; width:auto; align-self:flex-start; display:block;" />
+          <div style="display:flex; gap:14px; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; color:#6b6f6c;"><span>2019–2021</span></div>
+          <h2 style="margin:0; font:500 27px/1.2 Archivo, sans-serif; letter-spacing:-0.02em;">Pipelines data teams can trust</h2>
+          <p style="margin:0; font:400 16px/1.55 Archivo, sans-serif; color:#4a4e4c; max-width:30em; text-wrap:pretty;">I was the first designer on the app. I rebuilt onboarding and connector setup so a non-technical user could reach a finished first sync without an engineer.</p>
+        </div>
+        <div style="aspect-ratio:16/10; border:1px solid #0f1211; background:#fff; overflow:hidden; transition:box-shadow 0.25s ease, transform 0.25s ease;" style-hover="box-shadow:0 12px 32px rgba(15,18,17,0.18); transform:translateY(-2px);">
+          <img src="images/fivetran-status.png" alt="Fivetran connector status page" style="width:100%; height:100%; object-fit:cover; object-position:top left; display:block;" />
+        </div>
+      </a>
+    </div>
+
+    <sc-if value="{{ showEarlier }}" hint-placeholder-val="{{ true }}">
+    <div style="padding:64px 100px 0;">
+      <div style="display:flex; align-items:baseline; justify-content:space-between; padding-bottom:20px; border-bottom:1px solid #0f1211; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase;">
+        <span>Earlier</span>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0 40px;">
+        <a href='/exabeam' style-hover='background:#f0f0ec;' style='display:grid; grid-template-columns:96px minmax(0,1fr); gap:20px; padding:22px 0; border-bottom:1px solid #d8d8d4;'>
+          <span style="font:400 11px/1.5 'Space Mono', monospace; color:#6b6f6c; letter-spacing:0.05em;">2017–18</span>
+          <div style="display:flex; flex-direction:column; gap:5px;">
+            <img src="images/exabeam-logo.png" alt="Exabeam" style="height:22px; width:auto; align-self:flex-start; display:block; margin-bottom:4px;" />
+            <span style="font:500 15px/1.3 Archivo, sans-serif;">One design system across three security products</span>
+            <span style="font:400 14px/1.5 Archivo, sans-serif; color:#6b6f6c;">Design refresh and feature gaps for an ML-driven threat detection platform.</span>
+          </div>
+        </a>
+        <a href='/pebble' style-hover='background:#f0f0ec;' style='display:grid; grid-template-columns:96px minmax(0,1fr); gap:20px; padding:22px 0; border-bottom:1px solid #d8d8d4;'>
+          <span style="font:400 11px/1.5 'Space Mono', monospace; color:#6b6f6c; letter-spacing:0.05em;">2013–14</span>
+          <div style="display:flex; flex-direction:column; gap:5px;">
+            <img src="images/pebble-logo.png" alt="Pebble" style="height:18px; width:auto; align-self:flex-start; display:block; margin-bottom:4px;" />
+            <span style="font:500 15px/1.3 Archivo, sans-serif;">From Kickstarter to Best Buy</span>
+            <span style="font:400 14px/1.5 Archivo, sans-serif; color:#6b6f6c;">Founding designer for the first mainstream smartwatch. Acquired by Fitbit.</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    </sc-if>
+
+    <div style="display:flex; align-items:baseline; justify-content:space-between; margin:80px 100px 0; padding:28px 0 40px; border-top:1px solid #d8d8d4; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase;">
+      <span style="color:#6b6f6c;">Omar Younis · Product designer</span>
+      <div style="display:flex; gap:26px;">
+        <a href="mailto:omarkc@gmail.com">Email</a>
+        <a href="resume-omar-younis.pdf" target="_blank" rel="noopener">Resume</a>
+        <a href="https://www.linkedin.com/in/omaryounis/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
+<sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ closeLightbox }}" style="position:fixed; inset:0; z-index:9999; background:rgba(15,18,17,0.88); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; padding:48px; cursor:zoom-out;">
+  <div role="img" aria-label="{{ lightboxAlt }}" style="{{ lightboxImageStyle }}"></div>
+  <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; color:#8b918e;">Click anywhere or press Esc to close</span>
+</div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showEarlier&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Home page&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;fade-up&quot;,&quot;fade&quot;,&quot;off&quot;],&quot;default&quot;:&quot;fade-up&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+class Component extends DCLogic {
+  state = { lightbox: null, carouselIndex: 0 };
+  carouselRef = React.createRef();
+  asciiRef = React.createRef();
+
+  carouselStep(el) {
+    const kids = el.children;
+    return kids.length > 1 ? kids[1].offsetLeft - kids[0].offsetLeft : el.clientWidth;
+  }
+
+  currentSlide(el) {
+    return Math.round(el.scrollLeft / this.carouselStep(el));
+  }
+
+  moveCarousel(dir) {
+    const el = this.carouselRef.current;
+    if (!el) return;
+    const next = Math.max(0, Math.min(el.children.length - 1, this.currentSlide(el) + dir));
+    el.scrollLeft = next * this.carouselStep(el);
+    this.setState({ carouselIndex: next });
+  }
+
+  onCarouselScroll = () => {
+    const el = this.carouselRef.current;
+    if (!el) return;
+    const i = this.currentSlide(el);
+    if (i !== this.state.carouselIndex) this.setState({ carouselIndex: i });
+  };
+
+  componentDidMount() {
+    this.onKey = (e) => { if (e.key === 'Escape' && this.state.lightbox) this.setState({ lightbox: null }); };
+    window.addEventListener('keydown', this.onKey);
+
+    this.onScroll = () => {
+      if (this.raf) return;
+      this.raf = requestAnimationFrame(() => { this.raf = null; this.tick(); });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onScroll);
+    this.setupMotion();
+  }
+
+  componentDidUpdate() { this.setupMotion(); }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+    if (this.raf) cancelAnimationFrame(this.raf);
+    if (this.watchdog) clearInterval(this.watchdog);
+    if (this.io) this.io.disconnect();
+  }
+
+  collect() {
+    const out = [];
+    document.querySelectorAll('[data-screen-label]').forEach(page => {
+      page.querySelectorAll(':scope > div:not(:first-child)').forEach(el => {
+        if (!el.querySelector('[data-reveal]')) out.push(el);
+      });
+      page.querySelectorAll('[data-reveal]').forEach(el => out.push(el));
+    });
+    return out;
+  }
+
+  setupMotion() {
+    const mode = this.props.motion ?? 'fade-up';
+    const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const targets = this.collect();
+
+    if (mode === 'off' || reduced) {
+      targets.forEach(el => {
+        el.style.opacity = '';
+        el.style.transform = '';
+        el.style.transition = '';
+        el.style.transitionDelay = '';
+        delete el.dataset.omState;
+      });
+      return;
+    }
+
+    this.shift = mode === 'fade' ? '0px' : '18px';
+
+    // Only ever hide content from inside a real animation frame. In a frameless
+    // context (background tab, print/screenshot capture) nothing is hidden at all.
+    requestAnimationFrame(() => {
+      targets.forEach(el => {
+        if (el.dataset.omState) return;
+        el.dataset.omState = 'hidden';
+        el.style.opacity = '0';
+        el.style.transform = 'translate3d(0,' + this.shift + ',0)';
+        el.style.transition = 'opacity 620ms cubic-bezier(0.22,0.61,0.36,1), transform 620ms cubic-bezier(0.22,0.61,0.36,1)';
+      });
+      requestAnimationFrame(() => this.tick());
+      this.startWatchdog();
+    });
+  }
+
+  // The canvas host pans/zooms with a CSS transform and never fires window
+  // scroll, so rect polling + an observer both drive the reveal.
+  startWatchdog() {
+    if (!this.io && window.IntersectionObserver) {
+      this.io = new IntersectionObserver(() => this.tick(), { rootMargin: '0px 0px -6% 0px' });
+    }
+    if (this.io) {
+      this.collect().forEach(el => {
+        if (el.dataset.omObserved) return;
+        el.dataset.omObserved = '1';
+        this.io.observe(el);
+      });
+    }
+    if (this.watchdog) return;
+    this.watchdog = setInterval(() => this.tick(), 900);
+  }
+
+  tick() {
+    const h = window.innerHeight || 800;
+    let n = 0;
+    this.collect().forEach(el => {
+      if (el.dataset.omState !== 'hidden') return;
+      const r = el.getBoundingClientRect();
+      if (r.top > h * 0.94 || r.bottom < 0) return;
+      el.dataset.omState = 'shown';
+      const delay = Math.min(n++, 3) * 70;
+      el.style.transitionDelay = delay + 'ms';
+      el.style.opacity = '1';
+      el.style.transform = 'translate3d(0,0,0)';
+    });
+  }
+
+  renderVals() {
+    const lb = this.state && this.state.lightbox;
+    return {
+      showEarlier: this.props.showEarlier ?? true,
+      lightboxAlt: lb ? lb.alt : '',
+      lightboxImageStyle: lb ? {
+        width: '100%',
+        maxWidth: '1600px',
+        flex: '1 1 auto',
+        minHeight: 0,
+        backgroundImage: 'url("' + lb.src + '")',
+        backgroundSize: 'contain',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundColor: '#fff',
+        border: '1px solid #3a3f3d'
+      } : {},
+      lightboxOpen: !!lb,
+      openBefore: () => this.setState({ lightbox: { src: 'images/mcp-card-grid-before.png', alt: 'MCP servers card grid, before' } }),
+      openAfter: () => this.setState({ lightbox: { src: 'images/mcp-list-after.png', alt: 'MCP servers list with metadata, after' } }),
+      openNav: () => this.setState({ lightbox: { src: 'images/mcp-nav-options.png', alt: 'Navigation options explored' } }),
+      carouselRef: this.carouselRef,
+      onCarouselScroll: this.onCarouselScroll,
+      carouselLabel: (this.state.carouselIndex || 0) + 1 + ' / 4',
+      carouselPrev: () => this.moveCarousel(-1),
+      carouselNext: () => this.moveCarousel(1),
+      openSpec1: () => this.setState({ lightbox: { src: 'images/mcp-spec-1.png', alt: 'Tool list UI options' } }),
+      openSpec2: () => this.setState({ lightbox: { src: 'images/mcp-spec-2.png', alt: 'Table component details' } }),
+      openSpec3: () => this.setState({ lightbox: { src: 'images/mcp-spec-3.png', alt: 'Responsive designs' } }),
+      openSpec4: () => this.setState({ lightbox: { src: 'images/mcp-spec-4.png', alt: 'Default logo logic' } }),
+      openClaudeClient: () => this.setState({ lightbox: { src: 'images/mcp-claude-client.gif', alt: 'Claude client connecting to an MCP server' } }),
+      openExOriginal: () => this.setState({ lightbox: { src: 'images/ex-3.png', alt: 'Original asset activity header, lo-fi' } }),
+      openExRedesign: () => this.setState({ lightbox: { src: 'images/ex-4.png', alt: 'Redesigned activity header' } }),
+      openExLofi: () => this.setState({ lightbox: { src: 'images/ex-1.png', alt: 'Lo-fi component map' } }),
+      openExPlaybook: () => this.setState({ lightbox: { src: 'images/ex-playbook.png', alt: 'Playbook builder' } }),
+      openExCharts: () => this.setState({ lightbox: { src: 'images/ex-charts.png', alt: 'Chart system' } }),
+      openExStyleguide: () => this.setState({ lightbox: { src: 'images/ex-styleguide.png', alt: 'Style guide and component library' } }),
+      openPbHifi: () => this.setState({ lightbox: { src: 'images/pb-hifi.png', alt: 'Companion app, high fidelity' } }),
+      openPbWatch: () => this.setState({ lightbox: { src: 'images/pb-watch.png', alt: 'Watch UI patterns and guidelines' } }),
+      openPbSketches: () => this.setState({ lightbox: { src: 'images/pb-sketches.png', alt: 'Sketched screen layouts' } }),
+      openPbAppstore: () => this.setState({ lightbox: { src: 'images/pb-appstore.png', alt: 'App store' } }),
+      openPbUikit: () => this.setState({ lightbox: { src: 'images/pb-uikit.png', alt: 'UI kit' } }),
+      openFtWorkflow: () => this.setState({ lightbox: { src: 'images/ft-workflow.png', alt: 'Self-service data workflow' } }),
+      openFtPersonas: () => this.setState({ lightbox: { src: 'images/ft-personas.png', alt: 'Personas' } }),
+      openFtLofi: () => this.setState({ lightbox: { src: 'images/ft-lofi.png', alt: 'Lo-fi pain point map' } }),
+      openFtSetup: () => this.setState({ lightbox: { src: 'images/ft-setup-step.png', alt: 'Setup step with embedded docs' } }),
+      openFtOnboardingV1: () => this.setState({ lightbox: { src: 'images/ft-onboarding-v1.gif', alt: 'First release of the Fivetran onboarding flow' } }),
+      openFtWelcome: () => this.setState({ lightbox: { src: 'images/ft-welcome.png', alt: 'First release: the Welcome step' } }),
+      openFtDropoff: () => this.setState({ lightbox: { src: 'images/ft-dropoff.png', alt: 'Old flow vs test flow' } }),
+      openFtFlow: () => this.setState({ lightbox: { src: 'images/ft-onboarding-flow.png', alt: 'Onboarding flow map' } }),
+      openFtConnector: () => this.setState({ lightbox: { src: 'images/ft-connector-detail.png', alt: 'Connector detail page' } }),
+      openHtEtl: () => this.setState({ lightbox: { src: 'images/ht-etl-diagram.png', alt: 'ETL vs reverse ETL' } }),
+      openHtAudit: () => this.setState({ lightbox: { src: 'images/ht-audit.png', alt: 'Annotated audit board' } }),
+      openHtComponents: () => this.setState({ lightbox: { src: 'images/ht-components.png', alt: 'Standardized component set' } }),
+      openHtBefore: () => this.setState({ lightbox: { src: 'images/ht-sync-list-before.png', alt: 'Sync list at scale' } }),
+      openHtAfter: () => this.setState({ lightbox: { src: 'images/ht-dashboard-after.png', alt: 'First released dashboard' } }),
+      openHtJam: () => this.setState({ lightbox: { src: 'images/ht-design-jam.png', alt: 'Design jam output' } }),
+      openHtOnboarding: () => this.setState({ lightbox: { src: 'images/ht-onboarding.png', alt: 'Onboarding iteration under test' } }),
+      openHtStates: () => this.setState({ lightbox: { src: 'images/ht-sync-detail-states.png', alt: 'Sync detail page states' } }),
+      openHtWorkflows: () => this.setState({ lightbox: { src: 'images/ht-core-workflows.png', alt: 'Core workflow steps' } }),
+      openDpHash: () => this.setState({ lightbox: { src: 'images/dp-hash-field.png', alt: 'Field-level hash control' } }),
+      openDpIcon1: () => this.setState({ lightbox: { src: 'images/dp-hash-icon-1.png', alt: 'Hash icon explorations' } }),
+      openDpIcon2: () => this.setState({ lightbox: { src: 'images/dp-hash-icon-2.png', alt: 'In context, field row' } }),
+      openDpIcon3: () => this.setState({ lightbox: { src: 'images/dp-hash-icon-3.png', alt: 'Final mark' } }),
+      openDpResync: () => this.setState({ lightbox: { src: 'images/dp-resync.png', alt: 'Object re-sync design handoff' } }),
+      openDpSettings: () => this.setState({ lightbox: { src: 'images/dp-object-settings.png', alt: 'Object sync settings' } }),
+      openDpMon1: () => this.setState({ lightbox: { src: 'images/dp-monitor-1.png', alt: 'Sync type indicators in chart' } }),
+      openDpMon2: () => this.setState({ lightbox: { src: 'images/dp-monitor-2.png', alt: 'Chart icons and tooltips' } }),
+      openDpFile: () => this.setState({ lightbox: { src: 'images/dp-file-connector.png', alt: 'File-connector metadata' } }),
+      openDpComponents: () => this.setState({ lightbox: { src: 'images/dp-components.png', alt: 'Components added across these releases' } }),
+      openMetrics: () => this.setState({ lightbox: { src: 'images/mcp-metrics.png', alt: 'MCP metrics dashboard' } }),
+      openRebuilt: () => this.setState({ lightbox: { src: 'images/mcp-rebuilt-detail.png', alt: 'Rebuilt MCP server detail page' } }),
+      openComposable: () => this.setState({ lightbox: { src: 'images/mcp-composable-creation.gif', alt: 'Composable MCP server creation page' } }),
+      openAccessModel: () => this.setState({ lightbox: { src: 'images/mcp-access-model.png', alt: 'Access model diagram' } }),
+      openAuth: () => this.setState({ lightbox: { src: 'images/mcp-auth-method.gif', alt: 'MCP server settings, access method' } }),
+      openWizard: () => this.setState({ lightbox: { src: 'images/mcp-creation-wizard.png', alt: 'New MCP server creation wizard' } }),
+      openLanding: () => this.setState({ lightbox: { src: 'images/mcp-aihub-landing.png', alt: 'AI Hub MCP servers landing page' } }),
+      openDetail: () => this.setState({ lightbox: { src: 'images/mcp-detail-page.png', alt: 'MCP server detail page' } }),
+      openApiCollection: () => this.setState({ lightbox: { src: 'images/mcp-api-collection.png', alt: 'API collection toggle and install URL panel' } }),
+      openVua: () => this.setState({ lightbox: { src: 'images/mcp-vua-flow.png', alt: 'Verified user access sign-in flow' } }),
+      closeLightbox: () => this.setState({ lightbox: null })
+    };
+  }
+}
+</script>
+</body>
+</html>

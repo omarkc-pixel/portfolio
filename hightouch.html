@@ -240,10 +240,15 @@
           <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">Customer interviews kept landing in the same place: too many clicks to reach error information, no sense of what needed attention, status badges that were hard to read, filters that were hard to build and harder to maintain, and no way to get the lay of the land. It all reduced to one job. Find recent errors and debug them fast.</p>
           <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">The existing landing page listed every active sync, and folders hadn't stopped it going noisy as usage scaled. I ran a design jam with the PM and founding engineer on what a monitoring-first home screen would show, prioritized the ideas against customer feedback, and shipped a dashboard where you land on a set of sync runs from a recent point in time across syncs and destinations. Nobody has to hunt for the failure.</p>
           <div style="display:flex; flex-direction:column; gap:20px; padding-top:8px;">
-            <div onClick="{{ openHtBefore }}" style="aspect-ratio:2880/1564; max-width:640px; width:100%; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
+            <div onClick="{{ openHtBefore }}" style="aspect-ratio:2880/1564; width:100%; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
               <img src="images/ht-sync-list-before.png" alt="Before: sync list at scale" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
               <span style="position:absolute; left:12px; bottom:12px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Before: sync list at scale</span>
             </div>
+            <div onClick="{{ openHtJam }}" style="aspect-ratio:3528/2160; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
+                <img src="images/ht-design-jam.png" alt="Design jam output" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
+                <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Design jam output</span>
+              </div>
+            <h4 style="margin:24px 0 0; font:500 20px/1.3 Archivo, sans-serif; letter-spacing:-0.01em;">Shipped design</h4>
             <div style="display:flex; flex-direction:column; gap:20px;">
               <div onClick="{{ openHtAfter }}" style="aspect-ratio:2880/2480; width:100%; border:1px solid #0f1211; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
                 <img src="images/ht-after-overview.png" alt="After: workspace overview with run health metrics, extensions, draft approvals and active syncs by destination" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
@@ -261,10 +266,6 @@
               </div>
             </div>
           </div>
-          <div onClick="{{ openHtJam }}" style="aspect-ratio:3528/2160; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
-              <img src="images/ht-design-jam.png" alt="Design jam output" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
-              <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Design jam output</span>
-            </div>
         </div>
       </div>
 

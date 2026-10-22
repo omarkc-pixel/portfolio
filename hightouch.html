@@ -244,11 +244,16 @@
               <img src="images/ht-sync-list-before.png" alt="Before: sync list at scale" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
               <span style="position:absolute; left:12px; bottom:12px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Before: sync list at scale</span>
             </div>
+            <h4 style="margin:24px 0 0; font:500 20px/1.3 Archivo, sans-serif; letter-spacing:-0.01em;">Shipping a new design</h4>
+            <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">We started with design jams, exploring high-level concepts for what a monitoring-first home screen should show. I took the strongest ideas into lo-fi wireframes to settle structure and interaction details, then into high fidelity.</p>
             <div onClick="{{ openHtJam }}" style="aspect-ratio:3528/2160; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
-                <img src="images/ht-design-jam.png" alt="Design jam output" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
-                <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Design jam output</span>
-              </div>
-            <h4 style="margin:24px 0 0; font:500 20px/1.3 Archivo, sans-serif; letter-spacing:-0.01em;">Shipped design</h4>
+              <img src="images/ht-design-jam.png" alt="Design jam output" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
+              <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Design jam output</span>
+            </div>
+            <div onClick="{{ openHtIdeation }}" style="aspect-ratio:3200/1865; width:100%; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
+              <img src="images/ht-ideation.png" alt="Lo-fi UI ideation for the dashboard and interaction details: chart bin sizes, sort order and empty states" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
+              <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Lo-fi ideation and interaction details</span>
+            </div>
             <div style="display:flex; flex-direction:column; gap:20px;">
               <div onClick="{{ openHtAfter }}" style="aspect-ratio:2880/2480; width:100%; border:1px solid #0f1211; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
                 <img src="images/ht-after-overview.png" alt="After: workspace overview with run health metrics, extensions, draft approvals and active syncs by destination" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
@@ -560,6 +565,7 @@ class Component extends DCLogic {
       openHtAfterHover: () => this.setState({ lightbox: { src: 'images/ht-after-hover.png', alt: 'After: chart hover' } }),
       openHtAfterRuns: () => this.setState({ lightbox: { src: 'images/ht-after-sync-runs.png', alt: 'After: sync runs from the chart' } }),
       openHtJam: () => this.setState({ lightbox: { src: 'images/ht-design-jam.png', alt: 'Design jam output' } }),
+      openHtIdeation: () => this.setState({ lightbox: { src: 'images/ht-ideation.png', alt: 'Lo-fi ideation and interaction details' } }),
       openHtOnboarding: () => this.setState({ lightbox: { src: 'images/ht-onboarding.png', alt: 'Onboarding iteration under test' } }),
       openHtStates: () => this.setState({ lightbox: { src: 'images/ht-sync-detail-running.png', alt: 'Sync detail: running' } }),
       openHtStatesIdle: () => this.setState({ lightbox: { src: 'images/ht-sync-detail-idle.png', alt: 'Sync detail: idle, alerts collapsed' } }),

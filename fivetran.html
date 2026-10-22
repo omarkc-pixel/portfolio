@@ -272,9 +272,9 @@
 
     <div style="padding:96px 100px 0;">
       <div style="display:flex; align-items:baseline; justify-content:space-between; padding-bottom:20px; border-bottom:1px solid #0f1211; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase;">
-        <span>Rebuilt in Blueprint</span><span style="color:#6b6f6c;">The setup flow, end to end</span>
+        <span>The shipped setup flow</span><span style="color:#6b6f6c;">Eight steps, end to end</span>
       </div>
-      <p style="margin:18px 0 0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:40em; text-wrap:pretty;">I rebuilt the setup flow using nothing but Blueprint’s tokens and components. Every state the flow needed had to exist in the system, from the stepper and connection tests to the schema picker and status badges.</p>
+      <p style="margin:18px 0 0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:40em; text-wrap:pretty;">This is the setup flow as it shipped, from the welcome step to the first sync. It brings both phases together: the reordered steps and in-place guidance from Phase 1, and the schema review from Phase 2, where people choose what to sync and how future schema changes are handled before anything leaves their source. Every screen is built from Blueprint’s components, from the stepper and connection tests to the schema picker and status badges.</p>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start; margin-top:20px;">
         <div onClick="{{ openFtBpOnb1 }}" style="aspect-ratio:1440/960; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
           <img src="images/ft-bp-onb-1-welcome.png" alt="Onboarding step 1: welcome and how data flows" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
@@ -586,8 +586,8 @@ class Component extends DCLogic {
       openFtBeforeConnectors: () => this.setState({ lightbox: { src: 'images/ft-before-connectors.png', alt: 'Connector list before the redesign' } }),
       openFtBeforeDetail: () => this.setState({ lightbox: { src: 'images/ft-before-connector-detail.png', alt: 'Connector detail before the redesign' } }),
       openFtDsPatterns: () => this.setState({ lightbox: { src: 'images/ft-ds-patterns.png', alt: 'Blueprint design system: patterns' } }),
-      openFtBpConnectors: () => this.setState({ lightbox: { src: 'images/ft-bp-connectors.png', alt: 'Connectors list rebuilt in Blueprint: filters, sortable columns and status badges' } }),
-      openFtBpDetail: () => this.setState({ lightbox: { src: 'images/ft-bp-connector-detail.png', alt: 'Connector detail rebuilt in Blueprint: sync history, alerts and user actions' } }),
+      openFtBpConnectors: () => this.setState({ lightbox: { src: 'images/ft-bp-connectors.png', alt: 'Connector list after the redesign: filters, sortable columns and status badges' } }),
+      openFtBpDetail: () => this.setState({ lightbox: { src: 'images/ft-bp-connector-detail.png', alt: 'Connector detail after the redesign: sync history, alerts and user actions' } }),
       openFtBpOnb1: () => this.setState({ lightbox: { src: 'images/ft-bp-onb-1-welcome.png', alt: 'Onboarding step 1: welcome and how data flows' } }),
       openFtBpOnb2: () => this.setState({ lightbox: { src: 'images/ft-bp-onb-2-source.png', alt: 'Onboarding step 2: choose a data source' } }),
       openFtBpOnb3: () => this.setState({ lightbox: { src: 'images/ft-bp-onb-3-setup.png', alt: 'Onboarding step 3: source setup with the guide beside the form' } }),

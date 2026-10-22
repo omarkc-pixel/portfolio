@@ -235,51 +235,45 @@
 
       <div data-reveal style="padding:44px 0; border-bottom:1px solid #d8d8d4;">
         <div style="display:flex; flex-direction:column; gap:20px;">
-          <h3 style="margin:0; font:500 28px/1.25 Archivo, sans-serif; letter-spacing:-0.02em;">Treat PII anxiety as a design problem, not a documentation problem</h3>
+          <h3 style="margin:0; font:500 28px/1.25 Archivo, sans-serif; letter-spacing:-0.02em;">We shipped a new onboarding flow</h3>
           <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; text-wrap:pretty;">We shipped a follow-up quickly and made that first choice non-committal. You could move on without deciding. Sync rates at onboarding improved 36% overall after that release, and we kept tuning individual steps against ongoing usage tracking.</p>
-          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; text-wrap:pretty;">The most emotional thing in the interviews was not knowing whether personal data was about to be copied into the warehouse. People hesitated at the schema step, and hesitation at the schema step means no first sync.</p>
-          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; text-wrap:pretty;">Phase 2 gave users an explicit review of the schema and its PII risks before syncing. We stated the goal as reducing PII anxiety and raising sync rates, in those words, so the team knew what we were buying with the extra step.</p>
-        </div>
-      </div>
-    </div>
-
-    <div style="padding:96px 100px 0;">
-      <div style="display:flex; align-items:baseline; justify-content:space-between; padding-bottom:20px; border-bottom:1px solid #0f1211; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase;">
-        <span>The shipped setup flow</span><span style="color:#6b6f6c;">Eight steps, end to end</span>
-      </div>
-      <p style="margin:18px 0 0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:40em; text-wrap:pretty;">This is the setup flow as it shipped, from the welcome step to the first sync. It brings both phases together: the reordered steps and in-place guidance from Phase 1, and the schema review from Phase 2, where people choose what to sync and how future schema changes are handled before anything leaves their source. Every screen is built from Blueprint’s components, from the stepper and connection tests to the schema picker and status badges.</p>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start; margin-top:20px;">
-        <div onClick="{{ openFtBpOnb1 }}" style="aspect-ratio:1440/960; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
-          <img src="images/ft-bp-onb-1-welcome.png" alt="Onboarding step 1: welcome and how data flows" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
-          <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">01 · Welcome</span>
-        </div>
-        <div onClick="{{ openFtBpOnb2 }}" style="aspect-ratio:1440/1339; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
-          <img src="images/ft-bp-onb-2-source.png" alt="Onboarding step 2: choose a data source" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
-          <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">02 · Choose a source</span>
-        </div>
-        <div onClick="{{ openFtBpOnb3 }}" style="aspect-ratio:1440/1117; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
-          <img src="images/ft-bp-onb-3-setup.png" alt="Onboarding step 3: source setup with the guide beside the form" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
-          <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">03 · Set up the source</span>
-        </div>
-        <div onClick="{{ openFtBpOnb4 }}" style="aspect-ratio:1440/960; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
-          <img src="images/ft-bp-onb-4-tests.png" alt="Onboarding step 4: connection tests passed" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
-          <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">04 · Connection tests</span>
-        </div>
-        <div onClick="{{ openFtBpOnb5 }}" style="aspect-ratio:1440/1000; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
-          <img src="images/ft-bp-onb-5-destination.png" alt="Onboarding step 5: choose a destination warehouse" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
-          <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">05 · Choose a destination</span>
-        </div>
-        <div onClick="{{ openFtBpOnb6 }}" style="aspect-ratio:1440/1300; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
-          <img src="images/ft-bp-onb-6-data.png" alt="Onboarding step 6: review the schema and select tables" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
-          <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">06 · Select data</span>
-        </div>
-        <div onClick="{{ openFtBpOnb7 }}" style="aspect-ratio:1440/960; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
-          <img src="images/ft-bp-onb-7-changes.png" alt="Onboarding step 7: choose how future schema changes are handled" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
-          <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">07 · Schema changes</span>
-        </div>
-        <div onClick="{{ openFtBpOnb8 }}" style="aspect-ratio:1440/960; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
-          <img src="images/ft-bp-onb-8-done.png" alt="Onboarding step 8: initial sync started" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
-          <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">08 · Sync started</span>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; text-wrap:pretty;">The next problem was trust. The most emotional thing in the interviews was not knowing whether personal data was about to be copied into the warehouse. People hesitated at the schema step, and hesitation at the schema step means no first sync.</p>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; text-wrap:pretty;">Phase 2 gave users an explicit review of the schema and its PII risks before syncing. We stated the goal as reducing PII anxiety and raising sync rates, in those words, so the team knew what we were buying with the extra step.</p>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; text-wrap:pretty;">The final flow, from the welcome step to the first sync, brings both phases together: the reordered steps and in-place guidance from Phase 1, and the schema review from Phase 2, where people choose what to sync and how future schema changes are handled before anything leaves their source. Every screen is built from Blueprint’s components, from the stepper and connection tests to the schema picker and status badges.</p>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start; margin-top:8px;">
+            <div onClick="{{ openFtBpOnb1 }}" style="aspect-ratio:1440/960; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
+              <img src="images/ft-bp-onb-1-welcome.png" alt="Onboarding step 1: welcome and how data flows" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
+              <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">01 · Welcome</span>
+            </div>
+            <div onClick="{{ openFtBpOnb2 }}" style="aspect-ratio:1440/1339; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
+              <img src="images/ft-bp-onb-2-source.png" alt="Onboarding step 2: choose a data source" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
+              <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">02 · Choose a source</span>
+            </div>
+            <div onClick="{{ openFtBpOnb3 }}" style="aspect-ratio:1440/1117; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
+              <img src="images/ft-bp-onb-3-setup.png" alt="Onboarding step 3: source setup with the guide beside the form" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
+              <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">03 · Set up the source</span>
+            </div>
+            <div onClick="{{ openFtBpOnb4 }}" style="aspect-ratio:1440/960; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
+              <img src="images/ft-bp-onb-4-tests.png" alt="Onboarding step 4: connection tests passed" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
+              <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">04 · Connection tests</span>
+            </div>
+            <div onClick="{{ openFtBpOnb5 }}" style="aspect-ratio:1440/1000; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
+              <img src="images/ft-bp-onb-5-destination.png" alt="Onboarding step 5: choose a destination warehouse" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
+              <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">05 · Choose a destination</span>
+            </div>
+            <div onClick="{{ openFtBpOnb6 }}" style="aspect-ratio:1440/1300; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
+              <img src="images/ft-bp-onb-6-data.png" alt="Onboarding step 6: review the schema and select tables" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
+              <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">06 · Select data</span>
+            </div>
+            <div onClick="{{ openFtBpOnb7 }}" style="aspect-ratio:1440/960; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
+              <img src="images/ft-bp-onb-7-changes.png" alt="Onboarding step 7: choose how future schema changes are handled" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
+              <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">07 · Schema changes</span>
+            </div>
+            <div onClick="{{ openFtBpOnb8 }}" style="aspect-ratio:1440/960; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
+              <img src="images/ft-bp-onb-8-done.png" alt="Onboarding step 8: initial sync started" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
+              <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">08 · Sync started</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

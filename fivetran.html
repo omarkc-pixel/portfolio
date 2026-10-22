@@ -272,19 +272,9 @@
 
     <div style="padding:96px 100px 0;">
       <div style="display:flex; align-items:baseline; justify-content:space-between; padding-bottom:20px; border-bottom:1px solid #0f1211; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase;">
-        <span>Rebuilt in Blueprint</span><span style="color:#6b6f6c;">Setup flow and connector screens, end to end</span>
+        <span>Rebuilt in Blueprint</span><span style="color:#6b6f6c;">The setup flow, end to end</span>
       </div>
-      <p style="margin:18px 0 0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:40em; text-wrap:pretty;">I rebuilt the setup flow and the two screens people come back to most using nothing but Blueprint’s tokens and components. Every state the flow needed had to exist in the system, from the stepper and connection tests to the schema picker and status badges.</p>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start; margin-top:20px;">
-        <div onClick="{{ openFtBpConnectors }}" style="aspect-ratio:1440/1100; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
-          <img src="images/ft-bp-connectors.png" alt="Connectors list rebuilt in Blueprint: filters, sortable columns and status badges" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
-          <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Connectors list</span>
-        </div>
-        <div onClick="{{ openFtBpDetail }}" style="aspect-ratio:1440/1200; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
-          <img src="images/ft-bp-connector-detail.png" alt="Connector detail rebuilt in Blueprint: sync history, alerts and user actions" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
-          <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Connector detail</span>
-        </div>
-      </div>
+      <p style="margin:18px 0 0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:40em; text-wrap:pretty;">I rebuilt the setup flow using nothing but Blueprint’s tokens and components. Every state the flow needed had to exist in the system, from the stepper and connection tests to the schema picker and status badges.</p>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start; margin-top:20px;">
         <div onClick="{{ openFtBpOnb1 }}" style="aspect-ratio:1440/960; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
           <img src="images/ft-bp-onb-1-welcome.png" alt="Onboarding step 1: welcome and how data flows" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
@@ -318,6 +308,49 @@
           <img src="images/ft-bp-onb-8-done.png" alt="Onboarding step 8: initial sync started" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
           <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">08 · Sync started</span>
         </div>
+      </div>
+    </div>
+
+    <div style="padding:96px 100px 0;">
+      <div style="display:flex; align-items:baseline; justify-content:space-between; padding-bottom:20px; border-bottom:1px solid #0f1211; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase;">
+        <span>Redesigning the core dashboard</span><span style="color:#6b6f6c;">Before and after</span>
+      </div>
+      <p style="margin:18px 0 0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:40em; text-wrap:pretty;">Setup gets people to their first sync; the dashboard is where they spend the rest of their time. I redesigned the two pages at its core, the connector list and the connector detail page, around the questions operators actually ask: where is my connector, and is it healthy?</p>
+      <div style="margin-top:48px;">
+        <h3 style="margin:0 0 18px; font:500 22px/1.3 Archivo, sans-serif; letter-spacing:-0.01em;">Connector list</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start;">
+        <div onClick="{{ openFtBeforeConnectors }}" style="aspect-ratio:1678/940; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
+          <img src="images/ft-before-connectors.png" alt="Connector list before the redesign: connectors nested under their source with no filtering" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
+          <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Before</span>
+        </div>
+        <div onClick="{{ openFtBpConnectors }}" style="aspect-ratio:1440/1100; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
+          <img src="images/ft-bp-connectors.png" alt="Connector list after the redesign: search, status and source filters, and one sortable row per connector" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
+          <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">After</span>
+        </div>
+        </div>
+        <ul style="margin:22px 0 0; padding-left:20px; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:44em;">
+          <li style="margin:0 0 10px;"><strong style="font-weight:500; color:#0f1211;">Filtering.</strong> Search by name plus status and source filters, so a list of hundreds of connectors narrows to the one you need in a couple of steps.</li>
+          <li style="margin:0 0 10px;"><strong style="font-weight:500; color:#0f1211;">No more nesting.</strong> Connectors used to be grouped under their source, like “Amplitude (2)”, which hid them behind an extra click. Each connector is now its own row.</li>
+          <li style="margin:0 0 10px;"><strong style="font-weight:500; color:#0f1211;">Organized metadata.</strong> Name, source type, status and last sync sit in consistent, sortable columns instead of being stacked under each name.</li>
+        </ul>
+      </div>
+      <div style="margin-top:48px;">
+        <h3 style="margin:0 0 18px; font:500 22px/1.3 Archivo, sans-serif; letter-spacing:-0.01em;">Connector detail</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start;">
+        <div onClick="{{ openFtBeforeDetail }}" style="aspect-ratio:1680/940; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
+          <img src="images/ft-before-connector-detail.png" alt="Connector detail before the redesign: dense sync history chart and sparse stats" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
+          <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Before</span>
+        </div>
+        <div onClick="{{ openFtBpDetail }}" style="aspect-ratio:1440/1200; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
+          <img src="images/ft-bp-connector-detail.png" alt="Connector detail after the redesign: legible sync chart and a summary strip of key metrics" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
+          <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">After</span>
+        </div>
+        </div>
+        <ul style="margin:22px 0 0; padding-left:20px; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:44em;">
+          <li style="margin:0 0 10px;"><strong style="font-weight:500; color:#0f1211;">A legible sync chart.</strong> The wall of per-minute ticks became one clear bar per sync for each stage, with warnings in their own color, a “now” marker and timing on hover.</li>
+          <li style="margin:0 0 10px;"><strong style="font-weight:500; color:#0f1211;">Key information up front.</strong> Sync frequency, average duration, schema changes, last successful sync and open warnings sit in a single summary strip at the top.</li>
+          <li style="margin:0 0 10px;"><strong style="font-weight:500; color:#0f1211;">Built for monitoring.</strong> Alerts, user actions and stats sit side by side under the chart, so what went wrong, who changed what and how the connector is performing are visible in one view.</li>
+        </ul>
       </div>
     </div>
 
@@ -550,6 +583,8 @@ class Component extends DCLogic {
       openFtDsStyles: () => this.setState({ lightbox: { src: 'images/ft-ds-styles.png', alt: 'Blueprint design system: styles' } }),
       openFtDsControls: () => this.setState({ lightbox: { src: 'images/ft-ds-controls.png', alt: 'Blueprint design system: controls' } }),
       openFtDsFeedback: () => this.setState({ lightbox: { src: 'images/ft-ds-feedback.png', alt: 'Blueprint design system: feedback and overlays' } }),
+      openFtBeforeConnectors: () => this.setState({ lightbox: { src: 'images/ft-before-connectors.png', alt: 'Connector list before the redesign' } }),
+      openFtBeforeDetail: () => this.setState({ lightbox: { src: 'images/ft-before-connector-detail.png', alt: 'Connector detail before the redesign' } }),
       openFtDsPatterns: () => this.setState({ lightbox: { src: 'images/ft-ds-patterns.png', alt: 'Blueprint design system: patterns' } }),
       openFtBpConnectors: () => this.setState({ lightbox: { src: 'images/ft-bp-connectors.png', alt: 'Connectors list rebuilt in Blueprint: filters, sortable columns and status badges' } }),
       openFtBpDetail: () => this.setState({ lightbox: { src: 'images/ft-bp-connector-detail.png', alt: 'Connector detail rebuilt in Blueprint: sync history, alerts and user actions' } }),

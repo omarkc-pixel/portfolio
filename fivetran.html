@@ -183,12 +183,11 @@
     </div>
 
     <div style="padding:96px 100px 0;">
-      <div data-reveal style="display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px; padding:44px 0; border-bottom:1px solid #d8d8d4;">
-        <div style="display:flex; flex-direction:column; gap:6px; font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.06em; color:#6b6f6c;"><span>Phase 1</span></div>
+      <div data-reveal style="padding:44px 0; border-bottom:1px solid #d8d8d4;">
         <div style="display:flex; flex-direction:column; gap:20px;">
-          <h3 style="margin:0; font:500 28px/1.25 Archivo, sans-serif; letter-spacing:-0.02em; max-width:22em;">Reorder the steps, and put the documentation inside the step that needs it</h3>
-          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">I mapped the existing flow in low-fidelity first, marking every pain point so none of them got quietly lost in the redesign. Then we changed the order of steps, standardized the visual system, and rebuilt the layout to make room for embedded docs. Education in place, at the moment someone is stuck on a technical form.</p>
-          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">My PM and I agreed up front to measure it with the metrics our analytics team already tracked: time to value, and dropoff at each key step. No new instrumentation, no argument later about whether it worked.</p>
+          <h3 style="margin:0; font:500 28px/1.25 Archivo, sans-serif; letter-spacing:-0.02em;">Reorder the steps, and put the documentation inside the step that needs it</h3>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; text-wrap:pretty;">I mapped the existing flow in low-fidelity first, marking every pain point so none of them got quietly lost in the redesign. Then we changed the order of steps, standardized the visual system, and rebuilt the layout to make room for embedded docs. Education in place, at the moment someone is stuck on a technical form.</p>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; text-wrap:pretty;">My PM and I agreed up front to measure it with the metrics our analytics team already tracked: time to value, and dropoff at each key step. No new instrumentation, no argument later about whether it worked.</p>
           <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; padding-top:8px;">
             <div>
             <div onClick="{{ openFtDropoff }}" style="aspect-ratio:16/9; border:1px solid #0f1211; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
@@ -212,17 +211,16 @@
         </div>
       </div>
 
-      <div data-reveal style="display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px; padding:44px 0; border-bottom:1px solid #d8d8d4;">
-        <div style="display:flex; flex-direction:column; gap:6px; font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.06em; color:#6b6f6c;"><span>First release → follow-up</span></div>
+      <div data-reveal style="padding:44px 0; border-bottom:1px solid #d8d8d4;">
         <div style="display:flex; flex-direction:column; gap:20px;">
-          <h3 style="margin:0; font:500 28px/1.25 Archivo, sans-serif; letter-spacing:-0.02em; max-width:22em;">We added a Welcome step and made things worse</h3>
-          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">The embedded docs did what we hoped: more completed syncs during onboarding. The new Welcome step did not. Asking people to choose a source and a destination before anything else created more dropoff earlier in the flow than the version we replaced.</p>
+          <h3 style="margin:0; font:500 28px/1.25 Archivo, sans-serif; letter-spacing:-0.02em;">We added a Welcome step and made things worse</h3>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; text-wrap:pretty;">The embedded docs did what we hoped: more completed syncs during onboarding. The new Welcome step did not. Asking people to choose a source and a destination before anything else created more dropoff earlier in the flow than the version we replaced.</p>
           <div style="display:flex; flex-direction:column; gap:20px; padding-top:8px;">
             <div onClick="{{ openFtWelcome }}" style="aspect-ratio:16/9; border:1px solid oklch(0.72 0.13 60); background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
               <img src="images/ft-welcome.png" alt="First release: the Welcome step" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
               <span style="position:absolute; left:12px; bottom:12px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">First release: the Welcome step</span>
             </div>
-            <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">We shipped a follow-up quickly and made that first choice non-committal. You could move on without deciding. Sync rates at onboarding improved 36% overall after that release, and we kept tuning individual steps against ongoing usage tracking.</p>
+            <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; text-wrap:pretty;">We shipped a follow-up quickly and made that first choice non-committal. You could move on without deciding. Sync rates at onboarding improved 36% overall after that release, and we kept tuning individual steps against ongoing usage tracking.</p>
             <div style="aspect-ratio:1584/1080; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative;">
               <video src="images/ft-onboarding-v1.mp4" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" controls="{{ true }}" aria-label="First release of the Fivetran onboarding flow" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;"></video>
             </div>
@@ -232,12 +230,11 @@
         </div>
       </div>
 
-      <div data-reveal style="display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px; padding:44px 0; border-bottom:1px solid #d8d8d4;">
-        <div style="display:flex; flex-direction:column; gap:6px; font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.06em; color:#6b6f6c;"><span>Phase 2</span></div>
+      <div data-reveal style="padding:44px 0; border-bottom:1px solid #d8d8d4;">
         <div style="display:flex; flex-direction:column; gap:20px;">
-          <h3 style="margin:0; font:500 28px/1.25 Archivo, sans-serif; letter-spacing:-0.02em; max-width:22em;">Treat PII anxiety as a design problem, not a documentation problem</h3>
-          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">The most emotional thing in the interviews was not knowing whether personal data was about to be copied into the warehouse. People hesitated at the schema step, and hesitation at the schema step means no first sync.</p>
-          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">Phase 2 gave users an explicit review of the schema and its PII risks before syncing. We stated the goal as reducing PII anxiety and raising sync rates, in those words, so the team knew what we were buying with the extra step.</p>
+          <h3 style="margin:0; font:500 28px/1.25 Archivo, sans-serif; letter-spacing:-0.02em;">Treat PII anxiety as a design problem, not a documentation problem</h3>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; text-wrap:pretty;">The most emotional thing in the interviews was not knowing whether personal data was about to be copied into the warehouse. People hesitated at the schema step, and hesitation at the schema step means no first sync.</p>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; text-wrap:pretty;">Phase 2 gave users an explicit review of the schema and its PII risks before syncing. We stated the goal as reducing PII anxiety and raising sync rates, in those words, so the team knew what we were buying with the extra step.</p>
           <div onClick="{{ openFtFlow }}" style="aspect-ratio:1834/1380; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
               <img src="images/ft-onboarding-flow.png" alt="Onboarding flow: schema review and hashing" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
               <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Onboarding flow: schema review and hashing</span>

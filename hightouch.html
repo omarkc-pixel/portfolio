@@ -370,26 +370,34 @@
         <div style="display:flex; flex-direction:column; gap:20px;">
           <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">Alongside the product work, I designed marketing collateral: blog thumbnails, signup pages and email campaigns.</p>
           <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">Working on both sides kept the story consistent, from the first campaign someone saw to the product they signed into.</p>
-          <div style="display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:20px; align-items:start;">
-            <div style="display:flex; flex-direction:column; gap:8px;">
-              <div onClick="{{ openHtMktAstro }}" style="aspect-ratio:2400/1350; width:100%; border:1px solid #d8d8d4; background:#fff; overflow:hidden; cursor:zoom-in;">
-                <img src="images/ht-mkt-astrophysicist.png" alt="Campaign graphic: You shouldn’t have to be an astrophysicist to send a decent e-mail. Friends don’t let friends buy a CDP" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" />
+          <div style="display:grid; grid-template-columns:minmax(0,3fr) minmax(0,2fr); gap:20px; align-items:start;">
+            <div style="display:flex; flex-direction:column; gap:20px;">
+              <div style="display:flex; flex-direction:column; gap:8px;">
+                <div onClick="{{ openHtMktAstro }}" style="aspect-ratio:2400/1350; width:100%; border:1px solid #d8d8d4; background:#fff; overflow:hidden; cursor:zoom-in;">
+                  <img src="images/ht-mkt-astrophysicist.png" alt="Campaign graphic: You shouldn’t have to be an astrophysicist to send a decent e-mail. Friends don’t let friends buy a CDP" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" />
+                </div>
+                <span style="font:400 10px/1.4 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c;">Campaign: astrophysicist</span>
               </div>
-              <span style="font:400 10px/1.4 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c;">Campaign: astrophysicist</span>
+              <div style="display:flex; flex-direction:column; gap:8px;">
+                <div onClick="{{ openHtMktSea }}" style="aspect-ratio:2400/1350; width:100%; border:1px solid #d8d8d4; background:#fff; overflow:hidden; cursor:zoom-in;">
+                  <img src="images/ht-mkt-deep-sea.png" alt="Campaign graphic: You shouldn’t have to be an expert in deep-sea marine biology to access data, over an anglerfish" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" />
+                </div>
+                <span style="font:400 10px/1.4 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c;">Campaign: deep-sea</span>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:8px;">
+                  <div onClick="{{ openHtMktRetl }}" style="aspect-ratio:2400/1350; width:100%; border:1px solid #d8d8d4; background:#fff; overflow:hidden; cursor:zoom-in;">
+                    <img src="images/ht-mkt-ipaas-vs-retl.png" alt="Blog thumbnail: iPaaS point-to-point integrations versus Reverse ETL from a central warehouse" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" />
+                  </div>
+                  <span style="font:400 10px/1.4 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c;">Blog thumbnail: iPaaS vs Reverse ETL</span>
+                </div>
             </div>
             <div style="display:flex; flex-direction:column; gap:8px;">
-              <div onClick="{{ openHtMktSea }}" style="aspect-ratio:2400/1350; width:100%; border:1px solid #d8d8d4; background:#fff; overflow:hidden; cursor:zoom-in;">
-                <img src="images/ht-mkt-deep-sea.png" alt="Campaign graphic: You shouldn’t have to be an expert in deep-sea marine biology to access data, over an anglerfish" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" />
+              <div onClick="{{ openHtMktEmail }}" style="aspect-ratio:575/1534; width:100%; border:1px solid #d8d8d4; background:#fff; overflow:hidden; cursor:zoom-in;">
+                <img src="images/ht-mkt-rewind-email.png" alt="Email: 2022 Hightouch Rewind, a year-in-review of each workspace's syncs, destinations and rows synced" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" />
               </div>
-              <span style="font:400 10px/1.4 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c;">Campaign: deep-sea</span>
+              <span style="font:400 10px/1.4 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c;">Email: 2022 Hightouch Rewind</span>
             </div>
           </div>
-          <div style="display:flex; flex-direction:column; gap:8px;">
-              <div onClick="{{ openHtMktRetl }}" style="aspect-ratio:2400/1350; width:100%; border:1px solid #d8d8d4; background:#fff; overflow:hidden; cursor:zoom-in;">
-                <img src="images/ht-mkt-ipaas-vs-retl.png" alt="Blog thumbnail: iPaaS point-to-point integrations versus Reverse ETL from a central warehouse" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" />
-              </div>
-              <span style="font:400 10px/1.4 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c;">Blog thumbnail: iPaaS vs Reverse ETL</span>
-            </div>
         </div>
       </div>
     </div>
@@ -592,6 +600,7 @@ class Component extends DCLogic {
       openHtMktAstro: () => this.setState({ lightbox: { src: 'images/ht-mkt-astrophysicist.png', alt: 'Campaign: astrophysicist' } }),
       openHtMktSea: () => this.setState({ lightbox: { src: 'images/ht-mkt-deep-sea.png', alt: 'Campaign: deep-sea' } }),
       openHtMktRetl: () => this.setState({ lightbox: { src: 'images/ht-mkt-ipaas-vs-retl.png', alt: 'Blog thumbnail: iPaaS vs Reverse ETL' } }),
+      openHtMktEmail: () => this.setState({ lightbox: { src: 'images/ht-mkt-rewind-email.png', alt: 'Email: 2022 Hightouch Rewind' } }),
       openHtEtl: () => this.setState({ lightbox: { src: 'images/ht-etl-diagram.png', alt: 'ETL vs reverse ETL' } }),
       openHtAudit: () => this.setState({ lightbox: { src: 'images/ht-audit.png', alt: 'Annotated audit board' } }),
       openHtSpecComponents: () => this.setState({ lightbox: { src: 'images/ht-spec-components.png', alt: 'Hightouch UI components specimen' } }),

@@ -194,8 +194,7 @@
         <span>Three decisions</span><span style="color:#6b6f6c;">One designer, start to finish</span>
       </div>
 
-      <div data-reveal style="display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px; padding:44px 0; border-bottom:1px solid #d8d8d4;">
-        <div style="display:flex; flex-direction:column; gap:6px; font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.06em; color:#6b6f6c;"><span style="color:oklch(0.55 0.11 150);">Decision 01</span><span>Audit before adding</span></div>
+      <div data-reveal style="padding:44px 0; border-bottom:1px solid #d8d8d4;">
         <div style="display:flex; flex-direction:column; gap:20px;">
           <h3 style="margin:0; font:500 28px/1.25 Archivo, sans-serif; letter-spacing:-0.02em; max-width:22em;">Spend the first weeks cataloguing debt, not shipping screens</h3>
           <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">I went through every flow in the app against standard usability heuristics and wrote down what was actually wrong. Color was used inconsistently, a horizontal stepper had been stretched well past the three steps it worked for, and a "Preview" query button sat as a primary action next to "Save", so users stalled trying to decide which one came first.</p>
@@ -233,8 +232,7 @@
         </div>
       </div>
 
-      <div data-reveal style="display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px; padding:44px 0; border-bottom:1px solid #d8d8d4;">
-        <div style="display:flex; flex-direction:column; gap:6px; font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.06em; color:#6b6f6c;"><span style="color:oklch(0.55 0.11 150);">Decision 02</span><span>Landing page → dashboard</span></div>
+      <div data-reveal style="padding:44px 0; border-bottom:1px solid #d8d8d4;">
         <div style="display:flex; flex-direction:column; gap:20px;">
           <h3 style="margin:0; font:500 28px/1.25 Archivo, sans-serif; letter-spacing:-0.02em; max-width:22em;">The home screen was a list of syncs. What users came to do was find the broken one.</h3>
           <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">Customer interviews kept pointing to the same problems: too many clicks to reach error information, no sense of what needed attention, status badges that were hard to read, filters that were hard to build and harder to maintain, and no way to get an overview of the workspace. Taken together, they came down to one job: finding recent errors and debugging them quickly.</p>
@@ -274,10 +272,9 @@
         </div>
       </div>
 
-      <div data-reveal style="display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px; padding:44px 0; border-bottom:1px solid #d8d8d4;">
-        <div style="display:flex; flex-direction:column; gap:6px; font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.06em; color:#6b6f6c;"><span style="color:oklch(0.55 0.11 150);">Decision 03</span><span>Onboarding by use case</span></div>
+      <div data-reveal style="padding:44px 0; border-bottom:1px solid #d8d8d4;">
         <div style="display:flex; flex-direction:column; gap:20px;">
-          <h3 style="margin:0; font:500 28px/1.25 Archivo, sans-serif; letter-spacing:-0.02em; max-width:22em;">Testing the value proposition, not the flow</h3>
+          <h3 style="margin:0; font:500 28px/1.25 Archivo, sans-serif; letter-spacing:-0.02em; max-width:22em;">I redesigned onboarding to test assumptions</h3>
           <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">Data activation is a straightforward promise: clean, transformed data from the warehouse delivered into hundreds of operational tools in minutes. Part of the reason we rebuilt onboarding was to find out whether a business team would understand that promise the first time they saw it.</p>
           <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">They didn't, and the confusion was specific. People didn't know which sources to connect, which destinations to pick, or in what order. Asking them to assemble a pipeline before they had a use case in mind was the wrong place to start, and that's what pushed us toward onboarding organized around use cases.</p>
           <div onClick="{{ openHtOnboarding }}" style="aspect-ratio:4096/2599; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">

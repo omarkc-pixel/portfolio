@@ -254,6 +254,12 @@
               <img src="images/ht-ideation.png" alt="Lo-fi UI ideation for the dashboard and interaction details: chart bin sizes, sort order and empty states" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
               <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Lo-fi ideation and interaction details</span>
             </div>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <div onClick="{{ openHtStatusPatterns }}" style="height:880px; width:100%; border:1px solid #d8d8d4; background:#fff; overflow:hidden; cursor:zoom-in;">
+                <img src="images/ht-status-patterns.png" alt="Status patterns explored alongside the dashboard redesign: status scale, monitoring history bar treatments, status change log, hover tooltips and overlapping monitors" loading="lazy" style="width:100%; height:100%; object-fit:cover; object-position:top center; display:block;" />
+              </div>
+              <span style="font:400 10px/1.4 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c;">Status patterns explored alongside the dashboard: click to see all five</span>
+            </div>
             <div style="display:flex; flex-direction:column; gap:20px;">
               <div onClick="{{ openHtAfter }}" style="aspect-ratio:2880/2480; width:100%; border:1px solid #0f1211; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
                 <img src="images/ht-after-overview.png" alt="After: workspace overview with run health metrics, extensions, draft approvals and active syncs by destination" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
@@ -606,6 +612,7 @@ class Component extends DCLogic {
       openHtSpecComponents: () => this.setState({ lightbox: { src: 'images/ht-spec-components.png', alt: 'Hightouch UI components specimen' } }),
       openHtSpecFeedback: () => this.setState({ lightbox: { src: 'images/ht-spec-feedback.png', alt: 'Hightouch UI feedback and status specimen' } }),
       openHtBefore: () => this.setState({ lightbox: { src: 'images/ht-sync-list-before.png', alt: 'Sync list at scale' } }),
+      openHtStatusPatterns: () => this.setState({ lightbox: { src: 'images/ht-status-patterns.png', alt: 'Status patterns' } }),
       openHtAfter: () => this.setState({ lightbox: { src: 'images/ht-after-overview.png', alt: 'After: workspace overview' } }),
       openHtAfterHover: () => this.setState({ lightbox: { src: 'images/ht-after-hover.png', alt: 'After: chart hover' } }),
       openHtAfterRuns: () => this.setState({ lightbox: { src: 'images/ht-after-sync-runs.png', alt: 'After: sync runs from the chart' } }),

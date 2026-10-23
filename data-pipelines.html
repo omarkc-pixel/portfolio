@@ -116,7 +116,7 @@
         <img src="images/workato-logo.png" alt="Workato" style="height:26px; width:auto; align-self:flex-start; display:block; margin-bottom:-4px;" />
         <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; color:oklch(0.58 0.10 205);">Workato · 2024–2025</span>
         <h1 style="margin:0; font:500 52px/1.08 Archivo, sans-serif; letter-spacing:-0.03em; max-width:20em;">Helping you customize your data schema</h1>
-        <p style="margin:0; font:400 20px/1.5 Archivo, sans-serif; color:#333836; max-width:26em; text-wrap:pretty;">Workato moved data between systems in real time but couldn't replicate it at volume. I led design on the features that closed the gap. The product itself had already shipped, designed by someone else.</p>
+        <p style="margin:0; font:400 20px/1.5 Archivo, sans-serif; color:#333836; max-width:26em; text-wrap:pretty;">Workato could move data between systems in real time, but it couldn't replicate data at volume. I led design on the features that closed that gap, on a product that had already shipped and had been designed by someone else.</p>
       </div>
       <div style="display:flex; flex-direction:column; font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.05em; color:#6b6f6c; border-top:1px solid #0f1211;">
         <div style="display:flex; flex-direction:column; gap:4px; padding:14px 0; border-bottom:1px solid #d8d8d4;"><span style="font:700 10px/1.5 'Space Mono', monospace; text-transform:uppercase; letter-spacing:0.13em; color:#5f6462;">Role</span><span style="font:400 15px/1.45 Archivo, sans-serif; letter-spacing:0; color:#1c211f;">Lead designer, data orchestration</span></div>
@@ -129,8 +129,8 @@
     <div style="padding:24px 100px 0; display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px;">
       <span style="font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; padding-top:6px;">The problem</span>
       <div style="display:flex; flex-direction:column; gap:20px; max-width:36em;">
-        <p style="margin:0; font:400 18px/1.6 Archivo, sans-serif; text-wrap:pretty;">Workato's integration platform let disparate systems talk to each other in real time, but it could not move large volumes of data for analysis or storage. Enterprises kept a second vendor for that half of the job, usually Fivetran or Informatica.</p>
-        <p style="margin:0; font:400 18px/1.6 Archivo, sans-serif; color:#4a4e4c; text-wrap:pretty;">A v1 of data pipelines had already shipped and the designer on it had moved to other work. I joined to take the team through a roadmap of more sources and destinations and deeper replication capabilities, on a core UX that was already in users' hands. The constraint shaped everything: propose patterns that scale to features not yet specified, without introducing changes users didn't ask for.</p>
+        <p style="margin:0; font:400 18px/1.6 Archivo, sans-serif; text-wrap:pretty;">Workato's integration platform let different systems talk to each other in real time, but it couldn't move large volumes of data for analysis or storage. Enterprises kept a second vendor for that part of the job, usually Fivetran or Informatica.</p>
+        <p style="margin:0; font:400 18px/1.6 Archivo, sans-serif; color:#4a4e4c; text-wrap:pretty;">A first version of data pipelines had already shipped, and the designer who worked on it had moved on to other projects. I joined to take the team through a roadmap of more sources and destinations and deeper replication capabilities, on top of a core experience that was already in users' hands. That constraint shaped everything I did: I needed to propose patterns that would scale to features that weren't specified yet, without introducing changes users hadn't asked for.</p>
       </div>
     </div>
 
@@ -159,7 +159,7 @@
             <span style="font:400 13px/1.5 Archivo, sans-serif; color:#4a4e4c; text-wrap:pretty;">Investigate an error</span>
           </div>
         </div>
-        <p style="margin:24px 0 0; font:400 12px/1.6 'Space Mono', monospace; color:#6b6f6c; max-width:52em;">Every feature on the roadmap landed on one of these four. Where it landed decided which existing pattern it should extend.</p>
+        <p style="margin:24px 0 0; font:400 12px/1.6 'Space Mono', monospace; color:#6b6f6c; max-width:52em;">Every feature on the roadmap landed on one of these four, and where it landed decided which existing pattern it should extend.</p>
       </div>
     </div>
 
@@ -175,8 +175,8 @@
         </div>
         <div style="display:flex; flex-direction:column; gap:20px;">
           <h3 style="margin:0; font:500 28px/1.25 Archivo, sans-serif; letter-spacing:-0.02em; max-width:22em;">Put PII control on the field, not in a settings page</h3>
-          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">Sensitive fields have to be protected before they are replicated, and the decision is per field. The PM and I wrote the copy for a field-level control that lets a user hash a value or replicate it as is, and placed it in the right margin of the schema row. It sits next to the thing it applies to.</p>
-          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">I explored a range of hash icons so the mark would sit systemically with the surrounding copy and read correctly on its own, without a label to carry it.</p>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">Sensitive fields need to be protected before they're replicated, and that decision is made per field. The PM and I wrote the copy for a field-level control that lets a user either hash a value or replicate it as is, and I placed it in the right margin of the schema row, next to the field it applies to.</p>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">I explored a range of hash icons so the mark would fit with the surrounding copy and still be understood on its own, without a label.</p>
           <div onClick="{{ openDpHash }}" style="aspect-ratio:2/1; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
               <img src="images/dp-hash-field.png" alt="Field-level hash control in the schema table" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
               <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Field-level hash control in the schema table</span>
@@ -205,8 +205,8 @@
         </div>
         <div style="display:flex; flex-direction:column; gap:20px;">
           <h3 style="margin:0; font:500 28px/1.25 Archivo, sans-serif; letter-spacing:-0.02em; max-width:22em;">Reuse the margin affordance one level up</h3>
-          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">Users needed to trigger a one-time sync on an individual object, so data movement wasn't locked to the schedule. That meant object-level actions and object-level settings had to live somewhere the schema view already went.</p>
-          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">Rather than open a new surface, I extended the right-margin affordance introduced for hashing to the object row. One learned gesture, two scopes. The next feature could take the same pattern without a redesign.</p>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">Users needed to trigger a one-time sync on an individual object, so that moving data wasn't tied to the schedule. That meant object-level actions and settings needed to live somewhere the schema view already showed.</p>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">Instead of opening a new surface, I extended the right-margin control we'd introduced for hashing to the object row. Users only had to learn one interaction, and it worked at two levels. It also meant the next feature could use the same pattern without a redesign.</p>
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:6px;">
             <div onClick="{{ openDpResync }}" style="aspect-ratio:16/10; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
               <img src="images/dp-resync.png" alt="Object re-sync design handoff" style="width:100%; height:100%; object-fit:cover; object-position:top center; display:block;" />
@@ -227,8 +227,8 @@
         </div>
         <div style="display:flex; flex-direction:column; gap:20px;">
           <h3 style="margin:0; font:500 28px/1.25 Archivo, sans-serif; letter-spacing:-0.02em; max-width:22em;">Three kinds of sync now had to be legible in one chart</h3>
-          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">Adding object re-syncs meant the dashboard was suddenly reporting three things at once: initial syncs, incremental syncs, and re-syncs. Reading the chart no longer told you what kind of run you were looking at.</p>
-          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">We introduced indicator icons in the chart views and carried them into tooltips, so type is visible at a glance and explained on hover. A small addition, and it kept the existing dashboard intact rather than replacing it.</p>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">Adding object re-syncs meant the dashboard was suddenly reporting three kinds of runs at once: initial syncs, incremental syncs and re-syncs. Looking at the chart no longer told you which kind of run you were looking at.</p>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">We added indicator icons to the chart views and carried them into the tooltips, so the sync type is visible at a glance and explained on hover. It was a small addition, and it let us keep the existing dashboard instead of replacing it.</p>
           <div style="display:flex; flex-direction:column; gap:20px; margin-top:6px;">
             <div onClick="{{ openDpMon1 }}" style="aspect-ratio:16/10; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
               <img src="images/dp-monitor-1.png" alt="Sync type indicators in chart" style="width:100%; height:100%; object-fit:cover; object-position:top center; display:block;" />
@@ -251,8 +251,8 @@
       <div style="display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px; padding:36px 0 0;">
         <span style="font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; color:#6b6f6c; padding-top:5px;">What we added</span>
         <div style="display:flex; flex-direction:column; gap:20px;">
-          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">The pipeline pages reported on runs, not on objects. If one table out of eleven was stale, the only way to find it was to read the run history and infer. We added an Objects tab that lists the active schema with a last-status per object, filterable by state, so the answer to "is my data current" takes one glance instead of a reconstruction.</p>
-          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">Alongside it we shipped the most requested capability in the product's feedback: a manual re-sync button, per object. Sync schedules exist for good reasons, but a data engineer who has just fixed a mapping or a permission should not have to wait for the next window to prove it. The button appears on row hover and in the object drawer, and each manual run is labelled as an object re-sync in run history so scheduled and on-demand work stay distinguishable after the fact.</p>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">The pipeline pages reported on runs, not on objects. If one table out of eleven was stale, the only way to find it was to read through the run history and work it out. We added an Objects tab that lists the active schema with the last status of each object, filterable by state, so checking whether your data is current takes a glance instead of an investigation.</p>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">Alongside it, we shipped the capability users had requested most in product feedback: a manual re-sync button for each object. Sync schedules exist for good reasons, but a data engineer who has just fixed a mapping or a permission shouldn't have to wait for the next scheduled run to confirm it worked. The button appears when you hover a row and in the object drawer, and each manual run is labelled as an object re-sync in the run history, so scheduled and on-demand runs can still be told apart afterwards.</p>
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start; padding-top:4px;">
             <div>
               <div onClick="{{ openDpObjList }}" style="aspect-ratio:1944/1108; border:1px solid #d8d8d4; background:#fff; overflow:hidden; cursor:zoom-in;">
@@ -288,7 +288,7 @@
     <div style="padding:56px 100px 0; display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px;">
       <span style="font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; padding-top:6px;">Into the system</span>
       <div style="display:flex; flex-direction:column; gap:20px;">
-        <p style="margin:0; font:400 18px/1.6 Archivo, sans-serif; max-width:36em; text-wrap:pretty;">Each release added components and patterns back to the shared library, so the next feature started from something rather than nothing. A later file-connector pipeline needed more metadata surfaced per row; the icon-and-tooltip pattern already existed and absorbed it without a new layout.</p>
+        <p style="margin:0; font:400 18px/1.6 Archivo, sans-serif; max-width:36em; text-wrap:pretty;">Each release added components and patterns back to the shared library, so the next feature had something to start from. A later file-connector pipeline needed more metadata shown in each row, and the icon-and-tooltip pattern we already had was able to handle it without a new layout.</p>
         <div onClick="{{ openDpComponents }}" style="aspect-ratio:1768/1838; max-width:620px; width:100%; border:1px solid #0f1211; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
               <img src="images/dp-components.png" alt="Components added across these releases" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
               <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Components added across these releases</span>
@@ -302,7 +302,7 @@
 
     <div style="padding:88px 100px 0; display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px;">
       <span style="font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; padding-top:6px;">What I took from it</span>
-      <p style="margin:0; font:400 18px/1.6 Archivo, sans-serif; max-width:36em; text-wrap:pretty;">Inheriting a product is a design constraint with a payoff. I respected the prior work and extended its affordances instead of replacing them. That is what let three features land in a row without anyone relearning the screen.</p>
+      <p style="margin:0; font:400 18px/1.6 Archivo, sans-serif; max-width:36em; text-wrap:pretty;">Inheriting a product is a constraint, but it has a payoff. I tried to respect the work that came before me and extend its patterns instead of replacing them. That's what allowed three features to ship in a row without users having to relearn the screens.</p>
     </div>
 
     <div style="display:flex; align-items:center; justify-content:space-between; margin:96px 100px 0; padding:28px 0 40px; border-top:1px solid #d8d8d4; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase;">

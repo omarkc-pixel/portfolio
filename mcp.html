@@ -116,7 +116,7 @@
         <img src="images/workato-logo.png" alt="Workato" style="height:26px; width:auto; align-self:flex-start; display:block; margin-bottom:-4px;" />
         <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; color:oklch(0.58 0.10 205);">Workato · 2025</span>
         <h1 style="margin:0; font:500 52px/1.08 Archivo, sans-serif; letter-spacing:-0.03em; max-width:20em;">Enterprise MCP servers</h1>
-        <p style="margin:0; font:400 20px/1.5 Archivo, sans-serif; color:#333836; max-width:26em; text-wrap:pretty;">Building an MCP server was an engineering task. We made it something a business team could do on their own. IT could still govern it.</p>
+        <p style="margin:0; font:400 20px/1.5 Archivo, sans-serif; color:#333836; max-width:26em; text-wrap:pretty;">Building an MCP server used to be an engineering task. We turned it into something a business team could do on their own, while IT could still govern it.</p>
       </div>
       <div style="display:flex; flex-direction:column; font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.05em; color:#6b6f6c; border-top:1px solid #0f1211;">
         <div style="display:flex; flex-direction:column; gap:4px; padding:14px 0; border-bottom:1px solid #d8d8d4;"><span style="font:700 10px/1.5 'Space Mono', monospace; text-transform:uppercase; letter-spacing:0.13em; color:#5f6462;">Role</span><span style="font:400 15px/1.45 Archivo, sans-serif; letter-spacing:0; color:#1c211f;">Lead designer, research &amp; design</span></div>
@@ -153,8 +153,8 @@
     <div style="padding:80px 100px 0; display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px;">
       <span style="font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; padding-top:6px;">The problem</span>
       <div style="display:flex; flex-direction:column; gap:20px; max-width:36em;">
-        <p style="margin:0; font:400 18px/1.6 Archivo, sans-serif; text-wrap:pretty;">The people who understand a business problem are rarely the people who can ship a secure MCP server. Every custom server needed engineering time, which capped experimentation and left the useful automations unbuilt.</p>
-        <p style="margin:0; font:400 18px/1.6 Archivo, sans-serif; color:#4a4e4c; text-wrap:pretty;">Existing MCP catalogs offered pre-built servers from common providers, but none let a team encode its own business logic. Workato already had the raw material: recipes, connections, an identity layer. The opportunity was composition. Let people assemble a server out of assets they already trusted.</p>
+        <p style="margin:0; font:400 18px/1.6 Archivo, sans-serif; text-wrap:pretty;">The people who understand a business problem are rarely the people who can ship a secure MCP server. Every custom server needed engineering time, which limited how much teams could experiment and left a lot of useful automations unbuilt.</p>
+        <p style="margin:0; font:400 18px/1.6 Archivo, sans-serif; color:#4a4e4c; text-wrap:pretty;">Existing MCP catalogs offered pre-built servers from common providers, but none of them let a team encode its own business logic. Workato already had the building blocks: recipes, connections and an identity layer. The opportunity we saw was composition, letting people assemble a server out of assets they already trusted.</p>
         <div style="display:flex; flex-direction:column; gap:10px; padding:20px 0 0; border-top:1px solid #d8d8d4; font:400 13px/1.6 'Space Mono', monospace; color:#4a4e4c;">
           <span><span style="color:oklch(0.55 0.11 150);">Builders</span> create servers and provision access.</span>
           <span><span style="color:oklch(0.55 0.11 150);">End users</span> install a server and prompt it from Claude or Cursor.</span>
@@ -244,16 +244,16 @@
         </div>
 
         <div style="display:flex; gap:32px; margin-top:36px; padding-top:20px; border-top:1px solid #d8d8d4; font:400 12px/1.6 'Space Mono', monospace; color:#6b6f6c;">
-          <span style="flex:1;">Both paths converge on install and prompt. Same two steps, reached from opposite ends of the org.</span>
-          <span style="flex:1;">Every design decision in this case study sits on one of these seven steps.</span>
+          <span style="flex:1;">Both paths end with the same two steps, install and prompt, even though they start from opposite ends of the organization.</span>
+          <span style="flex:1;">Each design decision in this case study maps to one of these seven steps.</span>
         </div>
       </div>
-      <p style="margin:14px 0 0; font:400 12px/1.5 'Space Mono', monospace; letter-spacing:0.04em; color:#6b6f6c;">The two paths we designed against.</p>
+      <p style="margin:14px 0 0; font:400 12px/1.5 'Space Mono', monospace; letter-spacing:0.04em; color:#6b6f6c;">These are the two paths we designed for.</p>
     </div>
 
     <div style="padding:96px 100px 0;">
       <h2 style="margin:0; font:500 34px/1.2 Archivo, sans-serif; letter-spacing:-0.02em; max-width:24em;">Applying our strategy across milestones</h2>
-      <p style="margin:20px 0 0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:40em; text-wrap:pretty;">Our PM and I broke the north star into milestones small enough to verify and big enough to matter. We let requirements stay fluid across them so engineering could plan. We weren't going to solve it all at once, but we could keep it moving with the people we had.</p>
+      <p style="margin:20px 0 0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:40em; text-wrap:pretty;">Our PM and I broke the north star into milestones that were small enough to verify and big enough to matter. We kept requirements flexible across them so engineering could plan ahead. We knew we couldn't solve everything at once, but this let us keep making progress with the team we had.</p>
     </div>
 
     <div style="padding:56px 100px 0;">
@@ -295,11 +295,11 @@
         </div>
         <div style="display:flex; flex-direction:column; gap:18px;">
           <h4 style="margin:0; font:500 21px/1.35 Archivo, sans-serif; letter-spacing:-0.015em; max-width:24em;">Ship the smallest thing that proves an MCP server can come out of Workato</h4>
-          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">We built on the existing API platform. A toggle turned an API collection, already assembled from endpoint recipes, into an MCP server, and a panel showed the URL an end user needs to install it in Claude or another client. No new object model, no new infrastructure.</p>
-          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">It also told us what was wrong. Only users provisioned for the API platform could reach it, so almost nobody discovered it. MCP servers had to move into the core platform, not sit as a setting inside one product.</p>
+          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">We built on the existing API platform. A toggle turned an API collection, which was already assembled from endpoint recipes, into an MCP server, and a panel showed the URL an end user needed to install it in Claude or another client. It didn't require a new object model or new infrastructure.</p>
+          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">It also showed us what wasn't working. Only users provisioned for the API platform could reach it, so very few people discovered it. That told us MCP servers needed to move into the core platform instead of living as a setting inside one product.</p>
           <div style="display:flex; flex-direction:column; gap:8px; padding:18px 0 0; border-top:1px solid #d8d8d4;">
             <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; color:#6b6f6c;">Open question, closed</span>
-            <p style="margin:0; font:400 15px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">Most catalogs offer both local and remote install. Following Anthropic's lead on where clients actually run, we shipped remote URLs only and cut the local instructions. One less branch in the install flow to explain.</p>
+            <p style="margin:0; font:400 15px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">Most catalogs offer both local and remote install. Following Anthropic's lead on where clients actually run, we shipped remote URLs only and cut the local instructions, which removed a branch from the install flow that we would otherwise have had to explain.</p>
           </div>
           <div onClick="{{ openApiCollection }}" style="aspect-ratio:2/1; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in; margin-top:6px;">
             <img src="images/mcp-api-collection.png" alt="API collection toggle and install URL panel" style="width:100%; height:100%; object-fit:contain; display:block;" />
@@ -315,8 +315,8 @@
         </div>
         <div style="display:flex; flex-direction:column; gap:18px;">
           <h4 style="margin:0; font:500 21px/1.35 Archivo, sans-serif; letter-spacing:-0.015em; max-width:24em;">Give MCP servers a home, a landing page and a way in</h4>
-          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">We pulled every AI capability into one top-level section and built the MCP landing state inside it. I assembled the creation flow from the design system's existing wizard components. It was the fastest path to something customers could use and react to.</p>
-          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">MCP is not a native Workato concept, so I borrowed from MCP server patterns customers had already seen elsewhere rather than inventing a Workato-specific mental model.</p>
+          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">We pulled every AI capability into one top-level section and built the MCP landing state inside it. I put the creation flow together from the design system's existing wizard components, because it was the fastest way to get something in front of customers that they could use and react to.</p>
+          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">MCP isn't a native Workato concept, so I borrowed from MCP server patterns customers had already seen elsewhere instead of inventing a Workato-specific mental model.</p>
           <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; margin-top:6px;">
             <div onClick="{{ openLanding }}" style="aspect-ratio:16/10; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
               <img src="images/mcp-aihub-landing.png" alt="AI Hub MCP servers landing page" style="width:100%; height:100%; object-fit:cover; object-position:top left; display:block;" />
@@ -341,8 +341,8 @@
         </div>
         <div style="display:flex; flex-direction:column; gap:18px;">
           <h4 style="margin:0; font:500 21px/1.35 Archivo, sans-serif; letter-spacing:-0.015em; max-width:24em;">Two questions IT asks before approving anything: who can use it, and what can it reach</h4>
-          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">A Settings section let builders switch a server's authentication method. I worked with the PM to prioritize real controls over both halves of the problem: which people get access, and which application permissions they carry once they have it.</p>
-          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">Verified user access came out of this milestone: the end user signs in to every app the server connects to. Getting it right meant sitting with product and engineering until I understood how those sign-in handoffs actually behave, failure states included. The defaulting decision is decision 03.</p>
+          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">A Settings section let builders change a server's authentication method. I worked with the PM to prioritize real controls for both halves of the problem: which people get access, and which application permissions they carry once they have it.</p>
+          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">Verified user access came out of this milestone: the end user signs in to every app the server connects to. Getting it right meant spending time with product and engineering until I understood how those sign-in handoffs actually behave, including the failure states. The decision about defaults is covered in decision 03.</p>
           <div onClick="{{ openAuth }}" style="aspect-ratio:2/1; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in; margin-top:6px;">
             <img src="images/mcp-auth-method.gif" alt="MCP server settings, access method" style="width:100%; height:100%; object-fit:cover; object-position:top left; display:block;" />
             <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Settings: access method</span>
@@ -361,8 +361,8 @@
         </div>
         <div style="display:flex; flex-direction:column; gap:18px;">
           <h4 style="margin:0; font:500 21px/1.35 Archivo, sans-serif; letter-spacing:-0.015em; max-width:24em;">One page where you assemble a server out of things you already own</h4>
-          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">The wizard came out and a single-page workflow went in: pick tools from the assets already sitting in your Workato workspace. This was the milestone that delivered the actual promise. Teams could encode their own business logic so an agent behaves predictably every time, instead of installing someone else's generic server.</p>
-          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">A templates panel came later, for people who wanted to see how a server works before they had their own resources ready. The hard part was tone: inviting enough that a non-technical builder starts, precise enough that they understand what they just published.</p>
+          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">We removed the wizard and replaced it with a single-page workflow where you pick tools from the assets already in your Workato workspace. This milestone delivered on the original promise. Teams could encode their own business logic so an agent behaves predictably every time, instead of installing someone else's generic server.</p>
+          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">We added a templates panel later for people who wanted to see how a server works before they had their own resources ready. The hardest part was getting the tone right: inviting enough that a non-technical builder would get started, but precise enough that they understood what they had just published.</p>
           <div onClick="{{ openComposable }}" style="aspect-ratio:2/1; border:1px solid #0f1211; background:#fff; overflow:hidden; position:relative; cursor:zoom-in; margin-top:6px;">
             <img src="images/mcp-composable-creation.gif" alt="Composable MCP server creation page" style="width:100%; height:100%; object-fit:cover; object-position:top left; display:block;" />
             <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#f6f6f4; background:#0f1211; padding:6px 8px;">Composable creation page</span>
@@ -378,8 +378,8 @@
         </div>
         <div style="display:flex; flex-direction:column; gap:18px;">
           <h4 style="margin:0; font:500 21px/1.35 Archivo, sans-serif; letter-spacing:-0.015em; max-width:24em;">Tool descriptions turned out to be a performance feature</h4>
-          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">The model relies on a tool's description to decide whether to call it. That reframed a text field as something worth designing for: we allowed long descriptions to stay visible in the list view and invested in rich text editing so builders could structure them for accuracy.</p>
-          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">I rebuilt the detail page around that. It needed room for varied tool metadata, expanded instructions, and inline affordances to add a tool or edit a description without leaving the page. I explored several table layouts for Skills, and worked with the Digital Design team on generated avatars so every row stopped falling back to the same MCP icon.</p>
+          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">The model relies on a tool's description to decide whether to call it. That changed how we thought about what had been just a text field. We let long descriptions stay visible in the list view and invested in rich text editing so builders could structure them for accuracy.</p>
+          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">I rebuilt the detail page around that idea. It needed room for varied tool metadata, expanded instructions, and inline controls to add a tool or edit a description without leaving the page. I explored several table layouts for Skills, and worked with the Digital Design team on generated avatars so that every row didn't fall back to the same MCP icon.</p>
           <div onClick="{{ openRebuilt }}" style="aspect-ratio:2/1; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in; margin-top:6px;">
             <img src="images/mcp-rebuilt-detail.png" alt="Rebuilt MCP server detail page" style="width:100%; height:100%; object-fit:cover; object-position:top left; display:block;" />
             <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Rebuilt detail page</span>
@@ -423,7 +423,7 @@
         </div>
         <div style="display:flex; flex-direction:column; gap:18px;">
           <h4 style="margin:0; font:500 21px/1.35 Archivo, sans-serif; letter-spacing:-0.015em; max-width:24em;">Give builders a way to see what their servers are doing</h4>
-          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">An analytics dashboard shipped as a limited preview to selected accounts, and we kept iterating on it while the preview ran and live feedback came in. It's also what made the launch numbers observable at all. That includes the failure rate we didn't like.</p>
+          <p style="margin:0; font:400 16px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">We shipped an analytics dashboard as a limited preview to selected accounts, and kept iterating on it as live feedback came in. It's also what made it possible to measure the launch at all, including the failure rate we weren't happy with.</p>
           <div onClick="{{ openMetrics }}" style="aspect-ratio:2/1; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in; margin-top:6px;">
             <img src="images/mcp-metrics.png" alt="MCP metrics dashboard" style="width:100%; height:100%; object-fit:cover; object-position:top left; display:block;" />
             <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">MCP metrics dashboard</span>
@@ -441,8 +441,8 @@
         <div style="display:flex; flex-direction:column; gap:6px; font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.06em; color:#6b6f6c;"><span style="color:oklch(0.55 0.11 150);">Decision 01</span><span>Milestone 2</span></div>
         <div style="display:flex; flex-direction:column; gap:20px;">
           <h3 style="margin:0; font:500 28px/1.25 Archivo, sans-serif; letter-spacing:-0.02em; max-width:22em;">"AI Hub" tested as a name nobody wanted to click</h3>
-          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">MCP servers started buried inside the API platform, reachable only by users already provisioned for it. Almost nobody found them. We pulled every AI capability into one top-level section and called it AI Hub.</p>
-          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">Customers told us the label was ambiguous and they hesitated to click it. A vague container is its own kind of hidden. We reworked the navigation to name the capability directly.</p>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">MCP servers started out inside the API platform, where only users already provisioned for it could reach them, so very few people found them. To fix that, we pulled every AI capability into one top-level section and called it AI Hub.</p>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">Customers told us the label was ambiguous and that they hesitated to click it. A vague container turned out to be another way of hiding things, so we reworked the navigation to name the capability directly.</p>
           <div onClick="{{ openNav }}" style="aspect-ratio:2/1; border:1px solid #d8d8d4; background:#e9e9e5; overflow:hidden; position:relative; cursor:zoom-in; margin-top:8px;">
             <img src="images/mcp-nav-options.png" alt="Navigation options explored" style="width:100%; height:100%; object-fit:contain; display:block;" />
             <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Navigation options explored → final menu</span>
@@ -454,8 +454,8 @@
         <div style="display:flex; flex-direction:column; gap:6px; font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.06em; color:#6b6f6c;"><span style="color:oklch(0.55 0.11 150);">Decision 02</span><span>Milestones 3 to 4</span></div>
         <div style="display:flex; flex-direction:column; gap:20px;">
           <h3 style="margin:0; font:500 28px/1.25 Archivo, sans-serif; letter-spacing:-0.02em; max-width:22em;">We shipped a card catalog, watched what people did with it, and replaced it with a list</h3>
-          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">Cards were the familiar format. Every MCP catalog uses them, and we explored a lot of variations before shipping. Then usage showed the real problem: people couldn't tell whether a server they needed already existed, so they made another one. Workspaces filled with near-duplicates.</p>
-          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">A catalog layout suits a fixed set of vendor-published items. This content was user-defined and metadata-heavy, which the grid couldn't carry. It was hard to scan, barely sortable, and it forced a weak call to action. We moved to a list.</p>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">Cards were the familiar format. Most MCP catalogs use them, and we explored a lot of variations before shipping. Once people started using it, we saw the real problem: people couldn't tell whether a server they needed already existed, so they created another one, and workspaces filled up with near-duplicates.</p>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">A catalog layout works well for a fixed set of items published by vendors. Our content was user-defined and heavy on metadata, which the grid couldn't support. It was hard to scan, barely sortable, and it pushed us toward a weak call to action, so we moved to a list.</p>
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; padding-top:8px;">
             <div onClick="{{ openBefore }}" style="aspect-ratio:16/10; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
               <img src="images/mcp-card-grid-before.png" alt="MCP servers card grid, before" style="width:100%; height:100%; object-fit:cover; object-position:top left; display:block;" />
@@ -473,8 +473,8 @@
         <div style="display:flex; flex-direction:column; gap:6px; font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.06em; color:#6b6f6c;"><span style="color:oklch(0.55 0.11 150);">Decision 03</span><span>Milestone 3</span></div>
         <div style="display:flex; flex-direction:column; gap:20px;">
           <h3 style="margin:0; font:500 28px/1.25 Archivo, sans-serif; letter-spacing:-0.02em; max-width:22em;">Default to identity, not shared tokens</h3>
-          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">Tokens are the path of least resistance for an MCP server and the fastest way to lose control of one. They get passed around, over-scoped, and never expire on schedule. We made every new server default to Workato Identity when the workspace had it enabled, so builders grant access by user group instead.</p>
-          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">Verified user access followed: end users sign in to each application the server touches, so a server can never hold more permission than the person prompting it.</p>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">Tokens are the path of least resistance when setting up an MCP server, and also the fastest way to lose control of one. They get passed around, over-scoped, and don't expire when they should. We made every new server default to Workato Identity when the workspace had it enabled, so builders grant access by user group instead.</p>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">Verified user access followed. End users sign in to each application the server touches, so a server never has more permission than the person prompting it.</p>
           <div onClick="{{ openAccessModel }}" style="aspect-ratio:2/1; border:1px solid #d8d8d4; background:#2b2b2b; overflow:hidden; position:relative; cursor:zoom-in; margin-top:8px;">
             <img src="images/mcp-access-model.png" alt="Access model: token-based, Workato Identity, verified user access, policy settings" style="width:100%; height:100%; object-fit:contain; display:block;" />
             <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">The access model</span>
@@ -493,13 +493,13 @@
           </div>
           <span style="display:block; margin-top:10px; font:400 12px/1.5 'Space Mono', monospace; letter-spacing:0.04em; color:#6b6f6c; max-width:52em;">Claude's client interface along with other compatible clients like Cursor enables users to access any API function by connecting to MCP servers</span>
         </div>
-        <p style="margin:0; font:400 18px/1.6 Archivo, sans-serif; max-width:36em; text-wrap:pretty;">A 34% tool failure rate was the number I cared about most, and the feedback form told us why it hurt: people couldn't see what was going wrong.</p>
+        <p style="margin:0; font:400 18px/1.6 Archivo, sans-serif; max-width:36em; text-wrap:pretty;">The number I cared about most was a 34% tool failure rate, and the feedback form told us why it was painful: people couldn't see what was going wrong.</p>
         <div style="display:flex; flex-direction:column; gap:0; border-top:1px solid #0f1211;">
           <span style="font:400 15px/1.6 'Space Mono', monospace; color:#333836; padding:16px 0; border-bottom:1px solid #d8d8d4;">"I do not know which tools are failing"</span>
           <span style="font:400 15px/1.6 'Space Mono', monospace; color:#333836; padding:16px 0; border-bottom:1px solid #d8d8d4;">"How do I prompt my MCP server when I want to {XYZ}"</span>
           <span style="font:400 15px/1.6 'Space Mono', monospace; color:#333836; padding:16px 0; border-bottom:1px solid #d8d8d4;">"I'm getting {ERROR_X} when prompting in {CLIENT_APP}. Is this a problem with a tool or with the server?"</span>
         </div>
-        <p style="margin:0; font:400 18px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:36em; text-wrap:pretty;">We answered with traceability, audit logs and inline education, and moved fast on them. For enterprise teams these were table stakes, not enhancements. Tool descriptions turned out to matter more than expected: the model needs them to pick the right tool, so we allowed long descriptions in the list and invested in rich text editing to help builders structure them well.</p>
+        <p style="margin:0; font:400 18px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:36em; text-wrap:pretty;">We responded with traceability, audit logs and inline education, and prioritized them quickly because enterprise teams expected them as a baseline. Tool descriptions also turned out to matter more than we expected. The model needs them to pick the right tool, so we allowed long descriptions in the list and invested in rich text editing to help builders write them well.</p>
       </div>
     </div>
 

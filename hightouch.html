@@ -191,7 +191,28 @@
 
     <div style="padding:96px 100px 0;">
       <div style="display:flex; align-items:baseline; justify-content:space-between; padding-bottom:20px; border-bottom:1px solid #0f1211; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase;">
-        <span>Two decisions</span>
+        <span>High level design plan</span>
+      </div>
+      <div style="display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px; border-bottom:1px solid #d8d8d4;">
+        <span style="font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; color:#6b6f6c; padding-top:24px;">Four phases</span>
+        <div style="display:grid; grid-template-columns:repeat(4, 1fr);">
+          <div style="display:flex; flex-direction:column; gap:10px; padding:24px 24px 24px 0; border-right:1px solid #d8d8d4;">
+            <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.06em; color:oklch(0.55 0.11 150);">01 · Understand</span>
+            <span style="font:400 14px/1.45 Archivo, sans-serif; color:#333836;">Heuristic audit of every flow. Zoom interviews with real customers, recurring concerns logged and grouped to prioritize design sprints.</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:10px; padding:24px; border-right:1px solid #d8d8d4;">
+            <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.06em; color:oklch(0.55 0.11 150);">02 · Observe</span>
+            <span style="font:400 14px/1.45 Archivo, sans-serif; color:#333836;">Information architecture reworked around debugging, and the workspace dashboard released as the new landing surface.</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:10px; padding:24px; border-right:1px solid #d8d8d4;">
+            <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.06em; color:oklch(0.55 0.11 150);">03 · Standardize</span>
+            <span style="font:400 14px/1.45 Archivo, sans-serif; color:#333836;">A common component set, a visual system, and the full set of states for the sync detail page, which is where users spend most of their time.</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:10px; padding:24px 0 24px 24px;">
+            <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.06em; color:oklch(0.55 0.11 150);">04 · Scale</span>
+            <span style="font:400 14px/1.45 Archivo, sans-serif; color:#333836;">Every step of the core setup workflows revisited, then enterprise and marketer surfaces on top: RBAC, deployments, Journeys, Audience builder.</span>
+          </div>
+        </div>
       </div>
 
       <div data-reveal style="display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px; padding:44px 0; border-bottom:1px solid #d8d8d4;">
@@ -204,24 +225,6 @@
             <div onClick="{{ openHtAudit }}" style="aspect-ratio:1024/964; width:100%; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
               <img src="images/ht-audit.png" alt="Annotated audit board" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
               <span style="position:absolute; left:12px; bottom:12px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Annotated audit board</span>
-            </div>
-            <div style="display:grid; grid-template-columns:repeat(4, 1fr); margin-top:12px; border-top:1px solid #d8d8d4; border-bottom:1px solid #d8d8d4;">
-              <div style="display:flex; flex-direction:column; gap:10px; padding:24px 24px 24px 0; border-right:1px solid #d8d8d4;">
-                <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.06em; color:oklch(0.55 0.11 150);">01 · Understand</span>
-                <span style="font:400 14px/1.45 Archivo, sans-serif; color:#333836;">Heuristic audit of every flow. Zoom interviews with real customers, recurring concerns logged and grouped to prioritize design sprints.</span>
-              </div>
-              <div style="display:flex; flex-direction:column; gap:10px; padding:24px; border-right:1px solid #d8d8d4;">
-                <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.06em; color:oklch(0.55 0.11 150);">02 · Standardize</span>
-                <span style="font:400 14px/1.45 Archivo, sans-serif; color:#333836;">A common component set, a visual system, and the full set of states for the sync detail page, which is where users spend most of their time.</span>
-              </div>
-              <div style="display:flex; flex-direction:column; gap:10px; padding:24px; border-right:1px solid #d8d8d4;">
-                <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.06em; color:oklch(0.55 0.11 150);">03 · Observe</span>
-                <span style="font:400 14px/1.45 Archivo, sans-serif; color:#333836;">Information architecture reworked around debugging, and the workspace dashboard released as the new landing surface.</span>
-              </div>
-              <div style="display:flex; flex-direction:column; gap:10px; padding:24px 0 24px 24px;">
-                <span style="font:400 11px/1 'Space Mono', monospace; letter-spacing:0.06em; color:oklch(0.55 0.11 150);">04 · Scale</span>
-                <span style="font:400 14px/1.45 Archivo, sans-serif; color:#333836;">Every step of the core setup workflows revisited, then enterprise and marketer surfaces on top: RBAC, deployments, Journeys, Audience builder.</span>
-              </div>
             </div>
           </div>
         </div>

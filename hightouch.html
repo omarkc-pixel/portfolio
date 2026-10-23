@@ -254,12 +254,6 @@
               <img src="images/ht-ideation.png" alt="Lo-fi UI ideation for the dashboard and interaction details: chart bin sizes, sort order and empty states" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
               <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Lo-fi ideation and interaction details</span>
             </div>
-            <div style="display:flex; flex-direction:column; gap:8px;">
-              <div onClick="{{ openHtStatusPatterns }}" style="height:880px; width:100%; border:1px solid #d8d8d4; background:#fff; overflow:hidden; cursor:zoom-in;">
-                <img src="images/ht-status-patterns.png" alt="Status patterns explored alongside the dashboard redesign: status scale, monitoring history bar treatments, status change log, hover tooltips and overlapping monitors" loading="lazy" style="width:100%; height:100%; object-fit:cover; object-position:top center; display:block;" />
-              </div>
-              <span style="font:400 10px/1.4 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c;">Status patterns explored alongside the dashboard: click to see all five</span>
-            </div>
             <div style="display:flex; flex-direction:column; gap:20px;">
               <div onClick="{{ openHtAfter }}" style="aspect-ratio:2880/2480; width:100%; border:1px solid #0f1211; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
                 <img src="images/ht-after-overview.png" alt="After: workspace overview with run health metrics, extensions, draft approvals and active syncs by destination" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
@@ -290,6 +284,31 @@
               <img src="images/ht-onboarding.png" alt="Onboarding iteration under test" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
               <span style="position:absolute; left:14px; bottom:14px; font:400 10px/1 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c; background:#f6f6f4; border:1px solid #d8d8d4; padding:6px 8px;">Onboarding iteration under test</span>
             </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:96px 100px 0;">
+      <div style="display:flex; align-items:baseline; justify-content:space-between; padding-bottom:20px; border-bottom:1px solid #0f1211; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase;">
+        <span>Extending status patterns to resource pages</span><span style="color:#6b6f6c;">Sync detail</span>
+      </div>
+      <div style="display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px; padding:36px 0 0;">
+        <span style="font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; color:#6b6f6c; padding-top:5px;">Status over time</span>
+        <div style="display:flex; flex-direction:column; gap:20px;">
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">While I was working on the dashboard, I also explored how the same status colors could show a single sync's health over time, and what a hover should reveal about why its status changed. I tried several treatments for the history bar, the change log and the tooltips before settling on tints for past states, with the hovered moment shown at full strength.</p>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">Once the patterns held up on the dashboard, I carried them into resource pages. On a sync's Monitoring tab, the history bar uses the same scale, and the monitor settings below it use the warning and unhealthy colors to separate the two thresholds each monitor can trigger, so people can see what will change a sync's status before it happens.</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div onClick="{{ openHtStatusPatterns }}" style="height:880px; width:100%; border:1px solid #d8d8d4; background:#fff; overflow:hidden; cursor:zoom-in;">
+              <img src="images/ht-status-patterns.png" alt="Status patterns: status scale, monitoring history bar treatments, status change log, hover tooltips and overlapping monitors" loading="lazy" style="width:100%; height:100%; object-fit:cover; object-position:top center; display:block;" />
+            </div>
+            <span style="font:400 10px/1.4 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c;">Status pattern explorations: click to see all five</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div onClick="{{ openHtSyncMonitoring }}" style="aspect-ratio:2880/2800; width:100%; border:1px solid #0f1211; background:#fff; overflow:hidden; cursor:zoom-in;">
+              <img src="images/ht-sync-monitoring.png" alt="Sync Monitoring tab: notification routing by status, monitoring history bar, and warning and unhealthy thresholds for each monitor" loading="lazy" style="width:100%; height:100%; object-fit:contain; object-position:top center; display:block;" />
+            </div>
+            <span style="font:400 10px/1.4 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c;">Sync detail: monitoring tab</span>
+          </div>
         </div>
       </div>
     </div>
@@ -613,6 +632,7 @@ class Component extends DCLogic {
       openHtSpecFeedback: () => this.setState({ lightbox: { src: 'images/ht-spec-feedback.png', alt: 'Hightouch UI feedback and status specimen' } }),
       openHtBefore: () => this.setState({ lightbox: { src: 'images/ht-sync-list-before.png', alt: 'Sync list at scale' } }),
       openHtStatusPatterns: () => this.setState({ lightbox: { src: 'images/ht-status-patterns.png', alt: 'Status patterns' } }),
+      openHtSyncMonitoring: () => this.setState({ lightbox: { src: 'images/ht-sync-monitoring.png', alt: 'Sync detail: monitoring tab' } }),
       openHtAfter: () => this.setState({ lightbox: { src: 'images/ht-after-overview.png', alt: 'After: workspace overview' } }),
       openHtAfterHover: () => this.setState({ lightbox: { src: 'images/ht-after-hover.png', alt: 'After: chart hover' } }),
       openHtAfterRuns: () => this.setState({ lightbox: { src: 'images/ht-after-sync-runs.png', alt: 'After: sync runs from the chart' } }),

@@ -130,7 +130,7 @@
       <span style="font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; padding-top:6px;">The problem</span>
       <div style="display:flex; flex-direction:column; gap:20px; max-width:36em;">
         <p style="margin:0; font:400 18px/1.6 Archivo, sans-serif; text-wrap:pretty;">Workato's integration platform let different systems talk to each other in real time, but it couldn't move large volumes of data for analysis or storage. Enterprises kept a second vendor for that part of the job, usually Fivetran or Informatica.</p>
-        <p style="margin:0; font:400 18px/1.6 Archivo, sans-serif; color:#4a4e4c; text-wrap:pretty;">A first version of data pipelines had already shipped, and the designer who worked on it had moved on to other projects. I joined to take the team through a roadmap of more sources and destinations and deeper replication capabilities, on top of a core experience that was already in users' hands. That constraint shaped everything I did: I needed to propose patterns that would scale to features that weren't specified yet, without introducing changes users hadn't asked for.</p>
+        <p style="margin:0; font:400 18px/1.6 Archivo, sans-serif; color:#4a4e4c; text-wrap:pretty;">A first version of data pipelines had already shipped, and the designer who worked on it had moved on to other projects. I joined to take the team through a roadmap of more sources and destinations and deeper replication capabilities, on top of a core experience that was already in users' hands. Because of that, I needed to propose patterns that would scale to features that weren't specified yet, without introducing changes users hadn't asked for.</p>
       </div>
     </div>
 
@@ -251,7 +251,7 @@
       <div style="display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px; padding:36px 0 0;">
         <span style="font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; color:#6b6f6c; padding-top:5px;">What we added</span>
         <div style="display:flex; flex-direction:column; gap:20px;">
-          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">The pipeline pages reported on runs, not on objects. If one table out of eleven was stale, the only way to find it was to read through the run history and work it out. We added an Objects tab that lists the active schema with the last status of each object, filterable by state, so checking whether your data is current takes a glance instead of an investigation.</p>
+          <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">The pipeline pages reported on runs, not on objects. If one table out of eleven was stale, the only way to find it was to read through the run history and work it out. We added an Objects tab that lists the active schema with the last status of each object, filterable by state, so people can check whether their data is current at a glance.</p>
           <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">Alongside it, we shipped the capability users had requested most in product feedback: a manual re-sync button for each object. Sync schedules exist for good reasons, but a data engineer who has just fixed a mapping or a permission shouldn't have to wait for the next scheduled run to confirm it worked. The button appears when you hover a row and in the object drawer, and each manual run is labelled as an object re-sync in the run history, so scheduled and on-demand runs can still be told apart afterwards.</p>
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start; padding-top:4px;">
             <div>
@@ -302,7 +302,7 @@
 
     <div style="padding:88px 100px 0; display:grid; grid-template-columns:200px minmax(0,1fr); gap:40px;">
       <span style="font:400 11px/1.5 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase; padding-top:6px;">What I took from it</span>
-      <p style="margin:0; font:400 18px/1.6 Archivo, sans-serif; max-width:36em; text-wrap:pretty;">Inheriting a product is a constraint, but it has a payoff. I tried to respect the work that came before me and extend its patterns instead of replacing them. That's what allowed three features to ship in a row without users having to relearn the screens.</p>
+      <p style="margin:0; font:400 18px/1.6 Archivo, sans-serif; max-width:36em; text-wrap:pretty;">Working on an inherited product limited what I could change, but it also meant users already knew its patterns. I tried to respect the work that came before me and extend those patterns instead of replacing them, which is what allowed three features to ship in a row without users having to relearn the screens.</p>
     </div>
 
     <div style="display:flex; align-items:center; justify-content:space-between; margin:96px 100px 0; padding:28px 0 40px; border-top:1px solid #d8d8d4; font:400 11px/1 'Space Mono', monospace; letter-spacing:0.09em; text-transform:uppercase;">

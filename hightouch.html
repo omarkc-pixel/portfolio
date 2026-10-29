@@ -291,10 +291,10 @@
           <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">While I was working on the dashboard, I also explored how the same status colors could show a single sync's health over time, and what a hover should reveal about why its status changed. I tried several treatments for the history bar, the change log and the tooltips before settling on tints for past states, with the hovered moment shown at full strength.</p>
           <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">Once the patterns held up on the dashboard, I carried them into resource pages. On a sync's Monitoring tab, the history bar uses the same scale, and the monitor settings below it use the warning and unhealthy colors to separate the two thresholds each monitor can trigger, so people can see what will change a sync's status before it happens.</p>
           <div style="display:flex; flex-direction:column; gap:8px;">
-            <div onClick="{{ openHtStatusPatterns }}" style="height:880px; width:100%; border:1px solid #d8d8d4; background:#fff; overflow:hidden; cursor:zoom-in;">
-              <img src="images/ht-status-patterns.png" alt="Status patterns: status scale, monitoring history bar treatments, status change log, hover tooltips and overlapping monitors" loading="lazy" style="width:100%; height:100%; object-fit:cover; object-position:top center; display:block;" />
+            <div onClick="{{ openHtStatusPatterns }}" style="width:100%; border:1px solid #d8d8d4; background:#fff; overflow:hidden; cursor:zoom-in;">
+              <img src="images/ht-status-patterns.png" alt="Status patterns: status scale, monitoring history bar treatments, status change log, hover tooltips and overlapping monitors" loading="lazy" style="width:100%; height:auto; display:block;" />
             </div>
-            <span style="font:400 10px/1.4 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c;">Status pattern explorations: click to see all five</span>
+            <span style="font:400 10px/1.4 'Space Mono', monospace; letter-spacing:0.07em; text-transform:uppercase; color:#6b6f6c;">Status pattern explorations</span>
           </div>
           <div style="display:flex; flex-direction:column; gap:8px;">
             <div onClick="{{ openHtSyncMonitoring }}" style="aspect-ratio:2880/2800; width:100%; border:1px solid #0f1211; background:#fff; overflow:hidden; cursor:zoom-in;">

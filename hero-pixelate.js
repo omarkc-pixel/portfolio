@@ -2,7 +2,7 @@
   // A silhouette resolving from a coarse grid to a smooth shape, step by step.
   var LEVELS = [[6, 4], [12, 8], [24, 16], [48, 32], [96, 64], null]; // null = smooth silhouette
   var LABELS = ['6×4', '12×8', '24×16', '48×32', '96×64', 'vector'];
-  var HOLD = 1.5, SWEEP = 0.9, END_HOLD = 2.6, RESET = 0.9;
+  var HOLD = 2.4, SWEEP = 1.5, END_HOLD = 4, RESET = 1.4;
   var INK = '#0f1211', MUTED = '#8a8f8c';
   var STEP = HOLD + SWEEP, T = LEVELS.length * STEP - SWEEP + END_HOLD + RESET;
 

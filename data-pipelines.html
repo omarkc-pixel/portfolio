@@ -181,7 +181,7 @@
           <span>Hashing schema fields</span>
         </div>
         <div style="display:flex; flex-direction:column; gap:20px;">
-          <h3 style="margin:0; font:500 28px/1.25 Archivo, sans-serif; letter-spacing:-0.02em; max-width:22em;">Put PII control on the field, not in a settings page</h3>
+          <h3 style="margin:0; font:500 28px/1.25 'Martian Mono', 'Space Mono', monospace; letter-spacing:-0.04em; max-width:22em;">Put PII control on the field, not in a settings page</h3>
           <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">Sensitive fields need to be protected before they're replicated, and that decision is made per field. The PM and I wrote the copy for a field-level control that lets a user either hash a value or replicate it as is, and I placed it in the right margin of the schema row, next to the field it applies to.</p>
           <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">I explored a range of hash icons so the mark would fit with the surrounding copy and still be understood on its own, without a label.</p>
           <div onClick="{{ openDpHash }}" style="aspect-ratio:2/1; border:1px solid #d8d8d4; background:#fff; overflow:hidden; position:relative; cursor:zoom-in;">
@@ -211,7 +211,7 @@
           <span>Re-syncs and object settings</span>
         </div>
         <div style="display:flex; flex-direction:column; gap:20px;">
-          <h3 style="margin:0; font:500 28px/1.25 Archivo, sans-serif; letter-spacing:-0.02em; max-width:22em;">Reuse the margin affordance one level up</h3>
+          <h3 style="margin:0; font:500 28px/1.25 'Martian Mono', 'Space Mono', monospace; letter-spacing:-0.04em; max-width:22em;">Reuse the margin affordance one level up</h3>
           <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">Users needed to trigger a one-time sync on an individual object, so that moving data wasn't tied to the schedule. That meant object-level actions and settings needed to live somewhere the schema view already showed.</p>
           <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">Instead of opening a new surface, I extended the right-margin control we'd introduced for hashing to the object row. Users only had to learn one interaction, and it worked at two levels. It also meant the next feature could use the same pattern without a redesign.</p>
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:6px;">
@@ -233,7 +233,7 @@
           <span>Monitoring</span>
         </div>
         <div style="display:flex; flex-direction:column; gap:20px;">
-          <h3 style="margin:0; font:500 28px/1.25 Archivo, sans-serif; letter-spacing:-0.02em; max-width:22em;">Three kinds of sync now had to be legible in one chart</h3>
+          <h3 style="margin:0; font:500 28px/1.25 'Martian Mono', 'Space Mono', monospace; letter-spacing:-0.04em; max-width:22em;">Three kinds of sync now had to be legible in one chart</h3>
           <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#333836; max-width:34em; text-wrap:pretty;">Adding object re-syncs meant the dashboard was suddenly reporting three kinds of runs at once: initial syncs, incremental syncs and re-syncs. Looking at the chart no longer told you which kind of run you were looking at.</p>
           <p style="margin:0; font:400 17px/1.6 Archivo, sans-serif; color:#4a4e4c; max-width:34em; text-wrap:pretty;">We added indicator icons to the chart views and carried them into the tooltips, so the sync type is visible at a glance and explained on hover. It was a small addition, and it let us keep the existing dashboard instead of replacing it.</p>
           <div style="display:flex; flex-direction:column; gap:20px; margin-top:6px;">

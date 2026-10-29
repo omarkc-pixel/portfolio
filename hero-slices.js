@@ -3,6 +3,13 @@
   var INK = '#0f1211', PAPER = '#f6f6f4';
   var FILL = ['#ddd8ff', '#d3defd', '#e6e0ff'], EDGE = '#5b54e8';
   var C30 = Math.cos(Math.PI / 6), S30 = 0.5;
+  // one SaaS logo per arm; it lights up on the cube face of that arm's axis
+  var LOGOS = ['snowflake', 'salesforce', 'hubspot', 'slack', 'dbt', 'datadog'].map(function (n) {
+    var im = new Image(); im.src = '/images/logos/' + n + '.svg'; return im;
+  });
+  // in-face image axes (right, down) for the visible faces +x, +y, +z
+  var FACE_R = [[0, -1, 0], [1, 0, 0], [1, 0, 0]], FACE_D = [[0, 0, -1], [0, 0, -1], [0, 1, 0]];
+  function smooth(e0, e1, x) { var u = Math.max(0, Math.min(1, (x - e0) / (e1 - e0))); return u * u * (3 - 2 * u); }
   function proj(p) { return [(p[0] - p[1]) * C30, (p[0] + p[1]) * S30 - p[2]]; }
   function rot(v, ax, a) { // rotate vector v around unit axis index ax
     var c = Math.cos(a), s = Math.sin(a), x = v[0], y = v[1], z = v[2];
@@ -26,12 +33,20 @@
   var N = 5, H = 0.5, GAP = 0.19, START = 1.02;
   function scene(t) {
     var polys = [];
+    var arms = [[2, 1], [0, 1], [1, 1], [2, -1], [0, -1], [1, -1]];
+    // glow on the face sharing each animating arm's axis
+    var glow = [{ a: 0, logo: 0 }, { a: 0, logo: 0 }, { a: 0, logo: 0 }];
+    for (var g = 0; g < arms.length; g++) {
+      var lt = (((t - g * 1.0) % T) + T) % T;
+      if (lt > T - 0.3) lt -= T;
+      var al = smooth(-0.25, 0.2, lt) * (1 - smooth(1.45, 1.95, lt));
+      if (al > glow[arms[g][0]].a) glow[arms[g][0]] = { a: al, logo: g };
+    }
     // central cube faces
     var h = H;
     for (var a = 0; a < 3; a++) for (var s = -1; s <= 1; s += 2) {
-      polys.push({ pts: square(a, s * h, h, 0, 0, 0), cube: true });
+      polys.push({ pts: square(a, s * h, h, 0, 0, 0), cube: true, axis: a, side: s, glow: s > 0 ? glow[a] : null });
     }
-    var arms = [[2, 1], [0, 1], [1, 1], [2, -1], [0, -1], [1, -1]];
     for (var i = 0; i < arms.length; i++) {
       var a = arms[i][0], s = arms[i][1];
       var flipAx = (a + 1 + (i % 2)) % 3;
@@ -65,7 +80,7 @@
         var sc = Math.min(W, Hh) / 5.6;
         ctx.translate(W / 2, Hh / 2); ctx.scale(sc, sc);
         if (t0 === null) t0 = now;
-        var t = reduce ? 0 : ((now - t0) / 1000) % T;
+        var t = reduce ? 1.6 : ((now - t0) / 1000) % T;
         var polys = scene(t);
         ctx.lineJoin = 'round'; ctx.lineWidth = 1.15 * dpr / sc;
         for (var i = 0; i < polys.length; i++) {
@@ -75,6 +90,21 @@
           ctx.closePath();
           ctx.fillStyle = P.hot ? P.col : PAPER;
           ctx.globalAlpha = 1; ctx.fill();
+          if (P.glow && P.glow.a > 0.01) {
+            var G = P.glow, img = LOGOS[G.logo];
+            ctx.globalAlpha = G.a; ctx.fillStyle = '#ece9ff'; ctx.fill();
+            if (img.complete && img.naturalWidth) {
+              var c3 = [0, 0, 0]; c3[P.axis] = H;
+              var O = proj(c3), R = proj(FACE_R[P.axis]), D = proj(FACE_D[P.axis]);
+              var L = 0.56, ar = img.naturalWidth / img.naturalHeight;
+              var iw = ar >= 1 ? L : L * ar, ih = ar >= 1 ? L / ar : L;
+              ctx.save();
+              ctx.transform(R[0], R[1], D[0], D[1], O[0], O[1]);
+              ctx.drawImage(img, -iw / 2, -ih / 2, iw, ih);
+              ctx.restore();
+            }
+            ctx.globalAlpha = 1;
+          }
           ctx.strokeStyle = P.hot ? EDGE : INK; ctx.stroke();
         }
       }

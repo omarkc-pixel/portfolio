@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Omar Younis · Sumble brief prototype</title>
+<script src="./support.js"></script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+html,body{height:100%}
+body{margin:0;background:#f9fafb;color:#1d293d;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display",system-ui,"Segoe UI",sans-serif;font-size:14px;line-height:20px;-webkit-font-smoothing:antialiased}
+a{color:#00a63e;text-decoration:none}a:hover{color:#008236}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #155dfc;outline-offset:2px}
+.ic{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.app{display:flex;height:100vh;overflow:hidden}
+.side{width:232px;flex:none;box-sizing:border-box;background:#f8fafc;border-right:1px solid #e2e8f0;padding:16px 12px;display:flex;flex-direction:column;gap:2px;overflow-y:auto}
+.nav{display:flex;align-items:center;gap:8px;height:32px;padding:0 8px;border-radius:6px;font-size:15px;font-weight:500;color:#1d293d;border:0;background:none;text-align:left;width:100%}
+.nav:hover{background:#f1f5f9}
+.nav svg{color:#45556c}
+.nav-on{background:#e2e8f0}
+.nav-on:hover{background:#e2e8f0}
+.navlbl{font-size:12px;line-height:16px;color:#62748e;padding:14px 8px 4px}
+.main{flex:1;min-width:0;overflow-y:auto;box-sizing:border-box}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:32px;padding:0 12px;border-radius:6px;border:1px solid #e2e8f0;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.05);font-weight:500;color:#1d293d;white-space:nowrap}
+.btn:hover{background:#f8fafc}
+.btn-sm{height:28px;padding:0 10px;font-size:13px}
+.btn-ghost{border-color:transparent;box-shadow:none;background:transparent;color:#45556c}
+.btn-ghost:hover{background:#f1f5f9}
+.btn-g{background:#00a63e;border-color:#00a63e;color:#fff;font-weight:600;box-shadow:none}
+.btn-g:hover{background:#008236}
+.iconbtn{width:30px;height:30px;display:inline-grid;place-items:center;border:0;border-radius:6px;background:transparent;color:#62748e}
+.iconbtn:hover{background:#f1f5f9;color:#1d293d}
+.score{display:inline-block;min-width:38px;padding:0 5px;font-size:13px;font-weight:600;line-height:20px;text-align:center;border-radius:4px;background:#00c950;color:#fff;font-variant-numeric:tabular-nums}
+.chip{display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 8px;border-radius:4px;background:#f3f4f6;border:1px solid #e5e7eb;font-size:12px;font-weight:500;color:#314158;white-space:nowrap}
+a.chip:hover{border-color:#cad5e2;color:#1d293d}
+.tag{display:inline-flex;align-items:center;height:22px;padding:0 7px;border-radius:4px;background:#eff6ff;border:1px solid #dbeafe;color:#162556;font-size:12px;font-weight:500;white-space:nowrap}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden}
+.cardhd{display:flex;align-items:center;gap:10px;padding:14px 16px;font-size:15px;font-weight:600}
+.tile{width:24px;height:24px;border-radius:6px;display:inline-grid;place-items:center;background:#f1f5f9;color:#45556c;flex:none;box-sizing:border-box}
+.tile .ic{width:14px;height:14px}
+.tile-p{background:#fef2f2;border:1px solid #ffe2e2;color:#1d293d}
+.tile-g{background:#f0fdf4;color:#00a63e}
+.th{text-align:left;font-size:12px;font-weight:500;color:#62748e;padding:8px 16px;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;background:#f9fafb;white-space:nowrap}
+.td{height:46px;padding:0 16px;border-bottom:1px solid #e5e7eb;white-space:nowrap;font-weight:500}
+.num{font-variant-numeric:tabular-nums}
+.meta{display:inline-flex;align-items:center;gap:6px;color:#62748e;font-size:13px;white-space:nowrap}
+.meta .ic{width:14px;height:14px}
+.orgmark{width:24px;height:24px;border-radius:9999px;color:#fff;display:inline-grid;place-items:center;font-weight:700;font-size:11px;flex:none}
+.namebtn{border:0;background:none;padding:0;display:inline-flex;align-items:center;gap:10px;font-weight:600;color:#1d293d}
+.namebtn:hover span:last-child{text-decoration:underline;text-underline-offset:2px}
+.mk{display:inline-flex;align-items:center;gap:4px;height:22px;padding:0 6px;margin-left:8px;border-radius:4px;background:#f0fdf4;border:1px solid #b9f8cf;color:#016630;font-size:11px;font-weight:600;vertical-align:1px}
+.mk .ic{width:12px;height:12px}
+.panel{width:560px;flex:none;display:flex;flex-direction:column;background:#fff;border-left:1px solid #e2e8f0;box-shadow:-12px 0 24px -12px rgba(15,23,43,.12);box-sizing:border-box;height:100vh;position:relative}
+.pbody{flex:1;min-height:0;overflow-y:auto;padding:0 20px}
+.sec{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px solid #e2e8f0}
+.sechd{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600}
+.person{display:flex;flex-direction:column;gap:10px;padding:12px 14px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;transition:border-color .15s, box-shadow .15s}
+.person:hover{border-color:#b9f8cf;box-shadow:0 0 0 1px #b9f8cf}
+.av{width:32px;height:32px;border-radius:9999px;background:#e2e8f0;color:#314158;display:inline-grid;place-items:center;font-size:12px;font-weight:600;flex:none}
+.why{font-size:13px;line-height:19px;color:#45556c}
+.team{display:flex;flex-direction:column;gap:8px;padding:12px 14px;border:1px solid #e2e8f0;border-radius:8px}
+.stat{display:flex;flex-direction:column;gap:2px;padding:12px;border:1px solid #e2e8f0;border-radius:8px;background:#f9fafb}
+.stat b{font-size:20px;line-height:26px;font-variant-numeric:tabular-nums}
+.up{color:#016630;font-size:12px;font-weight:600}
+.sub{font-size:12px;color:#62748e}
+.skel{height:10px;border-radius:4px;background:linear-gradient(90deg,#eef2f6 0%,#f8fafc 50%,#eef2f6 100%);background-size:200% 100%;animation:sh 1.2s linear infinite}
+@keyframes sh{from{background-position:200% 0}to{background-position:-200% 0}}
+.pop{position:absolute;z-index:30;background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 20px 25px -5px rgba(15,23,43,.12),0 8px 10px -6px rgba(15,23,43,.1)}
+.mi{width:100%;display:flex;align-items:center;gap:8px;height:34px;padding:0 10px;border:0;border-radius:6px;background:none;text-align:left}
+.mi:hover{background:#f1f5f9}
+.row{display:flex;justify-content:space-between;gap:8px;font-size:13px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:60;display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:8px;background:#1d293d;color:#fff;font-size:13px;box-shadow:0 12px 24px rgba(15,23,43,.25);max-width:calc(100% - 32px)}
+.back{position:fixed;left:16px;bottom:16px;z-index:50;display:none;align-items:center;gap:6px;padding:8px 12px;border-radius:8px;background:#fff;border:1px solid #e2e8f0;color:#1d293d;font-size:12px;font-weight:600;box-shadow:0 4px 12px rgba(15,23,43,.08)}
+.back:hover{color:#1d293d;background:#f8fafc}
+@media (prefers-reduced-motion: reduce){.skel{animation:none}.person{transition:none}}
+@media (max-width: 900px){
+  .side{display:none}
+  .panel{position:fixed;inset:0;width:100%;z-index:40}
+  .hide-sm{display:none}
+  .back{display:inline-flex}
+}
+</style>
+</helmet>
+<svg width="0" height="0" style="position: absolute" aria-hidden="true">
+<symbol id="i-building" viewBox="0 0 24 24"><path d="M5 21V4h10v17M15 9h4v12M3 21h18M8 8h4M8 12h4M8 16h4"></path></symbol>
+<symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M3 8h18v12H3zM8 8V5h8v3"></path></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M9 11a3.5 3.5 0 1 0 0-7a3.5 3.5 0 1 0 0 7zM2.5 20c.6-3.3 3.2-5 6.5-5s5.9 1.7 6.5 5M16 4.5a3.5 3.5 0 0 1 0 6.5M18 15c2 .6 3.2 2.3 3.5 5"></path></symbol>
+<symbol id="i-signal" viewBox="0 0 24 24"><path d="M12 12h.01M8.5 15.5a5 5 0 0 1 0-7M15.5 8.5a5 5 0 0 1 0 7M5.6 18.4a9 9 0 0 1 0-12.8M18.4 5.6a9 9 0 0 1 0 12.8"></path></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4"></path></symbol>
+<symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"></path></symbol>
+<symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"></path></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3 7l9 6l9-6"></path></symbol>
+<symbol id="i-hash" viewBox="0 0 24 24"><path d="M9 4L7 20M17 4l-2 16M4 9h16M3 15h16"></path></symbol>
+<symbol id="i-key" viewBox="0 0 24 24"><path d="M7.5 15.5a3.5 3.5 0 1 0 0-7a3.5 3.5 0 1 0 0 7zM11 12h10M17 12v3M20 12v2"></path></symbol>
+<symbol id="i-monitor" viewBox="0 0 24 24"><path d="M5 5h14v10H5zM12 15v4M8 19h8"></path></symbol>
+<symbol id="i-gear" viewBox="0 0 24 24"><path d="M12 15a3 3 0 1 0 0-6a3 3 0 1 0 0 6zM12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"></path></symbol>
+<symbol id="i-gift" viewBox="0 0 24 24"><path d="M4 9h16v4H4zM5 13h14v8H5zM12 9v12M12 9c-1.5-3-5-4-5-1.5S10 9 12 9zM12 9c1.5-3 5-4 5-1.5S14 9 12 9z"></path></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3l5.9.9l-4.3 4.1l1 5.8L12 16.9l-5.2 2.7l1-5.8L3.5 9.7l5.9-.9z"></path></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"></path></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><path d="M8 8h12v12H8zM4 16V4h12"></path></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"></path></symbol>
+<symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V5M7 10l5-5l5 5M5 19h14"></path></symbol>
+<symbol id="i-dots" viewBox="0 0 24 24"><path d="M12 5.5h.01M12 12h.01M12 18.5h.01" stroke-width="3"></path></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M8 16L16 8M9 8h7v7"></path></symbol>
+<symbol id="i-down" viewBox="0 0 24 24"><path d="M6 9l6 6l6-6"></path></symbol>
+<symbol id="i-right" viewBox="0 0 24 24"><path d="M9 6l6 6l-6 6"></path></symbol>
+<symbol id="i-left" viewBox="0 0 24 24"><path d="M15 6l-6 6l6 6"></path></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18zM12 8a4 4 0 1 0 0 8a4 4 0 1 0 0-8zM12 12h.01"></path></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><path d="M12 11a4 4 0 1 0 0-8a4 4 0 1 0 0 8zM4 21c.8-4 4-6 8-6s7.2 2 8 6"></path></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18zM3 12h18M12 3c2.5 2.7 3.5 5.7 3.5 9s-1 6.3-3.5 9c-2.5-2.7-3.5-5.7-3.5-9s1-6.3 3.5-9z"></path></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l5 5l9-10"></path></symbol>
+<symbol id="i-send" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6l-6 6"></path></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 0 0 14a7 7 0 1 0 0-14zM20 20l-4-4"></path></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3L5 14h6l-1 7l8-11h-6z"></path></symbol>
+<symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4h11l-2 4l2 4H5"></path></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18zM12 7v5l3 2"></path></symbol>
+</svg>
+
+<div class="app">
+  <aside class="side" aria-label="Main navigation">
+    <img src="images/sb-logo.png" alt="Sumble" style="width: 140px; height: auto; margin: -6px 0 6px -4px;">
+    <button class="nav nav-on" type="button" onClick="{{goList}}"><svg class="ic"><use href="#i-building"></use></svg>Organizations</button>
+    <button class="nav" type="button" onClick="{{notInDemo}}"><svg class="ic"><use href="#i-briefcase"></use></svg>Job Posts</button>
+    <button class="nav" type="button" onClick="{{notInDemo}}"><svg class="ic"><use href="#i-users"></use></svg>People</button>
+    <div class="navlbl">Intelligence</div>
+    <button class="nav" type="button" onClick="{{notInDemo}}"><svg class="ic"><use href="#i-signal"></use></svg>Signals</button>
+    <button class="nav" type="button" onClick="{{notInDemo}}"><svg class="ic"><use href="#i-calendar"></use></svg>Events<span style="margin-left: auto; font-size: 12px; line-height: 16px; padding: 1px 7px; border-radius: 6px; background: #e2e8f0; color: #314158;">Beta</span></button>
+    <button class="nav" type="button" onClick="{{notInDemo}}"><svg class="ic"><use href="#i-sparkle"></use></svg>Ask Sumble</button>
+    <div class="navlbl">Your lists</div>
+    <button class="nav" type="button" onClick="{{notInDemo}}"><svg class="ic"><use href="#i-list"></use></svg>Account Lists</button>
+    <button class="nav" type="button" onClick="{{notInDemo}}"><svg class="ic"><use href="#i-mail"></use></svg>Contact Lists</button>
+    <div class="navlbl">Connectors</div>
+    <button class="nav" type="button" onClick="{{notInDemo}}"><svg class="ic"><use href="#i-hash"></use></svg>Slack</button>
+    <button class="nav" type="button" onClick="{{notInDemo}}"><svg class="ic"><use href="#i-key"></use></svg>API</button>
+    <button class="nav" type="button" onClick="{{notInDemo}}"><svg class="ic"><use href="#i-monitor"></use></svg>MCP<span style="margin-left: auto; font-size: 11px; font-weight: 600; line-height: 16px; padding: 1px 7px; border-radius: 9999px; background: #62748e; color: #fff;">PRO</span></button>
+    <div style="margin-top: auto; padding-top: 16px; display: flex; flex-direction: column; gap: 8px;">
+      <a href="/sumble" style="display: inline-flex; align-items: center; gap: 6px; padding: 0 8px; font-size: 13px; font-weight: 600; color: #45556c;"><svg class="ic" style="width: 14px; height: 14px;"><use href="#i-left"></use></svg>Back to the case study</a>
+      <div style="display: flex; flex-direction: column; gap: 4px; padding: 10px; border: 1px solid #e2e8f0; border-radius: 8px; background: #fff;">
+        <span style="display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600;"><svg class="ic" style="width: 14px; height: 14px; color: #00a63e;"><use href="#i-sparkle"></use></svg>{{starterLabel}}</span>
+        <span class="sub">{{balanceLabel}}</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; padding: 4px 0 0 4px;">
+        <div aria-hidden="true" style="width: 32px; height: 32px; border-radius: 6px; background: #6a7282; color: #fff; display: grid; place-items: center; font-weight: 600; flex: none;">O</div>
+        <div style="min-width: 0;"><div style="font-weight: 600;">omaryounis48</div><span style="display: inline-block; font-size: 11px; font-weight: 600; line-height: 15px; padding: 0 6px; border-radius: 4px; background: #c10007; color: #fff;">27d left in Pro trial</span></div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <sc-if value="{{isList}}" hint-placeholder-val="{{true}}">
+      <div style="padding: 18px 24px 80px; display: flex; flex-direction: column; gap: 14px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+          <h1 style="margin: 0; font-size: 22px; line-height: 30px; font-weight: 600;">Organizations</h1>
+          <button class="btn btn-sm" type="button" onClick="{{notInDemo}}"><svg class="ic"><use href="#i-link"></use></svg>Share this view</button>
+        </div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+          <div style="flex: 1 1 240px; max-width: 320px; height: 32px; border: 1px solid #e2e8f0; border-radius: 6px; padding: 0 12px; display: flex; align-items: center; gap: 8px; color: #90a1b9; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.05);"><svg class="ic"><use href="#i-search"></use></svg>3,575,387 matching orgs</div>
+          <div style="display: inline-flex; border: 1px solid #e2e8f0; border-radius: 6px; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.05); overflow: hidden;">
+            <button type="button" onClick="{{notInDemo}}" style="height: 30px; padding: 0 12px; border: 0; background: none; font-weight: 500;">Tech +</button>
+            <button type="button" onClick="{{notInDemo}}" style="height: 30px; padding: 0 12px; border: 0; border-left: 1px solid #e2e8f0; background: none; font-weight: 500;">Job Function +</button>
+            <button type="button" onClick="{{notInDemo}}" style="height: 30px; padding: 0 12px; border: 0; border-left: 1px solid #e2e8f0; background: none; font-weight: 500;">Project +</button>
+          </div>
+          <button class="btn btn-sm" type="button" aria-pressed="{{filterOn}}" style="{{filterStyle}}" onClick="{{toggleFilter}}"><svg class="ic"><use href="#i-sparkle"></use></svg>Has a team brief</button>
+        </div>
+        <div class="card" style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; min-width: 720px;">
+            <thead><tr><th class="th" style="border-top: 0;">Name</th><th class="th" style="border-top: 0;">Sumble score</th><th class="th" style="border-top: 0;">URL</th><th class="th" style="border-top: 0;">Employees</th><th class="th" style="border-top: 0;">Jobs</th><th class="th" style="border-top: 0;">Last post</th></tr></thead>
+            <tbody>
+              <sc-for list="{{orgs}}" as="o" hint-placeholder-count="8">
+                <tr>
+                  <td class="td"><button class="namebtn" type="button" onClick="{{o.open}}"><span class="orgmark" style="{{o.markStyle}}">{{o.initial}}</span><span>{{o.name}}</span></button><sc-if value="{{o.hasBrief}}" hint-placeholder-val="{{false}}"><button class="mk" type="button" title="{{o.markTitle}}" aria-label="{{o.markTitle}}" onClick="{{o.openBrief}}"><svg class="ic"><use href="#i-sparkle"></use></svg>Brief</button></sc-if></td>
+                  <td class="td"><span class="score">{{o.score}}</span></td>
+                  <td class="td"><span class="chip" style="font-size: 13px;">{{o.url}}</span></td>
+                  <td class="td num">{{o.emp}}</td>
+                  <td class="td"><span class="chip num" style="font-size: 13px;">{{o.jobs}}</span></td>
+                  <td class="td"><span class="chip" style="font-size: 13px;">{{o.post}}</span></td>
+                </tr>
+              </sc-for>
+            </tbody>
+          </table>
+        </div>
+        <div class="sub" style="display: flex; align-items: center; gap: 6px;"><span class="mk" style="margin-left: 0;"><svg class="ic"><use href="#i-sparkle"></use></svg>Brief</span>Someone on your team already made a brief for this account. Opening it is free.</div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{isOrg}}" hint-placeholder-val="{{false}}">
+      <div style="padding: 18px 24px 80px; display: flex; flex-direction: column; gap: 14px; position: relative;">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+          <div style="display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500;"><button type="button" onClick="{{goList}}" style="border: 0; background: none; padding: 0; color: #1d293d; font-weight: 500;">Organizations</button><svg class="ic" style="width: 14px; height: 14px; color: #90a1b9;"><use href="#i-right"></use></svg><span style="padding: 1px 6px; border-radius: 4px; background: #e2e8f0;">{{org.name}}</span></div>
+          <button class="btn btn-sm hide-sm" type="button" onClick="{{notInDemo}}"><svg class="ic"><use href="#i-link"></use></svg>Share this view</button>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <svg class="ic" style="color: #90a1b9;"><use href="#i-star"></use></svg>
+            <span class="orgmark" style="{{org.markStyleLg}}">{{org.initial}}</span>
+            <h1 style="margin: 0; font-size: 24px; line-height: 30px; font-weight: 600;">{{org.name}}</h1>
+          </div>
+          <button class="btn" type="button" aria-pressed="{{panelOpen}}" style="{{briefBtnStyle}}" onClick="{{onBriefBtn}}"><svg class="ic"><use href="#i-sparkle"></use></svg>{{briefBtnLabel}}</button>
+        </div>
+        <div style="color: #314158;">{{org.desc}}</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px 16px;">
+          <span class="meta"><svg class="ic"><use href="#i-building"></use></svg>{{org.industry}}</span>
+          <span class="meta"><svg class="ic"><use href="#i-user"></use></svg>{{org.headcount}}</span>
+          <span class="meta"><svg class="ic"><use href="#i-globe"></use></svg>{{org.hq}}</span>
+        </div>
+        <div style="display: flex; gap: 20px; border-bottom: 1px solid #e2e8f0; font-size: 15px; color: #45556c; white-space: nowrap; overflow: hidden;">
+          <span style="padding: 8px 2px; color: #1d293d; font-weight: 600; border-bottom: 2px solid #1d293d;">Overview</span><span style="padding: 8px 2px;">Signals</span><span style="padding: 8px 2px;">Teams</span><span style="padding: 8px 2px;">Tech Stack</span><span style="padding: 8px 2px;">People</span><span style="padding: 8px 2px;">Job Posts</span>
+        </div>
+        <div class="card">
+          <div class="cardhd"><span class="tile tile-p"><svg class="ic"><use href="#i-user"></use></svg></span>Top People to Target</div>
+          <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse;">
+              <thead><tr><th class="th">Name</th><th class="th">Sumble Lead Score</th><th class="th">Title</th></tr></thead>
+              <tbody>
+                <sc-for list="{{people}}" as="p" hint-placeholder-count="5">
+                  <tr style="{{p.rowStyle}}"><td class="td">{{p.name}}</td><td class="td"><span class="score" style="{{p.scoreStyle}}">{{p.score}}</span></td><td class="td">{{p.title}}</td></tr>
+                </sc-for>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card">
+          <div class="cardhd"><span class="tile tile-p"><svg class="ic"><use href="#i-users"></use></svg></span>Top Teams to Target</div>
+          <table style="width: 100%; border-collapse: collapse;">
+            <thead><tr><th class="th">Team Name</th><th class="th">Sumble Teams Score</th><th class="th">Matching jobs</th></tr></thead>
+            <tbody>
+              <sc-for list="{{orgTeams}}" as="t" hint-placeholder-count="3">
+                <tr style="{{t.rowStyle}}"><td class="td">{{t.name}}</td><td class="td"><span class="score" style="{{t.scoreStyle}}">{{t.score}}</span></td><td class="td num">{{t.matches}}</td></tr>
+              </sc-for>
+            </tbody>
+          </table>
+        </div>
+
+        <sc-if value="{{showPreview}}" hint-placeholder-val="{{false}}">
+          <div class="pop" role="dialog" aria-label="Intelligence brief preview" style="right: 24px; top: 104px; width: 400px; max-width: calc(100% - 48px); padding: 18px; display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="display: flex; align-items: center; gap: 10px;"><span class="tile tile-g" style="width: 28px; height: 28px;"><svg class="ic"><use href="#i-sparkle"></use></svg></span><b style="font-size: 16px;">Intelligence brief for {{org.name}}</b></span>
+              <button class="iconbtn" type="button" aria-label="Close" onClick="{{closePreview}}"><svg class="ic"><use href="#i-x"></use></svg></button>
+            </div>
+            <sc-if value="{{previewFree}}" hint-placeholder-val="{{true}}">
+              <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div class="why">A one-page plan for this account, built from Sumble's data on its people, teams, hiring and growth.</div>
+                <div style="display: flex; align-items: center; gap: 10px; font-size: 13px;"><span class="tile tile-g"><svg class="ic"><use href="#i-target"></use></svg></span><span><b>What's the angle</b> <span class="sub">· the pitch and the team it fits</span></span></div>
+                <div style="display: flex; align-items: center; gap: 10px; font-size: 13px;"><span class="tile tile-p"><svg class="ic"><use href="#i-user"></use></svg></span><span><b>Who to contact first</b> <span class="sub">· with a reason for each</span></span></div>
+                <div style="display: flex; align-items: center; gap: 10px; font-size: 13px;"><span class="tile tile-p"><svg class="ic"><use href="#i-users"></use></svg></span><span><b>Best-fit teams</b> <span class="sub">· and who leads them</span></span></div>
+                <div style="display: flex; align-items: center; gap: 10px; font-size: 13px;"><span class="tile"><svg class="ic"><use href="#i-chart"></use></svg></span><span><b>The intel</b> <span class="sub">· growth and hiring, with sources</span></span></div>
+                <div style="display: flex; align-items: center; gap: 10px; font-size: 13px;"><span class="tile"><svg class="ic"><use href="#i-bolt"></use></svg></span><span><b>Recent changes</b> <span class="sub">· signals from the last 90 days</span></span></div>
+              </div>
+            </sc-if>
+            <sc-if value="{{previewPaid}}" hint-placeholder-val="{{false}}">
+              <div class="why">Angle · Who to contact first · Best-fit teams · Intel · Recent changes</div>
+            </sc-if>
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 10px; background: #f8fafc; border-radius: 8px; font-size: 13px;"><span>Tailored to <span class="tag" style="margin-left: 4px;">Finance software buyers</span></span><button type="button" onClick="{{notInDemo}}" style="border: 0; background: none; color: #45556c; font-size: 13px;">Change</button></div>
+            <sc-if value="{{previewFree}}" hint-placeholder-val="{{true}}">
+              <div style="padding: 12px; background: #f0fdf4; border: 1px solid #b9f8cf; border-radius: 8px; font-size: 13px; color: #016630;"><b>Free</b> · uses 1 of your {{starterLeft}} starter briefs. After that, a brief costs 50 credits.</div>
+            </sc-if>
+            <sc-if value="{{previewPaid}}" hint-placeholder-val="{{false}}">
+              <div style="padding: 12px; background: #f0fdf4; border: 1px solid #b9f8cf; border-radius: 8px; display: flex; flex-direction: column; gap: 4px;">
+                <div class="row"><span>Cost</span><b>50 credits</b></div>
+                <div class="row"><span>Your balance</span><span class="num">{{balance}} → <b>{{balanceAfter}}</b></span></div>
+              </div>
+            </sc-if>
+            <div style="display: flex; gap: 8px;">
+              <button class="btn btn-g" type="button" style="flex: 1;" onClick="{{onGenerate}}">{{generateLabel}}</button>
+              <button class="btn" type="button" onClick="{{closePreview}}">Not now</button>
+            </div>
+            <div class="sub">Takes about 30 seconds. Your team can open it free.</div>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+  </main>
+
+  <sc-if value="{{panelOpen}}" hint-placeholder-val="{{false}}">
+    <section class="panel" aria-label="Intelligence brief">
+      <header style="padding: 16px 20px 14px; border-bottom: 1px solid #e2e8f0; display: flex; flex-direction: column; gap: 12px; position: relative;">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span class="tile tile-g" style="width: 28px; height: 28px;"><svg class="ic"><use href="#i-sparkle"></use></svg></span>
+            <h2 style="margin: 0; font-size: 17px; line-height: 24px; font-weight: 600;">Intelligence brief</h2>
+            <span class="sub" style="font-size: 13px;">· {{org.name}}</span>
+          </div>
+          <div style="display: flex; gap: 2px;">
+            <button class="iconbtn" type="button" aria-label="More actions" aria-expanded="{{menuOpen}}" onClick="{{toggleMenu}}"><svg class="ic"><use href="#i-dots"></use></svg></button>
+            <button class="iconbtn" type="button" aria-label="Close brief" onClick="{{closePanel}}"><svg class="ic"><use href="#i-x"></use></svg></button>
+          </div>
+        </div>
+        <sc-if value="{{menuOpen}}" hint-placeholder-val="{{false}}">
+          <div class="pop" role="menu" style="right: 52px; top: 48px; width: 200px; padding: 4px;">
+            <button class="mi" type="button" role="menuitem" onClick="{{menuCopyLink}}"><svg class="ic"><use href="#i-link"></use></svg>Copy link</button>
+            <button class="mi" type="button" role="menuitem" onClick="{{menuReport}}"><svg class="ic"><use href="#i-flag"></use></svg>Report an issue</button>
+          </div>
+        </sc-if>
+        <sc-if value="{{isGenerating}}" hint-placeholder-val="{{false}}">
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div class="row" style="color: #45556c;"><span>{{progressText}}</span><span class="sub">Safe to leave this page</span></div>
+            <div style="height: 6px; background: #e2e8f0; border-radius: 9999px; overflow: hidden;"><div style="{{progressStyle}}"></div></div>
+          </div>
+        </sc-if>
+        <sc-if value="{{isReady}}" hint-placeholder-val="{{true}}">
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 13px; color: #62748e;">
+              <span style="display: inline-flex; align-items: center; gap: 6px;"><span aria-hidden="true" style="{{brief.avStyle}}">{{brief.avInitial}}</span>Made by {{brief.by}} · {{brief.when}}</span>
+              <span class="tag"><svg class="ic" style="width: 13px; height: 13px; margin-right: 4px;"><use href="#i-target"></use></svg>Finance software buyers</span>
+              <span style="display: inline-flex; align-items: center; gap: 4px;"><svg class="ic" style="width: 14px; height: 14px;"><use href="#i-users"></use></svg>Your team can open it free</span>
+            </div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+              <button class="btn btn-sm" type="button" onClick="{{copyBrief}}"><svg class="ic"><use href="#i-copy"></use></svg>Copy</button>
+              <button class="btn btn-sm" type="button" onClick="{{shareBrief}}"><svg class="ic"><use href="#i-hash"></use></svg>Share to Slack</button>
+              <button class="btn btn-sm" type="button" onClick="{{crmBrief}}"><svg class="ic"><use href="#i-upload"></use></svg>Save to CRM</button>
+            </div>
+          </div>
+        </sc-if>
+      </header>
+
+      <div class="pbody">
+        <sc-if value="{{isGenerating}}" hint-placeholder-val="{{false}}">
+          <div style="display: flex; flex-direction: column;">
+            <sc-for list="{{genSections}}" as="s" hint-placeholder-count="5">
+              <div class="sec" style="{{s.style}}">
+                <div class="sechd"><span class="{{s.tileClass}}"><svg class="ic"><use href="{{s.icon}}"></use></svg></span>{{s.label}}<span class="sub" style="margin-left: auto; font-weight: 500;">{{s.state}}</span></div>
+                <sc-if value="{{s.done}}" hint-placeholder-val="{{false}}"><div class="why">{{s.text}}</div></sc-if>
+                <sc-if value="{{s.pending}}" hint-placeholder-val="{{true}}"><div style="display: flex; flex-direction: column; gap: 8px;"><div class="skel" style="width: 92%;"></div><div class="skel" style="width: 74%;"></div></div></sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{isReady}}" hint-placeholder-val="{{true}}">
+          <div style="display: flex; flex-direction: column;">
+            <div class="sec">
+              <div class="sechd"><span class="tile tile-g"><svg class="ic"><use href="#i-target"></use></svg></span>What's the angle</div>
+              <p style="margin: 0; font-size: 15px; line-height: 24px;">{{brief.angle}}</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                <sc-for list="{{brief.sources}}" as="src" hint-placeholder-count="3">
+                  <a class="chip" href="#" onClick="{{src.open}}">{{src.label}}<svg class="ic" style="width: 12px; height: 12px;"><use href="#i-arrow"></use></svg></a>
+                </sc-for>
+              </div>
+            </div>
+
+            <div class="sec">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div class="sechd"><span class="tile tile-p"><svg class="ic"><use href="#i-user"></use></svg></span>Who to contact first</div>
+                <a href="#" onClick="{{notInDemo}}" style="font-size: 13px; font-weight: 500; display: inline-flex; align-items: center; gap: 2px;">All people<svg class="ic" style="width: 13px; height: 13px;"><use href="#i-arrow"></use></svg></a>
+              </div>
+              <sc-for list="{{contacts}}" as="c" hint-placeholder-count="3">
+                <div class="person" onMouseEnter="{{c.hover}}" onMouseLeave="{{c.unhover}}">
+                  <div style="display: flex; align-items: center; gap: 12px;">
+                    <span class="av">{{c.initials}}</span>
+                    <div style="flex: 1; min-width: 0;"><div style="font-weight: 600;">{{c.name}}</div><div style="font-size: 13px; color: #62748e;">{{c.title}}</div></div>
+                    <span class="score">{{c.score}}</span>
+                  </div>
+                  <div class="why">{{c.why}}</div>
+                  <div style="display: flex; gap: 6px;"><button class="btn btn-sm" type="button" onClick="{{c.draft}}"><svg class="ic"><use href="#i-mail"></use></svg>Draft outreach</button><button class="btn btn-sm btn-ghost" type="button" onClick="{{c.add}}"><svg class="ic"><use href="{{c.addIcon}}"></use></svg>{{c.addLabel}}</button></div>
+                </div>
+              </sc-for>
+            </div>
+
+            <div class="sec">
+              <div class="sechd"><span class="tile tile-p"><svg class="ic"><use href="#i-users"></use></svg></span>Best-fit teams</div>
+              <sc-for list="{{teams}}" as="t" hint-placeholder-count="2">
+                <div class="team" onMouseEnter="{{t.hover}}" onMouseLeave="{{t.unhover}}">
+                  <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;"><b>{{t.name}}</b><span class="score">{{t.score}}</span></div>
+                  <div class="why">{{t.why}}</div>
+                  <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+                    <span style="display: flex; gap: 6px; flex-wrap: wrap;"><sc-for list="{{t.tags}}" as="g" hint-placeholder-count="2"><span class="tag">{{g.label}}</span></sc-for></span>
+                    <button class="btn btn-sm" type="button" onClick="{{t.find}}"><svg class="ic"><use href="#i-users"></use></svg>Find people</button>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+
+            <div class="sec">
+              <div class="sechd"><span class="tile"><svg class="ic"><use href="#i-chart"></use></svg></span>The intel</div>
+              <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;">
+                <sc-for list="{{stats}}" as="st" hint-placeholder-count="3">
+                  <div class="stat"><span class="sub">{{st.label}}</span><b>{{st.value}}</b><span style="{{st.noteStyle}}">{{st.note}}</span></div>
+                </sc-for>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 10px; padding: 14px 0; border-bottom: 1px solid #e2e8f0; font-size: 13px; color: #62748e;">
+              <span class="tile"><svg class="ic"><use href="#i-bolt"></use></svg></span>
+              <span style="flex: 1;"><b style="color: #1d293d; font-size: 14px;">Recent changes</b> · No new signals in the last 90 days</span>
+              <span class="chip" style="background: #f0fdf4; border-color: #b9f8cf; color: #016630;">10 credits refunded</span>
+            </div>
+
+            <sc-for list="{{followups}}" as="f" hint-placeholder-count="0">
+              <div class="sec" style="border-bottom: 0; padding-bottom: 4px;">
+                <div style="display: flex; justify-content: flex-end;"><div style="max-width: 80%; padding: 8px 12px; border-radius: 12px 12px 4px 12px; background: #f1f5f9; font-weight: 500;">{{f.q}}</div></div>
+                <div style="display: flex; gap: 10px;">
+                  <span class="tile tile-g"><svg class="ic"><use href="#i-sparkle"></use></svg></span>
+                  <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <p style="margin: 0; line-height: 21px;">{{f.a}}</p>
+                    <div style="display: flex; gap: 6px; flex-wrap: wrap;"><span class="chip">{{f.src1}}</span><span class="chip">{{f.src2}}</span></div>
+                  </div>
+                </div>
+              </div>
+            </sc-for>
+            <div style="height: 16px;"></div>
+          </div>
+        </sc-if>
+      </div>
+
+      <sc-if value="{{isReady}}" hint-placeholder-val="{{true}}">
+        <footer style="padding: 12px 20px 14px; border-top: 1px solid #e2e8f0; background: #fff; display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 10px; border-radius: 8px; background: #f8fafc; font-size: 13px;">
+            <span style="display: inline-flex; align-items: center; gap: 8px; color: #45556c;"><svg class="ic" style="width: 14px; height: 14px;"><use href="#i-list"></use></svg>On <b style="color: #1d293d;">Q1 target accounts</b><span class="hide-sm">· Owner Omar Y.</span></span>
+            <button class="btn btn-sm" type="button" style="height: 26px;" onClick="{{cycleStatus}}"><span style="{{statusDot}}"></span>{{statusLabel}}<svg class="ic" style="width: 12px; height: 12px;"><use href="#i-down"></use></svg></button>
+          </div>
+          <form onSubmit="{{onAsk}}" style="display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 4px 0 12px; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,.05);">
+            <svg class="ic" style="color: #00a63e;"><use href="#i-sparkle"></use></svg>
+            <input id="ask" type="text" aria-label="Ask a follow-up" value="{{askText}}" onChange="{{onAskInput}}" placeholder="{{askPlaceholder}}" style="flex: 1; min-width: 0; border: 0; outline: 0; font: inherit; background: transparent; color: #1d293d;">
+            <button type="submit" aria-label="Ask" style="width: 32px; height: 32px; border: 0; border-radius: 6px; background: #00a63e; color: #fff; display: grid; place-items: center;"><svg class="ic"><use href="#i-send"></use></svg></button>
+          </form>
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 12px; color: #62748e;">
+            <span>Follow-ups are free and cite their sources</span>
+            <span style="display: inline-flex; align-items: center; gap: 4px;">Useful?<button class="btn btn-sm btn-ghost" type="button" style="height: 24px; padding: 0 6px; font-size: 12px;" onClick="{{rateYes}}">Yes</button><button class="btn btn-sm btn-ghost" type="button" style="height: 24px; padding: 0 6px; font-size: 12px;" onClick="{{rateNo}}">No</button></span>
+          </div>
+        </footer>
+      </sc-if>
+    </section>
+  </sc-if>
+</div>
+
+<a class="back" href="/sumble"><svg class="ic" style="width: 14px; height: 14px;"><use href="#i-left"></use></svg>Back to the case study</a>
+
+<sc-if value="{{hasToast}}" hint-placeholder-val="{{false}}">
+  <div class="toast" role="status"><svg class="ic" style="width: 14px; height: 14px; color: #00c950;"><use href="#i-check"></use></svg>{{toast}}</div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{}'>
+var GENERIC_PEOPLE = function (team) {
+  return [
+    ["Chief Financial Officer", "70.4", "Chief Financial Officer"],
+    ["VP Finance", "64.9", "VP Finance"],
+    ["Controller", "62.1", "Controller"],
+    ["Head of " + team, "60.8", "Head of " + team],
+    ["Director, FP&A", "58.5", "Director, FP&A"]
+  ];
+};
+var ORGS = [
+  { id: "clio", name: "Clio", color: "#0f172b", url: "clio.com", score: "69.7", emp: "2,420", jobs: "1,916", post: "2d ago",
+    desc: "Clio is the global leader in legal AI technology, empowering legal professionals and law firms of every size.",
+    industry: "Scientific and Technical Services", headcount: "2.4k headcount", hq: "HQ in British Columbia, Canada",
+    people: [["Curt S.", "71.8", "Chief Financial Officer"], ["Alex M., CPA", "62.4", "VP Finance"], ["Christal Y., CPA", "62.4", "Vice President of Tax"], ["Hugo R.", "62.4", "VP Strategic Finance"], ["Nav G., CPA", "62.4", "VP Finance"]],
+    orgTeams: [["Sales team", "14.8", "17"], ["EMEA org", "11.1", "3"], ["Finance team", "11.0", "52"]],
+    angle: "Clio's headcount is up 44% in a year, and the Finance team is hiring accountants and AP/AR specialists to keep pace. Lead with audit-ready reporting, starting with the CFO, who owns vendor spend.",
+    sources: ["Headcount +43.7% YoY", "Finance team · 52 matching jobs", "Accountants +54.2% YoY"],
+    contacts: [[0, "Chief Financial Officer · San Francisco", "Highest lead score at Clio. Owns vendor consolidation, and has been in the role nearly five years."],
+               [4, "VP Finance · Greater Vancouver", "Six promotions in three and a half years. Likely runs the budget review a new finance tool would go through."],
+               [2, "Vice President of Tax · Greater Vancouver", "Joined six months ago and is still setting priorities, so a good moment for a new idea."]],
+    teams: [[2, "Grew 57% in a year with 52 matching job posts, mostly accountants and AP/AR. Led by the CFO, VP Finance and VP of Tax.", ["Finance", "Accountant"]],
+            [0, "153 SDRs, up 32%, hiring across EMEA and APAC. A second entry point once Finance is engaged.", ["Sales Development Rep.", "Accountant"]]],
+    stats: [["Headcount", "2,415", "+43.7% YoY", true], ["Finance", "116", "+56.8% YoY", true], ["Open job posts", "1,916", "Last post 2d ago", false]] },
+  { id: "ramp", name: "Ramp", color: "#3f6212", url: "ramp.com", score: "68.8", emp: "2,736", jobs: "1,793", post: "2d ago",
+    desc: "Ramp builds corporate cards and finance automation software for modern businesses.",
+    industry: "Financial Services", headcount: "2.7k headcount", hq: "HQ in New York, United States",
+    teamWord: "Accounting", brief: { by: "Maya R.", when: "12 days ago" } },
+  { id: "anthropic", name: "Anthropic", color: "#1d293d", url: "anthropic.com", score: "67.1", emp: "5,741", jobs: "3,597", post: "2d ago",
+    desc: "Anthropic is an AI safety and research company building reliable, interpretable AI systems.",
+    industry: "Research and Development", headcount: "5.7k headcount", hq: "HQ in California, United States", teamWord: "Finance Operations" },
+  { id: "toast", name: "Toast", color: "#ea580c", url: "pos.toasttab.com", score: "66.0", emp: "6,845", jobs: "4,794", post: "2d ago",
+    desc: "Toast builds a cloud-based restaurant management and point-of-sale platform.",
+    industry: "Software", headcount: "6.8k headcount", hq: "HQ in Massachusetts, United States", teamWord: "Revenue Accounting" },
+  { id: "trimble", name: "Trimble Inc.", color: "#0284c7", url: "trimble.com", score: "65.5", emp: "12,288", jobs: "8,834", post: "2d ago",
+    desc: "Trimble provides technology for construction, geospatial, agriculture and transportation.",
+    industry: "Technology", headcount: "12.3k headcount", hq: "HQ in Colorado, United States", teamWord: "Shared Services" },
+  { id: "samsara", name: "Samsara", color: "#0f172b", url: "samsara.com", score: "64.8", emp: "4,682", jobs: "5,128", post: "2d ago",
+    desc: "Samsara offers a connected operations cloud for physical operations.",
+    industry: "Software", headcount: "4.7k headcount", hq: "HQ in California, United States", teamWord: "Procurement",
+    brief: { by: "Maya R.", when: "2 days ago" } },
+  { id: "openai", name: "OpenAI", color: "#45556c", url: "openai.com", score: "64.3", emp: "10,665", jobs: "6,361", post: "4d ago",
+    desc: "OpenAI is an AI research and deployment company.",
+    industry: "Research and Development", headcount: "10.7k headcount", hq: "HQ in California, United States", teamWord: "Finance Operations" },
+  { id: "gp", name: "Global Payments Inc.", color: "#1d4ed8", url: "globalpayments.com", score: "63.8", emp: "21,769", jobs: "16,954", post: "2d ago",
+    desc: "Global Payments provides payment technology and software solutions.",
+    industry: "Financial Services", headcount: "21.8k headcount", hq: "HQ in Georgia, United States", teamWord: "Controllership" }
+];
+// Fill the orgs that don't have hand-written detail with a placeholder brief built from their own figures.
+ORGS.forEach(function (o) {
+  if (o.people) return;
+  var tw = o.teamWord || "Finance";
+  o.people = GENERIC_PEOPLE(tw);
+  o.orgTeams = [["Finance team", "12.4", "38"], [tw + " team", "10.9", "21"], ["Sales team", "9.1", "12"]];
+  o.angle = o.name + " is hiring steadily, with " + o.jobs + " job posts and finance roles among the fastest-growing. Lead with automating close and reporting for the Finance team, starting with the CFO.";
+  o.sources = ["Headcount " + o.emp, "Finance team · 38 matching jobs", "Last post " + o.post];
+  o.contacts = [[0, "Chief Financial Officer", "Highest lead score at " + o.name + ", and the budget owner for finance tooling."],
+                [1, "VP Finance", "Likely runs the evaluation for a new finance tool."],
+                [2, "Controller", "Owns the close process the pitch would improve."]];
+  o.teams = [[0, "38 matching job posts, mostly accounting and FP&A roles.", ["Finance", "Accountant"]],
+             [1, "21 matching job posts; a second entry point once Finance is engaged.", [tw, "Accountant"]]];
+  o.stats = [["Headcount", o.emp, "Placeholder trend", false], ["Open job posts", o.jobs, "Last post " + o.post, false], ["Sumble score", o.score, "Fit to your ICP", false]];
+});
+var SECTIONS = [["What's the angle", "tile tile-g", "#i-target"], ["Who to contact first", "tile tile-p", "#i-user"], ["Best-fit teams", "tile tile-p", "#i-users"], ["The intel", "tile", "#i-chart"], ["Recent changes", "tile", "#i-bolt"]];
+var STATUSES = [["Not started", "#cad5e2"], ["Researching", "#155dfc"], ["Contacted", "#00c950"]];
+
+class Component extends DCLogic {
+  componentWillUnmount() { clearInterval(this.timer); clearTimeout(this.toastTimer); }
+  s() {
+    var init = {};
+    ORGS.forEach(function (o) { if (o.brief) init[o.id] = o.brief; });
+    return Object.assign({ screen: "list", orgId: "clio", preview: false, panel: null, progress: 0, starter: 5, balance: 9850,
+      briefs: init, status: {}, added: {}, asks: {}, ask: "", toast: "", filter: false, menu: false, hoverP: -1, hoverT: -1 }, this.state || {});
+  }
+  say(msg) {
+    var self = this;
+    clearTimeout(this.toastTimer);
+    this.setState({ toast: msg });
+    this.toastTimer = setTimeout(function () { self.setState({ toast: "" }); }, 2600);
+  }
+  openOrg(id, withBrief) {
+    clearInterval(this.timer);
+    var has = !!this.s().briefs[id];
+    this.setState({ screen: "org", orgId: id, preview: false, menu: false, hoverP: -1, hoverT: -1, panel: withBrief && has ? "ready" : null, progress: 0 });
+  }
+  generate() {
+    var self = this, st = this.s(), id = st.orgId;
+    var next = { preview: false, panel: "generating", progress: 0, menu: false };
+    if (st.starter > 0) next.starter = st.starter - 1; else next.balance = st.balance - 50;
+    this.setState(next);
+    clearInterval(this.timer);
+    this.timer = setInterval(function () {
+      var cur = self.s(), p = cur.progress + 1;
+      if (p >= 5) {
+        clearInterval(self.timer);
+        var b = Object.assign({}, cur.briefs);
+        b[id] = { by: "you", when: "just now" };
+        self.setState({ progress: 5, panel: "ready", briefs: b });
+      } else {
+        self.setState({ progress: p });
+      }
+    }, 750);
+  }
+  renderVals() {
+    var self = this, st = this.s();
+    var org = ORGS.filter(function (o) { return o.id === st.orgId; })[0] || ORGS[0];
+    var brief = st.briefs[org.id];
+    var fmt = function (n) { return n.toLocaleString("en-US"); };
+    var list = ORGS.filter(function (o) { return !st.filter || st.briefs[o.id]; });
+    var stIdx = st.status[org.id] || 0;
+    var contactRows = org.contacts.map(function (c) { return c[0]; });
+    var teamRows = org.teams.map(function (t) { return t[0]; });
+    var initials = function (n) { return n.replace(/[^A-Za-z ]/g, "").split(" ").filter(Boolean).slice(0, 2).map(function (w) { return w.charAt(0); }).join("").toUpperCase(); };
+    return {
+      isList: st.screen === "list",
+      isOrg: st.screen === "org",
+      notInDemo: function (e) { if (e && e.preventDefault) e.preventDefault(); self.say("Not part of this prototype"); },
+      starterLabel: st.starter > 0 ? st.starter + " starter briefs left" : "Starter briefs used",
+      balanceLabel: fmt(st.balance) + " credits · resets Dec 1",
+      filterOn: st.filter,
+      filterStyle: st.filter ? "background:#f0fdf4;border-color:#00a63e;color:#016630" : "",
+      toggleFilter: function () { self.setState({ filter: !self.s().filter }); },
+      goList: function () { clearInterval(self.timer); self.setState({ screen: "list", preview: false, panel: null, menu: false }); },
+      orgs: list.map(function (o) {
+        var b = st.briefs[o.id];
+        return {
+          name: o.name, initial: o.name.charAt(0), markStyle: "background:" + o.color, url: o.url, score: o.score, emp: o.emp, jobs: o.jobs, post: o.post,
+          hasBrief: !!b, markTitle: b ? "Team brief by " + b.by + " · " + b.when + " · open free" : "",
+          open: function () { self.openOrg(o.id, false); },
+          openBrief: function () { self.openOrg(o.id, true); }
+        };
+      }),
+      org: { name: org.name, initial: org.name.charAt(0), markStyleLg: "width:28px;height:28px;font-size:13px;background:" + org.color, desc: org.desc, industry: org.industry, headcount: org.headcount, hq: org.hq },
+      people: org.people.map(function (p, i) {
+        var lit = (st.hoverP === i) || (st.panel === "ready" && st.hoverP < 0 && i === contactRows[0]);
+        return { name: p[0], score: p[1], title: p[2], rowStyle: lit ? "background:#f0fdf4" : "", scoreStyle: parseFloat(p[1]) < 60 ? "background:#e2e8f0;color:#1d293d" : "" };
+      }),
+      orgTeams: org.orgTeams.map(function (t, i) {
+        return { name: t[0], score: t[1], matches: t[2], rowStyle: st.hoverT === i ? "background:#f0fdf4" : "", scoreStyle: parseFloat(t[1]) < 10 ? "background:#e2e8f0;color:#1d293d" : "" };
+      }),
+      panelOpen: !!st.panel,
+      briefBtnLabel: st.panel ? "Intelligence brief" : (brief ? "View brief" : "Intelligence brief"),
+      briefBtnStyle: st.panel ? "background:#f0fdf4;border-color:#00a63e;color:#016630;font-weight:600" : "border-color:#00a63e;color:#016630;font-weight:600",
+      onBriefBtn: function () {
+        var cur = self.s();
+        if (cur.panel) self.setState({ panel: cur.panel === "generating" ? cur.panel : null, menu: false });
+        else if (cur.briefs[org.id]) self.setState({ panel: "ready", preview: false });
+        else self.setState({ preview: !cur.preview });
+      },
+      showPreview: st.preview,
+      closePreview: function () { self.setState({ preview: false }); },
+      previewFree: st.starter > 0,
+      previewPaid: st.starter <= 0,
+      starterLeft: String(st.starter),
+      balance: fmt(st.balance),
+      balanceAfter: fmt(st.balance - 50),
+      generateLabel: st.starter > 0 ? "Generate free brief" : "Generate · 50 credits",
+      onGenerate: function () { self.generate(); },
+      isGenerating: st.panel === "generating",
+      isReady: st.panel === "ready",
+      closePanel: function () { clearInterval(self.timer); self.setState({ panel: null, menu: false, hoverP: -1, hoverT: -1 }); },
+      menuOpen: st.menu,
+      toggleMenu: function () { self.setState({ menu: !self.s().menu }); },
+      menuCopyLink: function () { self.setState({ menu: false }); self.say("Link to this brief copied"); },
+      menuReport: function () { self.setState({ menu: false }); self.say("Thanks. We'll review this brief."); },
+      progressText: "Writing " + Math.min(st.progress + 1, 5) + " of 5 sections…",
+      progressStyle: "height:100%;background:#00a63e;transition:width .4s;width:" + (st.progress * 20 + 6) + "%",
+      genSections: SECTIONS.map(function (sec, i) {
+        var done = i < st.progress, writing = i === st.progress;
+        var text = i === 0 ? org.angle
+          : i === 1 ? org.contacts.map(function (c) { return org.people[c[0]][0]; }).join(" · ")
+          : i === 2 ? org.teams.map(function (t) { return org.orgTeams[t[0]][0]; }).join(" · ")
+          : i === 3 ? org.stats.map(function (s2) { return s2[0] + " " + s2[1]; }).join(" · ")
+          : "No new signals in the last 90 days.";
+        return { label: sec[0], tileClass: sec[1], icon: sec[2], done: done, pending: !done, text: text,
+          state: done ? "Done" : writing ? "Writing…" : "Queued", style: done || writing ? "" : "opacity:.5" };
+      }),
+      brief: {
+        by: brief ? brief.by : "you", when: brief ? brief.when : "just now", angle: org.angle,
+        avInitial: brief && brief.by !== "you" ? brief.by.charAt(0) : "O",
+        avStyle: "width:18px;height:18px;border-radius:4px;display:inline-grid;place-items:center;font-size:10px;font-weight:600;color:#fff;background:" + (brief && brief.by !== "you" ? "#7c3aed" : "#6a7282"),
+        sources: org.sources.map(function (l) { return { label: l, open: function (e) { if (e && e.preventDefault) e.preventDefault(); self.say("Opens the data behind “" + l + "”"); } }; })
+      },
+      contacts: org.contacts.map(function (c, i) {
+        var p = org.people[c[0]], key = org.id + ":" + i, added = !!st.added[key];
+        return {
+          name: p[0], initials: initials(p[0]), score: p[1], title: c[1], why: c[2],
+          addLabel: added ? "Added" : "Add to list", addIcon: added ? "#i-check" : "#i-plus",
+          hover: function () { self.setState({ hoverP: c[0] }); },
+          unhover: function () { self.setState({ hoverP: -1 }); },
+          draft: function () { self.say("Drafting outreach to " + p[0] + " (demo)"); },
+          add: function () { var a = Object.assign({}, self.s().added); a[key] = !a[key]; self.setState({ added: a }); self.say(a[key] ? "Added " + p[0] + " to Q1 contacts" : "Removed " + p[0] + " from Q1 contacts"); }
+        };
+      }),
+      teams: org.teams.map(function (t) {
+        var row = org.orgTeams[t[0]];
+        return { name: row[0], score: row[1], why: t[1], tags: t[2].map(function (g) { return { label: g }; }),
+          hover: function () { self.setState({ hoverT: t[0] }); },
+          unhover: function () { self.setState({ hoverT: -1 }); },
+          find: function () { self.say("Opens People filtered to " + row[0] + " (demo)"); } };
+      }),
+      stats: org.stats.map(function (x) { return { label: x[0], value: x[1], note: x[2], noteStyle: x[3] ? "color:#016630;font-size:12px;font-weight:600" : "color:#62748e;font-size:12px" }; }),
+      statusLabel: STATUSES[stIdx][0],
+      statusDot: "width:6px;height:6px;border-radius:50%;background:" + STATUSES[stIdx][1],
+      cycleStatus: function () { var s2 = Object.assign({}, self.s().status); s2[org.id] = (stIdx + 1) % STATUSES.length; self.setState({ status: s2 }); self.say(org.name + " marked " + STATUSES[s2[org.id]][0]); },
+      copyBrief: function () { self.say("Brief copied"); },
+      shareBrief: function () { self.say("Shared to #sales-team (demo)"); },
+      crmBrief: function () { self.say("Saved as a note on the " + org.name + " CRM account (demo)"); },
+      rateYes: function () { self.say("Thanks. This helps tune future briefs."); },
+      rateNo: function () { self.say("Thanks. We'll use this to improve briefs."); },
+      askText: st.ask,
+      askPlaceholder: "Ask a follow-up about " + org.name,
+      onAskInput: function (e) { self.setState({ ask: e.target.value }); },
+      onAsk: function (e) {
+        if (e && e.preventDefault) e.preventDefault();
+        var q = (self.s().ask || "").trim();
+        if (!q) return;
+        var all = Object.assign({}, self.s().asks);
+        all[org.id] = (all[org.id] || []).concat([{ q: q,
+          a: "In the full product, Sumble would answer from " + org.name + "'s people, teams, tech and job posts. In this prototype, answers are placeholders.",
+          src1: org.sources[0], src2: "People: " + org.people[0][2] }]);
+        self.setState({ asks: all, ask: "" });
+      },
+      followups: st.asks[org.id] || [],
+      hasToast: !!st.toast,
+      toast: st.toast
+    };
+  }
+}
+</script>
+</body>
+</html>
